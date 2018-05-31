@@ -1,0 +1,20 @@
+@import '../utils/colors';
+
+.root {
+  padding: 1em 0;
+  background: $color-brand-secondary;
+  color: transparentize(white, 0.2);
+}
+
+.contentContainer {
+  display: flex;
+  align-items: center;
+}
+
+.brandContainer {
+  flex: 1;
+}
+
+.menuItemLink:hover {
+  color: white;
+}

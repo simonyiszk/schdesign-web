@@ -1,0 +1,18 @@
+@import '../utils/breakpoints';
+
+.root {
+  padding: 0 1rem;
+  margin: 0 auto;
+
+  @include media-breakpoint-up(sm) {
+    margin: 0 8%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin: 0 16%;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin: 0 24%;
+  }
+}

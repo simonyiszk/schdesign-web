@@ -1,0 +1,16 @@
+@import '~modern-normalize';
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.headerBrandLogo {
+  height: 2em;
+}
+
+.content {
+  a:hover {
+    text-decoration: underline;
+  }
+}
