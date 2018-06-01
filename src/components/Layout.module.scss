@@ -1,4 +1,15 @@
 @import '~modern-normalize';
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Roboto+Mono:500);
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+}
+
+h1 {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+}
 
 a {
   color: inherit;
