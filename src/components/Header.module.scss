@@ -13,16 +13,19 @@
   flex-direction: column;
   align-items: center;
 
-  @include gap(1em);
+  @include gap(0.5em);
 
   @include media-breakpoint-up(md) {
     flex-direction: row;
   }
 }
 
-.brandContainer,
+.brandContainer {
+  flex: 7;
+}
+
 .menuContainer {
-  flex: 1;
+  flex: 5;
 }
 
 .menuItemsList {
@@ -37,6 +40,10 @@
   text-transform: lowercase;
 }
 
-.menuItemLink:hover {
-  color: white;
+.menuItemLink {
+  padding: 0.5em 0;
+
+  &:hover {
+    color: white;
+  }
 }
