@@ -25,6 +25,11 @@ const Layout = ({ children }) => (
           defaultTitle={staticData.site.siteMetadata.title}
         >
           <html lang={staticData.site.siteMetadata.language} />
+
+          <link
+            href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Mono:500"
+            rel="stylesheet"
+          />
         </Helmet>
       )}
     />
