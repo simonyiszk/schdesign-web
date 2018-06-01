@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Roboto+Mono:500);
+
+$fonts: (
+  display: (
+    font-family: unquote("'Roboto Mono', monospace"),
+    font-weight: 500,
+  ),
+  body: (
+    font-family: unquote("'Montserrat', sans-serif"),
+  ),
+);
+
+@mixin font($type) {
+  @each $key, $value in map-get($fonts, $type) {
+    #{$key}: #{$value};
+  }
+}
