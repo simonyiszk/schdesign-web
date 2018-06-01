@@ -5,6 +5,7 @@ body {
   @include font(body);
 
   line-height: 1.5;
+  overflow-x: hidden;
 
   @include media-breakpoint-up(md) {
     font-size: 1.25em;
