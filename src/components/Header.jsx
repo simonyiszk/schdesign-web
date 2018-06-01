@@ -6,36 +6,38 @@ import styles from './Header.module.scss';
 
 const Header = ({ brand, className, ...props }) => (
   <header className={`${styles.root} ${className}`} {...props}>
-    <Container className={styles.contentContainer}>
-      <div className={styles.brandContainer}>{brand}</div>
+    <Container>
+      <div className={styles.contentContainer}>
+        <div className={styles.brandContainer}>{brand}</div>
 
-      <nav>
-        <ul>
-          <StaticQuery
-            query={graphql`
-              query HeaderQuery {
-                allHeaderMenuItemsYaml {
-                  edges {
-                    node {
-                      label
-                      url
+        <nav className={styles.menuContainer}>
+          <ul className={styles.menuItemsList}>
+            <StaticQuery
+              query={graphql`
+                query HeaderQuery {
+                  allHeaderMenuItemsYaml {
+                    edges {
+                      node {
+                        label
+                        url
+                      }
                     }
                   }
                 }
+              `}
+              render={staticData =>
+                staticData.allHeaderMenuItemsYaml.edges.map(({ node }) => (
+                  <li key={node.url}>
+                    <a href={node.url} className={styles.menuItemLink}>
+                      {node.label}
+                    </a>
+                  </li>
+                ))
               }
-            `}
-            render={staticData =>
-              staticData.allHeaderMenuItemsYaml.edges.map(({ node }) => (
-                <li key={node.url}>
-                  <a href={node.url} className={styles.menuItemLink}>
-                    {node.label}
-                  </a>
-                </li>
-              ))
-            }
-          />
-        </ul>
-      </nav>
+            />
+          </ul>
+        </nav>
+      </div>
     </Container>
   </header>
 );
