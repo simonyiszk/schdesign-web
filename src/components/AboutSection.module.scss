@@ -1,6 +1,13 @@
+@import '../utils/breakpoints';
+
 .contentContainer {
   display: flex;
   align-items: center;
+  flex-direction: column;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+  }
 }
 
 .introductionContainer {
