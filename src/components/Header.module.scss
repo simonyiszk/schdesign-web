@@ -5,7 +5,7 @@
 .root {
   padding: 1em 0;
   background: $color-brand-secondary;
-  color: transparentize(white, 0.2);
+  color: transparentize(white, $transparentize-amount);
 }
 
 .contentContainer {
