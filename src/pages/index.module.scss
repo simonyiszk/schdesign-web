@@ -1,3 +1,12 @@
+@import '../utils/breakpoints';
+
+$header-height-small: 4em;
+$header-height-large: 6em;
+
 .aboutSection {
-  min-height: calc(100vh - 4em);
+  min-height: calc(100vh - #{$header-height-large});
+
+  @include media-breakpoint-up(md) {
+    min-height: calc(100vh - #{$header-height-small});
+  }
 }
