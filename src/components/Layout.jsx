@@ -45,7 +45,7 @@ const Layout = ({ children }) => (
       }
     />
 
-    <main className={styles.content}>{children}</main>
+    <main className={styles.main}>{children}</main>
   </React.Fragment>
 );
 
