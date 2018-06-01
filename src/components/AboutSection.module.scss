@@ -1,0 +1,22 @@
+.contentContainer {
+  display: flex;
+  align-items: center;
+}
+
+.introductionContainer {
+  flex: 5;
+}
+
+.sectionTitle {
+  text-transform: lowercase;
+}
+
+.divisionsList {
+  flex: 7;
+  padding: 0;
+  font-size: 2em;
+  line-height: 2;
+  list-style-type: none;
+  text-align: right;
+  text-transform: lowercase;
+}
