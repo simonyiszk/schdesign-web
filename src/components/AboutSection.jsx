@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Container from './Container';
+import SectionTitle from './SectionTitle';
 import styles from './AboutSection.module.scss';
 
 const AboutSection = ({ className, ...props }) => (
   <div className={`${styles.root} ${className}`} {...props}>
-    <div className={styles.divisionsBackground} />
-
-    <Container className={`${styles.contentContainer} ${className}`}>
-      <div className={styles.introductionContainer}>
-        <h1 className={styles.sectionTitle}>Rólunk</h1>
+    <Container className={styles.introductionContainer}>
+      <div>
+        <SectionTitle>Rólunk</SectionTitle>
 
         <p>
           A Schönherz Design Stúdió a Simonyi Károly Szakkollégium kreatív
@@ -27,22 +26,18 @@ const AboutSection = ({ className, ...props }) => (
           workshopjaink alkalmával!
         </p>
       </div>
-
-      <ul className={styles.divisionsList}>
-        <li>
-          <span className={styles.divisionLabel}>Grafikai tervezés</span>
-        </li>
-        <li>
-          <span className={styles.divisionLabel}>Web design</span>
-        </li>
-        <li>
-          <span className={styles.divisionLabel}>User experience</span>
-        </li>
-        <li>
-          <span className={styles.divisionLabel}>3D</span>
-        </li>
-      </ul>
     </Container>
+
+    <div className={styles.divisionsOuterContainer}>
+      <Container className={styles.divisionsInnerContainer}>
+        <ul className={styles.divisionsList}>
+          <li>Grafikai tervezés</li>
+          <li>Web design</li>
+          <li>User experience</li>
+          <li>3D</li>
+        </ul>
+      </Container>
+    </div>
   </div>
 );
 
