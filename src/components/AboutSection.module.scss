@@ -22,11 +22,17 @@ $header-height-large: 6em;
 .introductionContainer {
   min-height: calc(100vh - #{$header-height-large});
   flex: 5;
+  padding-top: 1em;
+  padding-bottom: 1em;
   margin-right: 0;
 
   @include media-breakpoint-up(md) {
     min-height: calc(100vh - #{$header-height-small});
   }
+}
+
+.sectionTitle {
+  margin-top: 0;
 }
 
 .divisionsOuterContainer {
