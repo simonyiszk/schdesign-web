@@ -1,5 +1,8 @@
 # schdesign-web
 
+[![Build status](https://img.shields.io/travis/simonyiszk/schdesign-web/master.svg)](https://travis-ci.org/simonyiszk/schdesign-web)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+
 Website of Schönherz Design Stúdió.
 
 ## 🚀 Getting started
