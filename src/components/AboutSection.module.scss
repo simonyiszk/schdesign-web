@@ -1,9 +1,6 @@
 @import '../utils/breakpoints';
 @import '../utils/colors';
 
-$header-height-small: 4em;
-$header-height-large: 6em;
-
 .root {
   display: flex;
   flex-direction: column;
