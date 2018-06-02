@@ -41,7 +41,8 @@ $header-height-large: 6em;
   justify-content: flex-end;
   background-blend-mode: multiply;
   background-color: $color-brand-primary;
-  background-image: url('../assets/about-section-background.jpg');
+  // TODO: Uncomment the line below when https://github.com/gatsbyjs/gatsby/issues/3665 gets fixed
+  // background-image: url('../assets/about-section-background.jpg');
   background-size: cover;
   color: transparentize(white, $transparentize-amount);
 
