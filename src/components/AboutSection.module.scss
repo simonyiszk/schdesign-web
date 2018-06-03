@@ -1,12 +1,23 @@
 @import '../utils/breakpoints';
 @import '../utils/colors';
+@import '../utils/separator';
 
 .root {
   display: flex;
   flex-direction: column;
+  background: white;
 
   @include media-breakpoint-up(md) {
     flex-direction: row;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 100%,
+      0 calc(100% - #{$separator-height})
+    );
+
+    // Fix color mixing at the edges of clip-path in some browsers
+    mix-blend-mode: multiply;
   }
 }
 
@@ -14,6 +25,14 @@
 .divisionsOuterContainer {
   display: flex;
   align-items: center;
+}
+
+.introductionContainer,
+.divisionsInnerContainer {
+  @include media-breakpoint-up(md) {
+    // Normalize positions by accounting for the extra space required by the bottom separator
+    margin-bottom: #{$separator-height};
+  }
 }
 
 .introductionContainer {

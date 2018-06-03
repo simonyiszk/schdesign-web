@@ -1,9 +1,11 @@
 @import '../utils/breakpoints';
+@import '../utils/colors';
 @import '../utils/typography';
 
 body {
   @include font(body);
 
+  background: $color-brand-secondary;
   line-height: 1.5;
   overflow-x: hidden;
 

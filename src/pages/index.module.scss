@@ -1,4 +1,5 @@
 @import '../utils/breakpoints';
+@import '../utils/separator';
 
 $header-height-small: 4em;
 $header-height-large: 6em;
@@ -7,6 +8,6 @@ $header-height-large: 6em;
   min-height: calc(100vh - #{$header-height-large});
 
   @include media-breakpoint-up(md) {
-    min-height: calc(100vh - #{$header-height-small});
+    min-height: calc(100vh + #{$separator-height} - #{$header-height-small});
   }
 }
