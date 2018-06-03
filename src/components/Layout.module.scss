@@ -1,8 +1,10 @@
 @import '../utils/breakpoints';
 @import '../utils/colors';
+@import '../utils/themes';
 @import '../utils/typography';
 
 body {
+  @include theme(dark);
   @include font(body);
 
   background: $color-brand-secondary;

@@ -1,11 +1,12 @@
 @import '../utils/breakpoints';
 @import '../utils/colors';
 @import '../utils/separator';
+@import '../utils/themes';
 
 .root {
   display: flex;
   flex-direction: column;
-  background: white;
+  background: map-get(map-get($themes, light), background);
 
   @include media-breakpoint-up(md) {
     flex-direction: row;
@@ -39,6 +40,7 @@
   flex: 5;
   padding-bottom: 1.5em;
   margin-right: 0;
+  color: map-get(map-get($themes, light), color);
 }
 
 .divisionsOuterContainer {
@@ -50,7 +52,6 @@
   // TODO: Uncomment the line below when https://github.com/gatsbyjs/gatsby/issues/3665 gets fixed
   // background-image: url('../assets/about-section-background.jpg');
   background-size: cover;
-  color: transparentize(white, $transparentize-amount);
 
   @include media-breakpoint-up(md) {
     clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
@@ -70,8 +71,12 @@
   list-style-type: none;
   text-transform: lowercase;
 
-  > :hover {
-    color: white;
+  > * {
+    opacity: $opacity-light;
+
+    &:hover {
+      opacity: $opacity-default;
+    }
   }
 
   @include media-breakpoint-up(md) {

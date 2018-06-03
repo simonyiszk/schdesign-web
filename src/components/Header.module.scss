@@ -4,7 +4,6 @@
 
 .root {
   padding: 1em 0;
-  color: transparentize(white, $transparentize-amount);
 }
 
 .contentContainer {
@@ -40,8 +39,9 @@
 
 .menuItemLink {
   padding: 0.5em 0;
+  opacity: $opacity-light;
 
   &:hover {
-    color: white;
+    opacity: $opacity-default;
   }
 }
