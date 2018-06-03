@@ -20,9 +20,9 @@ Website of Schönherz Design Stúdió.
 [script-lint]: #linting
 [script-format]: #automatic-code-formatting
 
-## 💅 Enhanced style management
+## 💅 Style management
 
-[SCSS][sass], a superset of CSS can be used for styling components.
+[SCSS][sass], a superset of CSS is used for styling components.
 
 The default style of browsers is normalized by [modern-normalize][].
 
