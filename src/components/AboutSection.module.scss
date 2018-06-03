@@ -16,9 +16,6 @@
       100% 100%,
       0 calc(100% - #{$separator-height})
     );
-
-    // Fix color mixing at the edges of clip-path in some browsers
-    mix-blend-mode: multiply;
   }
 }
 
