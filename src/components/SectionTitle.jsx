@@ -2,9 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './SectionTitle.module.scss';
 
-const SectionTitle = ({ children, centered, className, ...props }) => (
+const SectionTitle = ({ children, mdUpCentered, className, ...props }) => (
   <h1
-    className={`${styles.root} ${centered && styles.textCenter} ${className}`}
+    className={`${styles.root} ${mdUpCentered &&
+      styles.mdUpTextCenter} ${className}`}
     {...props}
   >
     {children}
@@ -13,12 +14,12 @@ const SectionTitle = ({ children, centered, className, ...props }) => (
 
 SectionTitle.propTypes = {
   children: PropTypes.node.isRequired,
-  centered: PropTypes.bool,
+  mdUpCentered: PropTypes.bool,
   className: PropTypes.string,
 };
 
 SectionTitle.defaultProps = {
-  centered: false,
+  mdUpCentered: false,
   className: '',
 };
 

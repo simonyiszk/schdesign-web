@@ -43,7 +43,6 @@
 .divisionsOuterContainer {
   position: relative;
   flex: 7;
-  justify-content: flex-end;
   background-blend-mode: multiply;
   background-color: $color-brand-primary;
   // TODO: Uncomment the line below when https://github.com/gatsbyjs/gatsby/issues/3665 gets fixed
@@ -51,6 +50,7 @@
   background-size: cover;
 
   @include media-breakpoint-up(md) {
+    justify-content: flex-end;
     clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
 
     // Fix color mixing at the edges of clip-path in some browsers
@@ -69,6 +69,7 @@
   font-size: 1.5em;
   line-height: 3;
   list-style-type: none;
+  text-align: center;
   text-transform: lowercase;
 
   > * {
