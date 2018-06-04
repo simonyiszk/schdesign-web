@@ -52,6 +52,9 @@
 
   @include media-breakpoint-up(md) {
     clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+
+    // Fix color mixing at the edges of clip-path in some browsers
+    mix-blend-mode: multiply;
   }
 }
 
