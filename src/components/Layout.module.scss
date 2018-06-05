@@ -28,20 +28,24 @@ body {
 
 h1 {
   @include font(display);
+
+  line-height: normal;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+
+  .main & {
+    color: $color-link;
+
+    &:not(:hover) {
+      text-decoration: underline;
+    }
+  }
 }
 
 .headerBrandLogo {
   height: 2em;
   vertical-align: middle;
-}
-
-.main {
-  a:hover {
-    text-decoration: underline;
-  }
 }
