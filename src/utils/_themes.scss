@@ -1,0 +1,18 @@
+@import './colors';
+
+$themes: (
+  light: (
+    background: white,
+    color: black,
+  ),
+  dark: (
+    background: $color-dark-gray,
+    color: white,
+  ),
+);
+
+@mixin theme($type) {
+  @each $key, $value in map-get($themes, $type) {
+    #{$key}: #{$value};
+  }
+}

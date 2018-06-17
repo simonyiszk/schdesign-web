@@ -28,7 +28,7 @@ const Layout = ({ children }) => (
           <html lang={staticData.site.siteMetadata.language} />
 
           <link
-            href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Mono:500"
+            href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Mono"
             rel="stylesheet"
           />
         </Helmet>

@@ -1,0 +1,11 @@
+@import '../utils/breakpoints';
+
+.root {
+  text-transform: lowercase;
+}
+
+.mdUpTextCenter {
+  @include media-breakpoint-up(md) {
+    text-align: center;
+  }
+}

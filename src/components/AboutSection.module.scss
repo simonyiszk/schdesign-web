@@ -1,60 +1,86 @@
 @import '../utils/breakpoints';
 @import '../utils/colors';
+@import '../utils/separator';
+@import '../utils/themes';
 
 .root {
-  position: relative;
-}
-
-.divisionsBackground {
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-blend-mode: multiply;
-  background-color: $color-brand-primary;
-  background-image: url('../assets/about-section-background.jpg');
-  background-size: cover;
-
-  @include media-breakpoint-up(md) {
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    background-blend-mode: normal, multiply;
-    background-image: url('../assets/about-section-background-overlay.svg'),
-      url('../assets/about-section-background.jpg');
-  }
-}
-
-.contentContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background: map-get(map-get($themes, light), background);
 
   @include media-breakpoint-up(md) {
     flex-direction: row;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 100%,
+      0 calc(100% - #{$separator-height})
+    );
+  }
+}
+
+.introductionContainer,
+.divisionsOuterContainer {
+  display: flex;
+  align-items: center;
+}
+
+.introductionContainer,
+.divisionsInnerContainer {
+  @include media-breakpoint-up(md) {
+    // Normalize positions by accounting for the extra space required by the bottom separator
+    margin-bottom: #{$separator-height};
   }
 }
 
 .introductionContainer {
   flex: 5;
+  padding-bottom: 1em;
+  margin-right: 0;
+  color: map-get(map-get($themes, light), color);
 }
 
-.sectionTitle {
-  text-transform: lowercase;
+.divisionsOuterContainer {
+  position: relative;
+  flex: 7;
+  background-blend-mode: multiply;
+  background-color: $color-primary;
+  // TODO: Uncomment the line below when https://github.com/gatsbyjs/gatsby/issues/3665 gets fixed
+  // background-image: url('../assets/about-section-background.jpg');
+  background-size: cover;
+
+  @include media-breakpoint-up(md) {
+    justify-content: flex-end;
+    clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+
+    // Fix color mixing at the edges of clip-path in some browsers
+    mix-blend-mode: multiply;
+  }
+}
+
+.divisionsInnerContainer {
+  @include media-breakpoint-up(md) {
+    margin-left: 0;
+  }
 }
 
 .divisionsList {
-  flex: 7;
   padding: 0;
-  color: transparentize(white, $transparentize-amount);
   font-size: 1.5em;
   line-height: 3;
   list-style-type: none;
-  text-align: right;
+  text-align: center;
   text-transform: lowercase;
-}
 
-.divisionLabel:hover {
-  color: white;
+  > * {
+    opacity: $opacity-light;
+
+    &:hover {
+      opacity: $opacity-default;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    text-align: right;
+  }
 }

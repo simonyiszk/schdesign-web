@@ -5,10 +5,10 @@
   margin: 0 auto;
 
   @include media-breakpoint-up(md) {
-    margin: 0 8%;
+    margin: 0 8vw;
   }
 
   @include media-breakpoint-up(xl) {
-    margin: 0 16%;
+    margin: 0 16vw;
   }
 }

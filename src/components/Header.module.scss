@@ -4,8 +4,6 @@
 
 .root {
   padding: 1em 0;
-  background: $color-brand-secondary;
-  color: transparentize(white, $transparentize-amount);
 }
 
 .contentContainer {
@@ -35,15 +33,15 @@
   @include gap(0 2em);
 
   padding: 0;
-  margin: 0;
   list-style-type: none;
   text-transform: lowercase;
 }
 
 .menuItemLink {
   padding: 0.5em 0;
+  opacity: $opacity-light;
 
   &:hover {
-    color: white;
+    opacity: $opacity-default;
   }
 }
