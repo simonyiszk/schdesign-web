@@ -1,0 +1,26 @@
+@import '../utils/breakpoints';
+
+.membersContainer {
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    flex: (100% / 4) 0 0;
+
+    @include media-breakpoint-up(sm) {
+      flex-basis: (100% / 6);
+    }
+
+    @include media-breakpoint-up(md) {
+      flex-basis: (100% / 8);
+    }
+
+    @include media-breakpoint-up(lg) {
+      flex-basis: (100% / 10);
+    }
+
+    @include media-breakpoint-up(xl) {
+      flex-basis: (100% / 12);
+    }
+  }
+}

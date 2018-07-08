@@ -1,7 +1,9 @@
 import { graphql, StaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 import React from 'react';
 import Container from './Container';
 import SectionTitle from './SectionTitle';
+import styles from './TeamSection.module.scss';
 
 const TeamSection = ({ ...props }) => (
   <section {...props}>
@@ -9,29 +11,40 @@ const TeamSection = ({ ...props }) => (
       <SectionTitle id="team" mdUpCentered>
         Csapatunk
       </SectionTitle>
+    </Container>
 
-      <ul>
-        <StaticQuery
-          query={graphql`
-            query TeamSectionQuery {
-              allMembersYaml {
-                edges {
-                  node {
-                    id
-                    name
+    <div className={styles.membersContainer}>
+      <StaticQuery
+        query={graphql`
+          query TeamSectionQuery {
+            allMembersYaml {
+              edges {
+                node {
+                  id
+                  name
+                  picture {
+                    childImageSharp {
+                      fluid(maxWidth: 256, quality: 92) {
+                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                      }
+                    }
                   }
                 }
               }
             }
-          `}
-          render={staticData =>
-            staticData.allMembersYaml.edges.map(({ node }) => (
-              <li key={node.id}>{node.name}</li>
-            ))
           }
-        />
-      </ul>
-    </Container>
+        `}
+        render={staticData =>
+          staticData.allMembersYaml.edges.map(({ node }) => (
+            <Img
+              key={node.id}
+              fluid={node.picture.childImageSharp.fluid}
+              alt={node.name}
+            />
+          ))
+        }
+      />
+    </div>
   </section>
 );
 
