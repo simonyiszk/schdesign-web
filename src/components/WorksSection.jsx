@@ -5,7 +5,9 @@ import SectionTitle from './SectionTitle';
 const WorksSection = ({ ...props }) => (
   <div {...props}>
     <Container>
-      <SectionTitle mdUpCentered>Munkáink</SectionTitle>
+      <SectionTitle id="works" mdUpCentered>
+        Munkáink
+      </SectionTitle>
     </Container>
   </div>
 );

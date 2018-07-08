@@ -5,7 +5,9 @@ import SectionTitle from './SectionTitle';
 const TeamSection = ({ ...props }) => (
   <div {...props}>
     <Container>
-      <SectionTitle mdUpCentered>Csapatunk</SectionTitle>
+      <SectionTitle id="team" mdUpCentered>
+        Csapatunk
+      </SectionTitle>
     </Container>
   </div>
 );

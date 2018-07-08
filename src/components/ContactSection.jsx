@@ -5,7 +5,9 @@ import SectionTitle from './SectionTitle';
 const ContactSection = ({ ...props }) => (
   <div {...props}>
     <Container>
-      <SectionTitle mdUpCentered>Kapcsolat</SectionTitle>
+      <SectionTitle id="contact" mdUpCentered>
+        Kapcsolat
+      </SectionTitle>
     </Container>
   </div>
 );
