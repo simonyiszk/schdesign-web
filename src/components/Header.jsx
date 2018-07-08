@@ -4,6 +4,13 @@ import React from 'react';
 import Container from './Container';
 import styles from './Header.module.scss';
 
+const handleMenuItemClick = (event, targetElementSelector) => {
+  event.preventDefault();
+  document
+    .querySelector(targetElementSelector)
+    .scrollIntoView({ behavior: 'smooth' });
+};
+
 const Header = ({ brand, className, ...props }) => (
   <header className={`${styles.root} ${className}`} {...props}>
     <Container>
@@ -28,7 +35,11 @@ const Header = ({ brand, className, ...props }) => (
               render={staticData =>
                 staticData.allHeaderMenuItemsYaml.edges.map(({ node }) => (
                   <li key={node.url}>
-                    <a href={node.url} className={styles.menuItemLink}>
+                    <a
+                      href={node.url}
+                      onClick={event => handleMenuItemClick(event, node.url)}
+                      className={styles.menuItemLink}
+                    >
                       {node.label}
                     </a>
                   </li>
