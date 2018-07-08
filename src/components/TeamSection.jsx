@@ -4,7 +4,7 @@ import Container from './Container';
 import SectionTitle from './SectionTitle';
 
 const TeamSection = ({ ...props }) => (
-  <div {...props}>
+  <section {...props}>
     <Container>
       <SectionTitle id="team" mdUpCentered>
         Csapatunk
@@ -32,7 +32,7 @@ const TeamSection = ({ ...props }) => (
         />
       </ul>
     </Container>
-  </div>
+  </section>
 );
 
 export default TeamSection;

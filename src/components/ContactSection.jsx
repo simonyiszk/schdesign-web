@@ -3,13 +3,13 @@ import Container from './Container';
 import SectionTitle from './SectionTitle';
 
 const ContactSection = ({ ...props }) => (
-  <div {...props}>
+  <section {...props}>
     <Container>
       <SectionTitle id="contact" mdUpCentered>
         Kapcsolat
       </SectionTitle>
     </Container>
-  </div>
+  </section>
 );
 
 export default ContactSection;

@@ -5,7 +5,7 @@ import SectionTitle from './SectionTitle';
 import styles from './AboutSection.module.scss';
 
 const AboutSection = ({ className, ...props }) => (
-  <div className={`${styles.root} ${className}`} {...props}>
+  <section className={`${styles.root} ${className}`} {...props}>
     <Container className={styles.introductionContainer}>
       <div>
         <SectionTitle>Rólunk</SectionTitle>
@@ -38,7 +38,7 @@ const AboutSection = ({ className, ...props }) => (
         </ul>
       </Container>
     </div>
-  </div>
+  </section>
 );
 
 AboutSection.propTypes = {
