@@ -8,7 +8,7 @@ const handleMenuItemClick = (event, targetElementSelector) => {
   event.preventDefault();
   document
     .querySelector(targetElementSelector)
-    .scrollIntoView({ behavior: 'smooth' });
+    .scrollIntoView({ block: 'start', behavior: 'smooth' });
 };
 
 const Header = ({ brand, className, ...props }) => (
