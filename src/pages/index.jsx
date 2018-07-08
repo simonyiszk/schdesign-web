@@ -7,7 +7,9 @@ import TeamSection from '../components/TeamSection';
 import WorksSection from '../components/WorksSection';
 import styles from './index.module.scss';
 
-smoothscroll.polyfill();
+if (typeof window !== 'undefined') {
+  smoothscroll.polyfill();
+}
 
 const IndexPage = () => (
   <Layout>
