@@ -3842,8 +3842,8 @@ eslint-module-utils@^2.2.0:
     pkg-dir "^1.0.0"
 
 eslint-plugin-flowtype@^2.46.1:
-  version "2.50.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.50.0.tgz#953e262fa9b5d0fa76e178604892cf60dfb916da"
+  version "2.49.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.49.3.tgz#ccca6ee5ba2027eb3ed36bc2ec8c9a842feee841"
   dependencies:
     lodash "^4.17.10"
 
@@ -4683,8 +4683,8 @@ gatsby-cli@^2.0.0-beta.3:
     yurnalist "^0.2.1"
 
 gatsby-image@^2.0.0-beta.4:
-  version "2.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.0.0-beta.5.tgz#086f079b5fc84079f0fd3387a19fc48b4cf72a73"
+  version "2.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.0.0-beta.4.tgz#1978da2f1f5d125840c536b587bd6e1080eab948"
   dependencies:
     "@babel/runtime" "7.0.0-beta.51"
     prop-types "^15.6.1"
@@ -4719,8 +4719,8 @@ gatsby-plugin-react-helmet@^3.0.0-beta.3:
     "@babel/runtime" "7.0.0-beta.51"
 
 gatsby-plugin-sass@^2.0.0-beta.3:
-  version "2.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sass/-/gatsby-plugin-sass-2.0.0-beta.4.tgz#eb6c97f9952e42ac73ab0b2119bbf838aed2ee14"
+  version "2.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sass/-/gatsby-plugin-sass-2.0.0-beta.3.tgz#61138c1e98627685f7a02e4ae9e2cb1c57c3137d"
   dependencies:
     "@babel/runtime" "7.0.0-beta.51"
     sass-loader "^7.0.1"
@@ -4787,8 +4787,8 @@ gatsby-transformer-yaml@^2.1.1-beta.2:
     unist-util-select "^1.5.0"
 
 gatsby@^2.0.0-beta.19:
-  version "2.0.0-beta.20"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-beta.20.tgz#6dcdbd947a4265c714c85921b24cb07c53a07713"
+  version "2.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-beta.19.tgz#15233f7b4730166cfe1309555c57af1e64e1a729"
   dependencies:
     "@babel/code-frame" "7.0.0-beta.51"
     "@babel/core" "7.0.0-beta.51"
@@ -5443,11 +5443,11 @@ hash-base@^3.0.0:
     safe-buffer "^5.0.1"
 
 hash.js@^1.0.0, hash.js@^1.0.3:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/hash.js/-/hash.js-1.1.5.tgz#e38ab4b85dfb1e0c40fe9265c0e9b54854c23812"
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/hash.js/-/hash.js-1.1.4.tgz#8b50e1f35d51bd01e5ed9ece4dbe3549ccfa0a3c"
   dependencies:
     inherits "^2.0.3"
-    minimalistic-assert "^1.0.1"
+    minimalistic-assert "^1.0.0"
 
 hawk@~3.1.3:
   version "3.1.3"
@@ -7038,7 +7038,7 @@ mini-svg-data-uri@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mini-svg-data-uri/-/mini-svg-data-uri-1.0.1.tgz#d81ffc14b85558860581cc58d9790daaecbe91bf"
 
-minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
+minimalistic-assert@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz#2e194de044626d4a10e7f7fbc00ce73e83e4d5c7"
 
@@ -7198,10 +7198,6 @@ nan@^2.10.0, nan@^2.9.2:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.10.0.tgz#96d0cd610ebd58d4b4de9cc0c6828cda99c7548f"
 
-nanoid@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-1.0.7.tgz#23857a9514ae8efb7374221b923a2b92be3f74f2"
-
 nanomatch@^1.2.9:
   version "1.2.13"
   resolved "https://registry.yarnpkg.com/nanomatch/-/nanomatch-1.2.13.tgz#b87a8aa4fc0de8fe6be88895b38983ff265bd119"
@@ -7222,7 +7218,7 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
 
-needle@^2.2.1:
+needle@^2.2.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/needle/-/needle-2.2.1.tgz#b5e325bd3aae8c2678902fa296f729455d1d3a7d"
   dependencies:
@@ -7327,12 +7323,12 @@ node-libs-browser@^2.0.0:
     vm-browserify "0.0.4"
 
 node-pre-gyp@^0.10.0:
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.10.3.tgz#3070040716afdc778747b61b6887bf78880b80fc"
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.10.2.tgz#e8945c20ef6795a20aac2b44f036eb13cf5146e3"
   dependencies:
     detect-libc "^1.0.2"
     mkdirp "^0.5.1"
-    needle "^2.2.1"
+    needle "^2.2.0"
     nopt "^4.0.1"
     npm-packlist "^1.1.6"
     npmlog "^4.0.2"
@@ -7342,8 +7338,8 @@ node-pre-gyp@^0.10.0:
     tar "^4"
 
 node-sass@^4.9.1:
-  version "4.9.2"
-  resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.9.2.tgz#5e63fe6bd0f2ae3ac9d6c14ede8620e2b8bdb437"
+  version "4.9.1"
+  resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.9.1.tgz#5416ae7079d991f0e7002e62c8b0ba3fedc15c79"
   dependencies:
     async-foreach "^0.1.3"
     chalk "^1.1.1"
@@ -9650,10 +9646,8 @@ shell-quote@1.6.1:
     jsonify "~0.0.0"
 
 shortid@^2.2.6:
-  version "2.2.11"
-  resolved "https://registry.yarnpkg.com/shortid/-/shortid-2.2.11.tgz#a77896f086b0dae7fce1237e29232d2aeef5738e"
-  dependencies:
-    nanoid "^1.0.7"
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/shortid/-/shortid-2.2.8.tgz#033b117d6a2e975804f6f0969dbe7d3d0b355131"
 
 sift@^5.1.0:
   version "5.1.0"
