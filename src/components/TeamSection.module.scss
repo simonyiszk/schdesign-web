@@ -14,13 +14,5 @@
     @include media-breakpoint-up(md) {
       flex-basis: (100% / 8);
     }
-
-    @include media-breakpoint-up(lg) {
-      flex-basis: (100% / 10);
-    }
-
-    @include media-breakpoint-up(xl) {
-      flex-basis: (100% / 12);
-    }
   }
 }
