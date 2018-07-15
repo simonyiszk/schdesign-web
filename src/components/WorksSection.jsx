@@ -1,3 +1,4 @@
+import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 import Measure from 'react-measure';
 import Gallery from 'react-photo-gallery';
@@ -36,63 +37,52 @@ export default class WorksSection extends React.PureComponent {
             let columns = 2;
             if (width >= 600) {
               columns = 3;
+              // TODO: Always display the latest 12 works
+              /*
               if (width >= 1024) {
                 columns = 4;
               }
+              */
             }
 
             return (
               <div ref={measureRef} className={styles.galleryContainer}>
-                <Gallery
-                  photos={[
-                    {
-                      src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599',
-                      width: 4,
-                      height: 3,
-                    },
-                    {
-                      src: 'https://source.unsplash.com/Dm-qxdynoEc/800x799',
-                      width: 1,
-                      height: 1,
-                    },
-                    {
-                      src: 'https://source.unsplash.com/qDkso9nvCg0/600x799',
-                      width: 3,
-                      height: 4,
-                    },
-                    {
-                      src: 'https://source.unsplash.com/iecJiKe_RNg/600x799',
-                      width: 3,
-                      height: 4,
-                    },
-                    {
-                      src: 'https://source.unsplash.com/epcsn8Ed8kY/600x799',
-                      width: 3,
-                      height: 4,
-                    },
-                    {
-                      src: 'https://source.unsplash.com/NQSWvyVRIJk/800x599',
-                      width: 4,
-                      height: 3,
-                    },
-                    {
-                      src: 'https://source.unsplash.com/zh7GEuORbUw/600x799',
-                      width: 3,
-                      height: 4,
-                    },
-                    {
-                      src: 'https://source.unsplash.com/PpOHJezOalU/800x599',
-                      width: 4,
-                      height: 3,
-                    },
-                    {
-                      src: 'https://source.unsplash.com/I1ASdgphUH4/800x599',
-                      width: 4,
-                      height: 3,
-                    },
-                  ]}
-                  columns={columns}
-                  margin={0}
+                <StaticQuery
+                  query={graphql`
+                    query WorksSectionQuery {
+                      allWorksYaml(limit: 12) {
+                        edges {
+                          node {
+                            name
+                            author
+                            image {
+                              childImageSharp {
+                                fluid(maxWidth: 1024, quality: 92) {
+                                  src
+                                  srcSet
+                                  sizes
+                                  aspectRatio
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  `}
+                  render={data => (
+                    <Gallery
+                      photos={data.allWorksYaml.edges
+                        .map(({ node }) => node.image.childImageSharp.fluid)
+                        .map(({ aspectRatio, ...rest }) => ({
+                          width: aspectRatio,
+                          height: 1,
+                          ...rest,
+                        }))}
+                      columns={columns}
+                      margin={0}
+                    />
+                  )}
                 />
               </div>
             );
