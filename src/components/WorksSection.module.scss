@@ -1,0 +1,7 @@
+@import '../utils/themes';
+@import '../utils/typography';
+
+.galleryContainer {
+  padding-bottom: $h1MarginY;
+  background: map-get(map-get($themes, light), background);
+}

@@ -1,5 +1,9 @@
 @import '../utils/breakpoints';
 
+.sectionTitle {
+  margin-top: 0;
+}
+
 .membersContainer {
   display: flex;
   flex-wrap: wrap;

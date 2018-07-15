@@ -8,6 +8,9 @@ $fonts: (
   ),
 );
 
+$h1FontSize: 2em;
+$h1MarginY: 0.83 * $h1FontSize;
+
 @mixin font($type) {
   @each $key, $value in map-get($fonts, $type) {
     #{$key}: #{$value};
