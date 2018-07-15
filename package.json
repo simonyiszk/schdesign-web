@@ -23,6 +23,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
+    "react-measure": "^2.0.2",
     "react-photo-gallery": "^6.0.28",
     "smoothscroll-polyfill": "^0.4.3"
   },
