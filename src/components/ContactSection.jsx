@@ -21,6 +21,9 @@ const ContactSection = ({ ...props }) => (
             site {
               siteMetadata {
                 email
+                siteBehanceURL
+                siteFacebookURL
+                siteInstagramURL
               }
             }
           }
@@ -37,9 +40,26 @@ const ContactSection = ({ ...props }) => (
             </p>
 
             <div className={styles.socialMediaIconsContainer}>
-              <FontAwesomeIcon icon={faFacebook} />
-              <FontAwesomeIcon icon={faInstagram} />
-              <FontAwesomeIcon icon={faBehance} />
+              <a
+                href={data.site.siteMetadata.siteFacebookURL}
+                aria-label="Facebook"
+              >
+                <FontAwesomeIcon icon={faFacebook} />
+              </a>
+
+              <a
+                href={data.site.siteMetadata.siteInstagramURL}
+                aria-label="Instagram"
+              >
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+
+              <a
+                href={data.site.siteMetadata.siteBehanceURL}
+                aria-label="Behance"
+              >
+                <FontAwesomeIcon icon={faBehance} />
+              </a>
             </div>
           </React.Fragment>
         )}

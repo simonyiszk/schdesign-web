@@ -3,6 +3,9 @@ module.exports = {
     title: 'Schönherz Design Stúdió',
     language: 'hu',
     email: 'hello@schdesign.hu',
+    siteBehanceURL: 'https://www.behance.net/wearethesds',
+    siteFacebookURL: 'https://www.facebook.com/schonherzdesignstudio',
+    siteInstagramURL: 'https://www.instagram.com/schdesign.hu/',
   },
   plugins: [
     {
