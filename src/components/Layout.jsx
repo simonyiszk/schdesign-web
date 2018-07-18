@@ -11,7 +11,7 @@ const Layout = ({ children }) => (
   <React.Fragment>
     <StaticQuery
       query={graphql`
-        query LayoutQuery {
+        {
           site {
             siteMetadata {
               title

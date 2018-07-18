@@ -64,7 +64,7 @@ export default class WorksSection extends React.PureComponent {
             return (
               <StaticQuery
                 query={graphql`
-                  query WorksSectionQuery {
+                  {
                     allWorksYaml(limit: 12) {
                       edges {
                         node {

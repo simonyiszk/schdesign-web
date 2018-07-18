@@ -16,7 +16,7 @@ const TeamSection = ({ ...props }) => (
     <div className={styles.membersContainer}>
       <StaticQuery
         query={graphql`
-          query TeamSectionQuery {
+          {
             allMembersYaml {
               edges {
                 node {

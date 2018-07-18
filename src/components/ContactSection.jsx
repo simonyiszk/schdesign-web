@@ -17,7 +17,7 @@ const ContactSection = ({ ...props }) => (
 
       <StaticQuery
         query={graphql`
-          query ContactSectionQuery {
+          {
             site {
               siteMetadata {
                 email
