@@ -3,7 +3,7 @@
 @import '../utils/themes';
 @import '../utils/typography';
 
-body {
+html > body {
   @include theme(dark);
   @include font(body);
 
