@@ -34,7 +34,7 @@ a {
   .main & {
     color: $color-link;
 
-    &:not(:hover) {
+    &:hover {
       text-decoration: underline;
     }
   }

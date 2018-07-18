@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Schönherz Design Stúdió',
     language: 'hu',
+    email: 'hello@schdesign.hu',
   },
   plugins: [
     {
