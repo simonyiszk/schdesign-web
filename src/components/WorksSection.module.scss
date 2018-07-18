@@ -2,6 +2,8 @@
 @import '../utils/typography';
 
 .galleryContainer {
+  // TODO: Remove width adjustment when it gets fixed in react-photo-gallery
+  width: calc(100% + 1px);
   padding-bottom: $h1MarginY;
   background: map-get(map-get($themes, light), background);
 }
