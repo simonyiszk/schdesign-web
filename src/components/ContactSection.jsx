@@ -1,3 +1,9 @@
+import {
+  faBehance,
+  faFacebook,
+  faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 import Container from './Container';
@@ -20,14 +26,22 @@ const ContactSection = ({ ...props }) => (
           }
         `}
         render={data => (
-          <p className={styles.textCenter}>
-            Van egy projekted számunkra?<br />
-            Küldj egy e-mailt a{' '}
-            <a href={`mailto:${data.site.siteMetadata.email}`}>
-              {data.site.siteMetadata.email}
-            </a>{' '}
-            címre!
-          </p>
+          <React.Fragment>
+            <p className={styles.textCenter}>
+              Van egy projekted számunkra?<br />
+              Küldj egy e-mailt a{' '}
+              <a href={`mailto:${data.site.siteMetadata.email}`}>
+                {data.site.siteMetadata.email}
+              </a>{' '}
+              címre!
+            </p>
+
+            <div className={styles.socialMediaIconsContainer}>
+              <FontAwesomeIcon icon={faFacebook} />
+              <FontAwesomeIcon icon={faInstagram} />
+              <FontAwesomeIcon icon={faBehance} />
+            </div>
+          </React.Fragment>
         )}
       />
     </Container>
