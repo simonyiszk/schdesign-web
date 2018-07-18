@@ -8,7 +8,7 @@ const AboutSection = ({ className, ...props }) => (
   <section className={`${styles.root} ${className}`} {...props}>
     <Container className={styles.introductionContainer}>
       <div>
-        <SectionTitle>Rólunk</SectionTitle>
+        <SectionTitle mdUpAlignLeft>Rólunk</SectionTitle>
 
         <p>
           A Schönherz Design Stúdió a Simonyi Károly Szakkollégium kreatív

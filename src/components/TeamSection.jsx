@@ -8,7 +8,7 @@ import styles from './TeamSection.module.scss';
 const TeamSection = ({ ...props }) => (
   <section {...props}>
     <Container>
-      <SectionTitle id="team" mdUpCentered className={styles.sectionTitle}>
+      <SectionTitle id="team" className={styles.sectionTitle}>
         Csapatunk
       </SectionTitle>
     </Container>

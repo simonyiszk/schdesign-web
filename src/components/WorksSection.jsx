@@ -40,9 +40,7 @@ export default class WorksSection extends React.PureComponent {
     return (
       <section {...props}>
         <Container>
-          <SectionTitle id="works" mdUpCentered>
-            Munkáink
-          </SectionTitle>
+          <SectionTitle id="works">Munkáink</SectionTitle>
         </Container>
 
         <Measure
