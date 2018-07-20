@@ -18,7 +18,7 @@ const AboutSection = ({ className, ...props }) => (
         <p>
           Bármilyen designnal, arculattervezéssel kapcsolatos feladattal
           szívesen foglalkozunk, legyen az egy weboldal, egy plakát vagy akár
-          egy mobil alkalmazás megtervezése.
+          egy mobilalkalmazás megtervezése.
         </p>
 
         <p>
