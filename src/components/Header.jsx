@@ -32,8 +32,8 @@ const Header = ({ brand, className, ...props }) => (
                   }
                 }
               `}
-              render={staticData =>
-                staticData.allHeaderMenuItemsYaml.edges.map(({ node }) => (
+              render={data =>
+                data.allHeaderMenuItemsYaml.edges.map(({ node }) => (
                   <li key={node.url}>
                     <a
                       href={node.url}

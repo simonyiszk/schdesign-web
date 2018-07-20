@@ -34,8 +34,8 @@ const TeamSection = ({ ...props }) => (
             }
           }
         `}
-        render={staticData =>
-          staticData.allMembersYaml.edges.map(({ node }) => (
+        render={data =>
+          data.allMembersYaml.edges.map(({ node }) => (
             <Img
               key={node.id}
               fluid={node.picture.childImageSharp.fluid}
