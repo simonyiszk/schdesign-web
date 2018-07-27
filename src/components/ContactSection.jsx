@@ -33,7 +33,10 @@ const ContactSection = ({ ...props }) => (
             <p className={styles.textCenter}>
               Van egy projekted számunkra?<br />
               Küldj egy e-mailt a{' '}
-              <a href={`mailto:${data.site.siteMetadata.email}`}>
+              <a
+                href={`mailto:${data.site.siteMetadata.email}`}
+                className={styles.email}
+              >
                 {data.site.siteMetadata.email}
               </a>{' '}
               címre!
