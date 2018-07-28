@@ -1,9 +1,9 @@
 import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
+import Carousel, { Modal, ModalGateway } from 'react-images';
 import Measure from 'react-measure';
 import Gallery from 'react-photo-gallery';
 import Container from './Container';
-import Lightbox from './Lightbox';
 import SectionTitle from './SectionTitle';
 import styles from './WorksSection.module.scss';
 
@@ -11,31 +11,24 @@ export default class WorksSection extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      isLightboxOpen: false,
-      initialLightboxImage: 0,
+      lightboxIsOpen: false,
+      selectedIndex: 0,
       width: 0,
     };
 
-    this.openLightbox = this.openLightbox.bind(this);
-    this.closeLightbox = this.closeLightbox.bind(this);
+    this.toggleLightbox = this.toggleLightbox.bind(this);
   }
 
-  openLightbox(event, obj) {
-    this.setState({
-      isLightboxOpen: true,
-      initialLightboxImage: obj.index,
-    });
-  }
-
-  closeLightbox() {
-    this.setState({
-      isLightboxOpen: false,
-    });
+  toggleLightbox(selectedIndex) {
+    this.setState(prevState => ({
+      lightboxIsOpen: !prevState.lightboxIsOpen,
+      selectedIndex,
+    }));
   }
 
   render() {
     const { ...props } = this.props;
-    const { isLightboxOpen, initialLightboxImage, width } = this.state;
+    const { lightboxIsOpen, selectedIndex, width } = this.state;
 
     return (
       <section {...props}>
@@ -91,8 +84,9 @@ export default class WorksSection extends React.PureComponent {
                       ...node.image.childImageSharp.fluid,
                       caption: `${node.name} – ${node.author}`,
                     }))
-                    .map(({ aspectRatio, ...rest }) => ({
+                    .map(({ src, aspectRatio, ...rest }) => ({
                       ...rest,
+                      source: src,
                       width: aspectRatio,
                       height: 1,
                     }));
@@ -103,15 +97,40 @@ export default class WorksSection extends React.PureComponent {
                         photos={images}
                         columns={columns}
                         margin={0}
-                        onClick={this.openLightbox}
+                        onClick={(event, { index }) =>
+                          this.toggleLightbox(index)
+                        }
                       />
 
-                      <Lightbox
-                        images={images}
-                        isOpen={isLightboxOpen}
-                        initialImage={initialLightboxImage}
-                        onClose={this.closeLightbox}
-                      />
+                      <ModalGateway>
+                        {lightboxIsOpen ? (
+                          <Modal onClose={this.toggleLightbox}>
+                            <Carousel
+                              components={{
+                                FooterCount: () => null,
+                              }}
+                              currentIndex={selectedIndex}
+                              frameProps={{ autoSize: 'height' }}
+                              formatters={{
+                                getAltText: ({ data: imageData }) =>
+                                  imageData.caption,
+                                getNextLabel: ({ currentIndex }) =>
+                                  `${currentIndex + 2}. kép mutatása`,
+                                getPrevLabel: ({ currentIndex }) =>
+                                  `${currentIndex}. kép mutatása`,
+                                getNextTitle: () => 'Következő (jobbra nyíl)',
+                                getPrevTitle: () => 'Előző (balra nyíl)',
+                                getCloseLabel: () => 'Bezárás (esc)',
+                                getFullscreenLabel: ({ isFullscreen }) =>
+                                  isFullscreen
+                                    ? 'Kilépés teljes képernyős módból (f)'
+                                    : 'Teljes képernyős módba lépés (f)',
+                              }}
+                              views={images}
+                            />
+                          </Modal>
+                        ) : null}
+                      </ModalGateway>
                     </div>
                   );
                 }}
