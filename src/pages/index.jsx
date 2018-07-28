@@ -12,7 +12,7 @@ if (typeof window !== 'undefined') {
 }
 
 const IndexPage = () => (
-  <Layout>
+  <Layout dark>
     <AboutSection className={styles.aboutSection} />
     <WorksSection />
     <TeamSection className={styles.teamSection} />

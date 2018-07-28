@@ -7,7 +7,7 @@ import schdesignLogoSrc from '../assets/schdesign-logo.svg';
 import Header from './Header';
 import styles from './Layout.module.scss';
 
-const Layout = ({ children }) => (
+const Layout = ({ dark, children }) => (
   <React.Fragment>
     <StaticQuery
       query={graphql`
@@ -26,6 +26,8 @@ const Layout = ({ children }) => (
           defaultTitle={data.site.siteMetadata.title}
         >
           <html lang={data.site.siteMetadata.language} />
+
+          {dark && <body className={styles.dark} />}
 
           <link
             href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Mono"
@@ -50,7 +52,12 @@ const Layout = ({ children }) => (
 );
 
 Layout.propTypes = {
+  dark: PropTypes.bool,
   children: PropTypes.node.isRequired,
+};
+
+Layout.defaultProps = {
+  dark: false,
 };
 
 export default Layout;

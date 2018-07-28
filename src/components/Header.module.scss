@@ -1,8 +1,11 @@
 @import '../utils/breakpoints';
 @import '../utils/colors';
 @import '../utils/flexbox';
+@import '../utils/themes';
 
 .root {
+  @include theme(dark);
+
   padding: 1em 0;
 }
 

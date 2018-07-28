@@ -4,7 +4,6 @@
 @import '../utils/typography';
 
 html > body {
-  @include theme(dark);
   @include font(body);
 
   line-height: 1.5;
@@ -43,4 +42,8 @@ a {
 .headerBrandLogo {
   height: 2em;
   vertical-align: middle;
+}
+
+.dark {
+  @include theme(dark);
 }
