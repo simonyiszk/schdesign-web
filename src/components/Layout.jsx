@@ -1,5 +1,5 @@
 import 'modern-normalize/modern-normalize.css';
-import { graphql, StaticQuery } from 'gatsby';
+import { graphql, Link, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
@@ -39,11 +39,13 @@ const Layout = ({ dark, children }) => (
 
     <Header
       brand={
-        <img
-          src={schdesignLogoSrc}
-          alt="schdesign"
-          className={styles.headerBrandLogo}
-        />
+        <Link to="/">
+          <img
+            src={schdesignLogoSrc}
+            alt="schdesign"
+            className={styles.headerBrandLogo}
+          />
+        </Link>
       }
     />
 
