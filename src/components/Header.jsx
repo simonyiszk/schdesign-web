@@ -1,14 +1,16 @@
-import { graphql, StaticQuery } from 'gatsby';
+import { graphql, Link, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Container from './Container';
 import styles from './Header.module.scss';
 
-const handleMenuItemClick = (event, targetElementSelector) => {
-  event.preventDefault();
-  document
-    .querySelector(targetElementSelector)
-    .scrollIntoView({ block: 'start', behavior: 'smooth' });
+const handleMenuItemClick = (event, targetElementID) => {
+  const targetElement = document.getElementById(targetElementID);
+
+  if (targetElement != null) {
+    event.preventDefault();
+    targetElement.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
 };
 
 const Header = ({ brand, className, ...props }) => (
@@ -35,13 +37,15 @@ const Header = ({ brand, className, ...props }) => (
               render={data =>
                 data.allHeaderMenuItemsYaml.edges.map(({ node }) => (
                   <li key={node.url}>
-                    <a
-                      href={node.url}
-                      onClick={event => handleMenuItemClick(event, node.url)}
+                    <Link
+                      to={node.url}
+                      onClick={event =>
+                        handleMenuItemClick(event, node.url.split('#')[1])
+                      }
                       className={styles.menuItemLink}
                     >
                       {node.label}
-                    </a>
+                    </Link>
                   </li>
                 ))
               }
