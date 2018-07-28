@@ -1,9 +1,9 @@
 import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
-import Carousel, { Modal, ModalGateway } from 'react-images';
 import Measure from 'react-measure';
 import Gallery from 'react-photo-gallery';
 import Container from './Container';
+import Lightbox from './Lightbox';
 import SectionTitle from './SectionTitle';
 import styles from './WorksSection.module.scss';
 
@@ -11,24 +11,31 @@ export default class WorksSection extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      lightboxIsOpen: false,
-      selectedIndex: 0,
+      isLightboxOpen: false,
+      initialLightboxImage: 0,
       width: 0,
     };
 
-    this.toggleLightbox = this.toggleLightbox.bind(this);
+    this.openLightbox = this.openLightbox.bind(this);
+    this.closeLightbox = this.closeLightbox.bind(this);
   }
 
-  toggleLightbox(selectedIndex) {
-    this.setState(prevState => ({
-      lightboxIsOpen: !prevState.lightboxIsOpen,
-      selectedIndex,
-    }));
+  openLightbox(event, obj) {
+    this.setState({
+      isLightboxOpen: true,
+      initialLightboxImage: obj.index,
+    });
+  }
+
+  closeLightbox() {
+    this.setState({
+      isLightboxOpen: false,
+    });
   }
 
   render() {
     const { ...props } = this.props;
-    const { lightboxIsOpen, selectedIndex, width } = this.state;
+    const { isLightboxOpen, initialLightboxImage, width } = this.state;
 
     return (
       <section {...props}>
@@ -84,9 +91,8 @@ export default class WorksSection extends React.PureComponent {
                       ...node.image.childImageSharp.fluid,
                       caption: `${node.name} – ${node.author}`,
                     }))
-                    .map(({ src, aspectRatio, ...rest }) => ({
+                    .map(({ aspectRatio, ...rest }) => ({
                       ...rest,
-                      source: src,
                       width: aspectRatio,
                       height: 1,
                     }));
@@ -97,40 +103,15 @@ export default class WorksSection extends React.PureComponent {
                         photos={images}
                         columns={columns}
                         margin={0}
-                        onClick={(event, { index }) =>
-                          this.toggleLightbox(index)
-                        }
+                        onClick={this.openLightbox}
                       />
 
-                      <ModalGateway>
-                        {lightboxIsOpen ? (
-                          <Modal onClose={this.toggleLightbox}>
-                            <Carousel
-                              components={{
-                                FooterCount: () => null,
-                              }}
-                              currentIndex={selectedIndex}
-                              frameProps={{ autoSize: 'height' }}
-                              formatters={{
-                                getAltText: ({ data: imageData }) =>
-                                  imageData.caption,
-                                getNextLabel: ({ currentIndex }) =>
-                                  `${currentIndex + 2}. kép mutatása`,
-                                getPrevLabel: ({ currentIndex }) =>
-                                  `${currentIndex}. kép mutatása`,
-                                getNextTitle: () => 'Következő (jobbra nyíl)',
-                                getPrevTitle: () => 'Előző (balra nyíl)',
-                                getCloseLabel: () => 'Bezárás (esc)',
-                                getFullscreenLabel: ({ isFullscreen }) =>
-                                  isFullscreen
-                                    ? 'Kilépés teljes képernyős módból (f)'
-                                    : 'Teljes képernyős módba lépés (f)',
-                              }}
-                              views={images}
-                            />
-                          </Modal>
-                        ) : null}
-                      </ModalGateway>
+                      <Lightbox
+                        images={images}
+                        isOpen={isLightboxOpen}
+                        initialImage={initialLightboxImage}
+                        onClose={this.closeLightbox}
+                      />
                     </div>
                   );
                 }}
