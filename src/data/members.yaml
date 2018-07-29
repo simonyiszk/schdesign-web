@@ -1,44 +1,44 @@
-- name: "Ács Patrik"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Antók Benedek Solt"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Bajmóczy Eszter"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Benda Katalin"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Dutova Anasztázia"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Frey Balázs"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Gema Szabolcs"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Kiss Sarolta"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Kovács Gergő"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Kovács-Egri Kristóf"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Körmendy István Bertalan"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Kővári Ádám"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Lobler Ádám"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Muraközy Nóra"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Papp Máté"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Poduszló Kristóf"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Salamon Dóra"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Szőke Viktor"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Takács Anna"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Takács Tamara"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Vankó Dániel Gábor"
-  picture: "./members/profile-picture-placeholder.png"
-- name: "Wéber Ádám"
-  picture: "./members/profile-picture-placeholder.png"
+- name: 'Ács Patrik'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Antók Benedek Solt'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Bajmóczy Eszter'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Benda Katalin'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Dutova Anasztázia'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Frey Balázs'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Gema Szabolcs'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Kiss Sarolta'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Kovács Gergő'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Kovács-Egri Kristóf'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Körmendy István Bertalan'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Kővári Ádám'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Lobler Ádám'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Muraközy Nóra'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Papp Máté'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Poduszló Kristóf'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Salamon Dóra'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Szőke Viktor'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Takács Anna'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Takács Tamara'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Vankó Dániel Gábor'
+  picture: './members/profile-picture-placeholder.png'
+- name: 'Wéber Ádám'
+  picture: './members/profile-picture-placeholder.png'

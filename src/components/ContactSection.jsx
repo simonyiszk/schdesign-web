@@ -31,7 +31,8 @@ const ContactSection = ({ ...props }) => (
         render={data => (
           <React.Fragment>
             <p className={styles.textCenter}>
-              Van egy projekted számunkra?<br />
+              Van egy projekted számunkra?
+              <br />
               Küldj egy e-mailt a{' '}
               <a
                 href={`mailto:${data.site.siteMetadata.email}`}

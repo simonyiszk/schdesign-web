@@ -1,6 +1,6 @@
-- label: "Munkáink"
-  url: "/#works"
-- label: "Csapatunk"
-  url: "/#team"
-- label: "Kapcsolat"
-  url: "/#contact"
+- label: 'Munkáink'
+  url: '/#works'
+- label: 'Csapatunk'
+  url: '/#team'
+- label: 'Kapcsolat'
+  url: '/#contact'

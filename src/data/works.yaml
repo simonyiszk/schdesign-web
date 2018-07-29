@@ -1,18 +1,18 @@
-- name: "Isometric clock radio"
-  author: "Antók Benedek Solt"
-  image: "./works/isometric-clock-radio.png"
-- name: "Parkett Klub redesign"
-  author: "Antók Benedek Solt"
-  image: "./works/parkett-klub-redesign.png"
-- name: "Building Elements"
-  author: "Kovács Gergő"
-  image: "./works/building-elements.jpg"
-- name: "Game of Thrones inspired graphics"
-  author: "Ács Patrik"
-  image: "./works/game-of-thrones-inspired-graphics.png"
-- name: "Bee eater vector bird illustration"
-  author: "Takács Anna"
-  image: "./works/bee-eater-vector-bird-illustration.jpg"
-- name: "Parkett Klub 2017 tavasz"
-  author: "Kovács Gergő"
-  image: "./works/parkett-klub-2017-tavasz.jpg"
+- name: 'Isometric clock radio'
+  author: 'Antók Benedek Solt'
+  image: './works/isometric-clock-radio.png'
+- name: 'Parkett Klub redesign'
+  author: 'Antók Benedek Solt'
+  image: './works/parkett-klub-redesign.png'
+- name: 'Building Elements'
+  author: 'Kovács Gergő'
+  image: './works/building-elements.jpg'
+- name: 'Game of Thrones inspired graphics'
+  author: 'Ács Patrik'
+  image: './works/game-of-thrones-inspired-graphics.png'
+- name: 'Bee eater vector bird illustration'
+  author: 'Takács Anna'
+  image: './works/bee-eater-vector-bird-illustration.jpg'
+- name: 'Parkett Klub 2017 tavasz'
+  author: 'Kovács Gergő'
+  image: './works/parkett-klub-2017-tavasz.jpg'
