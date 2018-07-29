@@ -6,7 +6,7 @@
     "lint:es": "eslint --ignore-path .gitignore \"**/*.{js,jsx}\"",
     "lint:style": "stylelint \"src/**/*.scss\"",
     "lint": "npm run lint:es && npm run lint:style",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.{js,jsx,json,scss,md,yaml}\""
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{js,jsx,json,scss,md,yml}\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
