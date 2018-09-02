@@ -3,10 +3,10 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "lint:es": "eslint --ignore-path .gitignore \"**/*.{js,jsx}\"",
-    "lint:style": "stylelint \"src/**/*.scss\"",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{js,jsx,json,scss,md,yml}\"",
     "lint": "npm run lint:es && npm run lint:style",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.{js,jsx,json,scss,md,yml}\""
+    "lint:es": "eslint --ignore-path .gitignore \"**/*.{js,jsx}\"",
+    "lint:style": "stylelint \"src/**/*.scss\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
@@ -32,9 +32,9 @@
     "smoothscroll-polyfill": "^0.4.3"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
+    "eslint": "^5.5.0",
     "eslint-config-airbnb": "^17.0.0",
-    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^2.6.2",
@@ -42,7 +42,7 @@
     "prettier": "^1.13.7",
     "stylelint": "^9.4.0",
     "stylelint-config-idiomatic-order": "^5.0.0",
-    "stylelint-config-prettier": "^3.3.0",
+    "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-recommended-scss": "^3.2.0",
     "stylelint-scss": "^3.2.0"
   }

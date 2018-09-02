@@ -8,7 +8,7 @@ import Header from './Header';
 import styles from './Layout.module.scss';
 
 const Layout = ({ dark, children }) => (
-  <React.Fragment>
+  <>
     <StaticQuery
       query={graphql`
         {
@@ -50,7 +50,7 @@ const Layout = ({ dark, children }) => (
     />
 
     <main className={styles.main}>{children}</main>
-  </React.Fragment>
+  </>
 );
 
 Layout.propTypes = {

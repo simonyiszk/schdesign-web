@@ -29,7 +29,7 @@ const ContactSection = ({ ...props }) => (
           }
         `}
         render={data => (
-          <React.Fragment>
+          <>
             <p className={styles.textCenter}>
               Van egy projekted számunkra?
               <br />
@@ -65,7 +65,7 @@ const ContactSection = ({ ...props }) => (
                 <FontAwesomeIcon icon={faBehance} />
               </a>
             </div>
-          </React.Fragment>
+          </>
         )}
       />
     </Container>
