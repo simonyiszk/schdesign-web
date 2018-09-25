@@ -5,6 +5,7 @@ import Layout from '../components/Layout';
 import ContactSection from '../components/ContactSection';
 import TeamSection from '../components/TeamSection';
 import WorksSection from '../components/WorksSection';
+import SponsorsSection from '../components/SponsorsSection';
 import styles from './index.module.scss';
 
 if (typeof window !== 'undefined') {
@@ -17,6 +18,7 @@ const IndexPage = () => (
     <WorksSection />
     <TeamSection className={styles.teamSection} />
     <ContactSection />
+    <SponsorsSection />
   </Layout>
 );
 
