@@ -1,0 +1,19 @@
+@import '../utils/colors';
+@import '../utils/themes';
+
+.root {
+  background: map-get(map-get($themes, dark), background);
+}
+
+.sponsorsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sponsorLogo {
+  height: 5em;
+  align-self: flex-end;
+  padding: 1em;
+  vertical-align: middle;
+}
