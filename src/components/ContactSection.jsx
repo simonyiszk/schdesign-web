@@ -30,19 +30,6 @@ const ContactSection = ({ ...props }) => (
         `}
         render={data => (
           <>
-            <p className={styles.textCenter}>
-              Van egy projekted számunkra?
-              <br />
-              Küldj egy e-mailt a{' '}
-              <a
-                href={`mailto:${data.site.siteMetadata.email}`}
-                className={styles.email}
-              >
-                {data.site.siteMetadata.email}
-              </a>{' '}
-              címre!
-            </p>
-
             <div className={styles.socialMediaIconsContainer}>
               <a
                 href={data.site.siteMetadata.siteFacebookURL}
@@ -65,6 +52,19 @@ const ContactSection = ({ ...props }) => (
                 <FontAwesomeIcon icon={faBehance} />
               </a>
             </div>
+
+            <p className={styles.textCenter}>
+              Van egy projekted számunkra?
+              <br />
+              Küldj egy e-mailt a{' '}
+              <a
+                href={`mailto:${data.site.siteMetadata.email}`}
+                className={styles.email}
+              >
+                {data.site.siteMetadata.email}
+              </a>{' '}
+              címre!
+            </p>
           </>
         )}
       />
