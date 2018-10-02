@@ -1,5 +1,16 @@
+@import '../utils/themes';
+
+.root {
+  background: map-get(map-get($themes, light), background);
+  color: map-get(map-get($themes, light), color);
+}
+
 .textCenter {
   text-align: center;
+}
+
+.contactTitle {
+  margin-top: 0;
 }
 
 .email {
@@ -18,4 +29,9 @@
   > *:not(:last-child) {
     margin-right: 1.5em;
   }
+}
+
+.projectRequest {
+  padding-bottom: 2.5em;
+  margin-bottom: 0;
 }

@@ -11,9 +11,11 @@ import SectionTitle from './SectionTitle';
 import styles from './ContactSection.module.scss';
 
 const ContactSection = ({ ...props }) => (
-  <section {...props}>
+  <section className={styles.root} {...props}>
     <Container>
-      <SectionTitle id="contact">Kapcsolat</SectionTitle>
+      <SectionTitle id="contact" className={styles.contactTitle}>
+        Kapcsolat
+      </SectionTitle>
 
       <StaticQuery
         query={graphql`
@@ -53,7 +55,7 @@ const ContactSection = ({ ...props }) => (
               </a>
             </div>
 
-            <p className={styles.textCenter}>
+            <p className={`${styles.textCenter} ${styles.projectRequest}`}>
               Van egy projekted számunkra?
               <br />
               Küldj egy e-mailt a{' '}
