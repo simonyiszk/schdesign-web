@@ -11,9 +11,11 @@ import SectionTitle from './SectionTitle';
 import styles from './ContactSection.module.scss';
 
 const ContactSection = ({ ...props }) => (
-  <section {...props}>
+  <section className={styles.root} {...props}>
     <Container>
-      <SectionTitle id="contact">Kapcsolat</SectionTitle>
+      <SectionTitle id="contact" className={styles.contactTitle}>
+        Kapcsolat
+      </SectionTitle>
 
       <StaticQuery
         query={graphql`
@@ -30,19 +32,6 @@ const ContactSection = ({ ...props }) => (
         `}
         render={data => (
           <>
-            <p className={styles.textCenter}>
-              Van egy projekted számunkra?
-              <br />
-              Küldj egy e-mailt a{' '}
-              <a
-                href={`mailto:${data.site.siteMetadata.email}`}
-                className={styles.email}
-              >
-                {data.site.siteMetadata.email}
-              </a>{' '}
-              címre!
-            </p>
-
             <div className={styles.socialMediaIconsContainer}>
               <a
                 href={data.site.siteMetadata.siteFacebookURL}
@@ -65,6 +54,19 @@ const ContactSection = ({ ...props }) => (
                 <FontAwesomeIcon icon={faBehance} />
               </a>
             </div>
+
+            <p className={`${styles.textCenter} ${styles.projectRequest}`}>
+              Van egy projekted számunkra?
+              <br />
+              Küldj egy e-mailt a{' '}
+              <a
+                href={`mailto:${data.site.siteMetadata.email}`}
+                className={styles.email}
+              >
+                {data.site.siteMetadata.email}
+              </a>{' '}
+              címre!
+            </p>
           </>
         )}
       />
