@@ -15,6 +15,7 @@ module.exports = {
         path: `${__dirname}/src/data/`,
       },
     },
+    'gatsby-plugin-favicon',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
