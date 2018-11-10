@@ -1,0 +1,16 @@
+@import '../utils/colors';
+@import '../utils/themes';
+
+.root {
+  background: map-get(map-get($themes, light), background);
+  color: map-get(map-get($themes, light), color);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+p {
+  padding-bottom: 3em;
+  margin-bottom: 0;
+}

@@ -4,6 +4,7 @@ import AboutSection from '../components/AboutSection';
 import Layout from '../components/Layout';
 import ContactSection from '../components/ContactSection';
 // import TeamSection from '../components/TeamSection';
+import LogosSection from '../components/LogosSection';
 import WorksSection from '../components/WorksSection';
 import SponsorsSection from '../components/SponsorsSection';
 import styles from './index.module.scss';
@@ -17,6 +18,7 @@ const IndexPage = () => (
     <AboutSection className={styles.aboutSection} />
     <WorksSection />
     {/* <TeamSection className={styles.teamSection} /> */}
+    <LogosSection />
     <ContactSection />
     <SponsorsSection />
   </Layout>
