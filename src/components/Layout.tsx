@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import { Box, Flex } from 'rebass';
 import { ThemeProvider } from 'styled-components';
 import theme from '../utils/theme';
+import Header from './Header';
 
 type Props = {
   children: React.ReactNode;
@@ -38,7 +39,7 @@ const Layout = ({ children }: Props) => (
         )}
       />
 
-      <header>{/* TODO */}</header>
+      <Header />
 
       <Box as="main" flex={1}>
         {children}
