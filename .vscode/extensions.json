@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode",
+    "jpoissonnier.vscode-styled-components",
+    "prisma.vscode-graphql",
+    "shinnn.stylelint"
+  ]
+}

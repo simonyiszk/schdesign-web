@@ -1,0 +1,50 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,js,json,css,md,yml}\"",
+    "lint": "npm run lint:es && npm run lint:style",
+    "lint:es": "eslint --ignore-path .gitignore \"**/*.{ts,tsx,js}\"",
+    "lint:style": "stylelint --ignore-path .gitignore \"src/**/*.{ts,tsx,js}\"",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.0",
+    "gatsby": "^2.0.75",
+    "gatsby-plugin-react-helmet": "^3.0.5",
+    "gatsby-plugin-styled-components": "^3.0.4",
+    "gatsby-plugin-typescript": "^2.0.3",
+    "gatsby-plugin-typography": "^2.2.4",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-helmet": "^5.2.0",
+    "react-typography": "^0.16.18",
+    "rebass": "^3.0.0",
+    "styled-components": "^4.1.3",
+    "typography": "^0.16.18"
+  },
+  "devDependencies": {
+    "@types/react-helmet": "^5.0.7",
+    "@types/rebass": "^0.3.3",
+    "@types/styled-components": "^4.1.4",
+    "@types/typography": "^0.16.1",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-typescript": "^0.14.0",
+    "prettier": "^1.15.3",
+    "stylelint": "^9.9.0",
+    "stylelint-config-idiomatic-order": "^6.2.0",
+    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.5.1",
+    "typescript": "^3.2.2",
+    "typescript-eslint-parser": "^21.0.2"
+  }
+}
