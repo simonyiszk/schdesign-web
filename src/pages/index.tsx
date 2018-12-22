@@ -1,12 +1,12 @@
 import React from 'react';
-import { Text } from 'rebass';
+import AboutSection from '../components/AboutSection';
 import Container from '../components/Container';
 import Layout from '../components/Layout';
 
 const IndexPage = () => (
   <Layout>
     <Container>
-      <Text as="p">Hello, world!</Text>
+      <AboutSection />
     </Container>
   </Layout>
 );

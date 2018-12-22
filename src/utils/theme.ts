@@ -6,6 +6,9 @@ const theme = {
     red: '#f8485e',
     darkgray: '#3d3d3d',
   },
+  Heading: {
+    textTransform: 'lowercase',
+  },
 };
 
 Heading.defaultProps = {
