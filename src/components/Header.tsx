@@ -39,11 +39,11 @@ const Header = () => (
                 ({ node }: any, i: number) => (
                   <ListItem
                     key={node.url}
-                    m={0}
+                    m={-2}
                     ml={i !== 0 ? [4, 5] : null}
                     css="display: inline-block;"
                   >
-                    <NavLink as={GatsbyLink} to={node.url}>
+                    <NavLink as={GatsbyLink} to={node.url} p={2}>
                       {node.title}
                     </NavLink>
                   </ListItem>
