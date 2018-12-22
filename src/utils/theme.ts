@@ -26,6 +26,7 @@ Heading.defaultProps = {
 };
 
 Link.defaultProps = {
+  ...Link.defaultProps,
   color: 'red',
 };
 
