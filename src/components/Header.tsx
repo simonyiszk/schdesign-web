@@ -7,7 +7,7 @@ import ListItem from './ListItem';
 import schdesignLogoSrc from '../assets/schdesign-logo.svg';
 
 const Header = () => (
-  <Box bg="darkgray" color="white">
+  <Box as="header" bg="darkgray" color="white">
     <Flex
       as={Container}
       flexDirection={['column', 'row']}
