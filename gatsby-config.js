@@ -1,9 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Strict Starter',
-    description:
-      'Demo for a Gatsby starter with strict linting and auto-formatting rules.',
-    language: 'en',
+    title: 'Schönherz Design Stúdió',
+    description: 'A Simonyi Károly Szakkollégium kreatív alkotóműhelye.',
+    language: 'hu',
+    email: 'hello@schdesign.hu',
+    siteBehanceURL: 'https://www.behance.net/wearethesds',
+    siteFacebookURL: 'https://www.facebook.com/schonherzdesignstudio',
+    siteInstagramURL: 'https://www.instagram.com/schdesign.hu/',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
