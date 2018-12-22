@@ -7,6 +7,6 @@ type Props = {
   [propName: string]: any; // TODO: Extend type of `Box`
 };
 
-const List = ({ as = 'ul', ...props }: Props) => <Box as={as} {...props} />;
+const List = (props: Props) => <Box as="ul" {...props} />;
 
 export default List;
