@@ -9,6 +9,14 @@ module.exports = {
     siteInstagramURL: 'https://www.instagram.com/schdesign.hu/',
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'data',
+        path: `${__dirname}/src/data/`,
+      },
+    },
+    'gatsby-transformer-yaml',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-typescript',

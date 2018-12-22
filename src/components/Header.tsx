@@ -1,8 +1,10 @@
+import { graphql, Link as GatsbyLink, StaticQuery } from 'gatsby';
 import React from 'react';
 import { Box, Flex, Image } from 'rebass';
 import Container from './Container';
 import List from './List';
 import ListItem from './ListItem';
+import NavLink from './NavLink';
 
 import schdesignLogoSrc from '../assets/schdesign-logo.svg';
 
@@ -19,12 +21,36 @@ const Header = () => (
 
       <Box as="nav" my={2}>
         <List m={0}>
-          {/* TODO: Load menu items from a YAML file */}
-          {['Munkáink', 'Kapcsolat'].map((menuItem, i) => (
-            <ListItem m={0} ml={i !== 0 && [4, 5]} css="display: inline-block;">
-              {menuItem}
-            </ListItem>
-          ))}
+          <StaticQuery
+            query={graphql`
+              {
+                allHeaderMenuItemsYaml {
+                  edges {
+                    node {
+                      title
+                      url
+                    }
+                  }
+                }
+              }
+            `}
+            render={data =>
+              data.allHeaderMenuItemsYaml.edges.map(
+                ({ node }: any, i: number) => (
+                  <ListItem
+                    key={node.url}
+                    m={0}
+                    ml={i !== 0 ? [4, 5] : null}
+                    css="display: inline-block;"
+                  >
+                    <NavLink as={GatsbyLink} to={node.url}>
+                      {node.title}
+                    </NavLink>
+                  </ListItem>
+                ),
+              )
+            }
+          />
         </List>
       </Box>
     </Flex>
