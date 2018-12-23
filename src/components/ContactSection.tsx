@@ -2,65 +2,68 @@ import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 import { Heading, Link, Text } from 'rebass';
 import { Behance, Facebook, Instagram } from 'styled-icons/fa-brands';
+import Container from './Container';
 import IconLink from './IconLink';
 import Section, { Props } from './Section';
 
 const ContactSection = (props: Props) => (
   <Text as={Section} textAlign="center" {...props}>
-    <Heading>Kapcsolat</Heading>
+    <Container>
+      <Heading>Kapcsolat</Heading>
 
-    <StaticQuery
-      query={graphql`
-        {
-          site {
-            siteMetadata {
-              email
-              siteBehanceURL
-              siteFacebookURL
-              siteInstagramURL
+      <StaticQuery
+        query={graphql`
+          {
+            site {
+              siteMetadata {
+                email
+                siteBehanceURL
+                siteFacebookURL
+                siteInstagramURL
+              }
             }
           }
-        }
-      `}
-      render={data => (
-        <>
-          <Text my={4} fontSize="2em" lineHeight={0}>
-            <IconLink
-              icon={Facebook}
-              href={data.site.siteMetadata.siteFacebookURL}
-              title="Facebook"
-            />
+        `}
+        render={data => (
+          <>
+            <Text my={4} fontSize="2em" lineHeight={0}>
+              <IconLink
+                icon={Facebook}
+                href={data.site.siteMetadata.siteFacebookURL}
+                title="Facebook"
+              />
 
-            <IconLink
-              icon={Instagram}
-              href={data.site.siteMetadata.siteInstagramURL}
-              title="Instagram"
-              mx={4}
-            />
+              <IconLink
+                icon={Instagram}
+                href={data.site.siteMetadata.siteInstagramURL}
+                title="Instagram"
+                mx={4}
+              />
 
-            <IconLink
-              icon={Behance}
-              href={data.site.siteMetadata.siteBehanceURL}
-              title="Behance"
-            />
-          </Text>
+              <IconLink
+                icon={Behance}
+                href={data.site.siteMetadata.siteBehanceURL}
+                title="Behance"
+              />
+            </Text>
 
-          <Text as="p">
-            Van egy projekted számunkra?
-            <br />
-            Küldj egy e-mailt a{' '}
-            <Text
-              as={Link}
-              href={`mailto:${data.site.siteMetadata.email}`}
-              fontWeight="bold"
-            >
-              {data.site.siteMetadata.email}
-            </Text>{' '}
-            címre!
-          </Text>
-        </>
-      )}
-    />
+            <Text as="p">
+              Van egy projekted számunkra?
+              <br />
+              Küldj egy e-mailt a{' '}
+              <Text
+                as={Link}
+                href={`mailto:${data.site.siteMetadata.email}`}
+                fontWeight="bold"
+              >
+                {data.site.siteMetadata.email}
+              </Text>{' '}
+              címre!
+            </Text>
+          </>
+        )}
+      />
+    </Container>
   </Text>
 );
 
