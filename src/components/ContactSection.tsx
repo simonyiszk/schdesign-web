@@ -3,9 +3,10 @@ import React from 'react';
 import { Heading, Link, Text } from 'rebass';
 import { Behance, Facebook, Instagram } from 'styled-icons/fa-brands';
 import IconLink from './IconLink';
+import Section, { Props } from './Section';
 
-const ContactSection = () => (
-  <Text as="section" textAlign="center">
+const ContactSection = (props: Props) => (
+  <Text as={Section} textAlign="center" {...props}>
     <Heading>Kapcsolat</Heading>
 
     <StaticQuery

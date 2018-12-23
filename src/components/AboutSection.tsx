@@ -1,8 +1,9 @@
 import React from 'react';
 import { Heading, Text } from 'rebass';
+import Section, { Props } from './Section';
 
-const AboutSection = () => (
-  <section>
+const AboutSection = (props: Props) => (
+  <Section {...props}>
     <Heading>Rólunk</Heading>
 
     <Text as="p">
@@ -20,7 +21,7 @@ const AboutSection = () => (
       Keress minket projektmunkákkal, vagy nyerj betekintést a világunkba
       workshopjaink alkalmával!
     </Text>
-  </section>
+  </Section>
 );
 
 export default AboutSection;
