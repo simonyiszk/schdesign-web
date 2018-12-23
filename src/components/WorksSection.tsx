@@ -33,7 +33,7 @@ const WorksSection = (props: Props) => (
           images={data.allWorksYaml.edges.map(
             ({ node }: any) => node.image.childImageSharp.fluid,
           )}
-          itemsPerRow={3}
+          itemsPerRow={[2, 3]}
         />
       )}
     />

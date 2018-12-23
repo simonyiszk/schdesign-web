@@ -10,26 +10,36 @@ type Props = {
     srcSet: string;
     sizes: string;
   }[];
-  itemsPerRow?: number;
+  itemsPerRow?: number[];
 };
 
-const Gallery = ({ images, itemsPerRow = 1 }: Props) => {
-  const rows = chunk(images, itemsPerRow);
+const Gallery = ({
+  images,
+  itemsPerRow: itemsPerRowByBreakpoints = [1],
+}: Props) => {
+  const aspectRatios = images.map(image => image.aspectRatio);
+  const rowAspectRatioSumsByBreakpoints = itemsPerRowByBreakpoints.map(
+    itemsPerRow =>
+      chunk(aspectRatios, itemsPerRow).map(rowAspectRatios =>
+        sum(rowAspectRatios),
+      ),
+  );
 
   return (
     <Flex flexWrap="wrap">
-      {rows.map(row => {
-        const rowAspectRatioSum = sum(row.map(image => image.aspectRatio));
+      {images.map((image, i) => (
+        <Box
+          key={image.src}
+          as={Img}
+          fluid={image}
+          flex={rowAspectRatioSumsByBreakpoints.map((rowAspectRatioSums, j) => {
+            const rowIndex = Math.floor(i / itemsPerRowByBreakpoints[j]);
+            const rowAspectRatioSum = rowAspectRatioSums[rowIndex];
 
-        return row.map(image => (
-          <Box
-            key={image.src}
-            as={Img}
-            fluid={image}
-            flex={`${(image.aspectRatio / rowAspectRatioSum) * 100}%`}
-          />
-        ));
-      })}
+            return `${(image.aspectRatio / rowAspectRatioSum) * 100}%`;
+          })}
+        />
+      ))}
     </Flex>
   );
 };
