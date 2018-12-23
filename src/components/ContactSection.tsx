@@ -9,7 +9,7 @@ import Section, { Props } from './Section';
 const ContactSection = (props: Props) => (
   <Section {...props}>
     <Container as={Text} textAlign="center">
-      <Heading>Kapcsolat</Heading>
+      <Heading as="h1">Kapcsolat</Heading>
 
       <StaticQuery
         query={graphql`

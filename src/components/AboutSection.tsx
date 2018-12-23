@@ -6,7 +6,7 @@ import Section, { Props } from './Section';
 const AboutSection = (props: Props) => (
   <Section {...props}>
     <Container>
-      <Heading>Rólunk</Heading>
+      <Heading as="h1">Rólunk</Heading>
 
       <Text as="p">
         A Schönherz Design Stúdió a Simonyi Károly Szakkollégium kreatív
