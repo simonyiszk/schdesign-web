@@ -1,6 +1,6 @@
 import { graphql, Link as GatsbyLink, StaticQuery } from 'gatsby';
 import React from 'react';
-import { Box, Flex, Image } from 'rebass';
+import { Box, Flex, Image, Text } from 'rebass';
 import Container from './Container';
 import List from './List';
 import ListItem from './ListItem';
@@ -17,7 +17,9 @@ const Header = () => (
       alignItems="center"
       my={2}
     >
-      <Image src={schdesignLogoSrc} alt="schdesign" height="2em" my={2} />
+      <Text as={GatsbyLink} to="/" lineHeight={0} my={2}>
+        <Image src={schdesignLogoSrc} alt="schdesign" height="2em" />
+      </Text>
 
       <Box as="nav" my={2}>
         <List m={0}>
