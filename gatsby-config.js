@@ -16,8 +16,10 @@ module.exports = {
         path: `${__dirname}/src/data/`,
       },
     },
+    'gatsby-transformer-sharp',
     'gatsby-transformer-yaml',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sharp',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-typescript',
     {
