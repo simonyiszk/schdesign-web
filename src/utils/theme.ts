@@ -16,7 +16,7 @@ const theme = {
     textUnderlinePosition: 'under',
     textDecoration: 'none',
     '&:hover': {
-      textDecoration: 'underline dashed',
+      textDecoration: 'underline',
     },
   },
 };
