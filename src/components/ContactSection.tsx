@@ -7,8 +7,8 @@ import IconLink from './IconLink';
 import Section, { Props } from './Section';
 
 const ContactSection = (props: Props) => (
-  <Text as={Section} textAlign="center" {...props}>
-    <Container>
+  <Section {...props}>
+    <Container as={Text} textAlign="center">
       <Heading>Kapcsolat</Heading>
 
       <StaticQuery
@@ -64,7 +64,7 @@ const ContactSection = (props: Props) => (
         )}
       />
     </Container>
-  </Text>
+  </Section>
 );
 
 export default ContactSection;

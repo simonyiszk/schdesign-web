@@ -3,6 +3,7 @@ import { Box } from 'rebass';
 
 type Props = {
   children: React.ReactNode;
+  [propName: string]: any;
 };
 
 const Container = (props: Props) => (
