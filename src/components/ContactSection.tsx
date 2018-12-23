@@ -26,7 +26,7 @@ const ContactSection = (props: Props) => (
         `}
         render={data => (
           <>
-            <Text my={4} fontSize="2em" lineHeight={0}>
+            <Text my={4} fontSize="2em">
               <IconLink
                 icon={Facebook}
                 href={data.site.siteMetadata.siteFacebookURL}
