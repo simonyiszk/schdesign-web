@@ -2,8 +2,8 @@ import Typography from 'typography';
 
 const typography = new Typography({
   headerFontFamily: ['Roboto Mono', 'monospace'],
-  headerWeight: 500,
   bodyFontFamily: ['Montserrat', 'sans-serif'],
+  headerWeight: 500,
   boldWeight: 600,
 });
 
