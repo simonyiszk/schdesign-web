@@ -8,6 +8,3 @@ export const chunk = <T>(array: T[], groupSize: number) => {
 
 export const sum = (array: number[]) =>
   array.reduce((accumulator, currentValue) => accumulator + currentValue);
-
-export const zip = <T>(rows: T[][]) =>
-  rows[0].map((_, i) => rows.map(row => row[i]));
