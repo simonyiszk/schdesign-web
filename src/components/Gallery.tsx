@@ -29,8 +29,8 @@ const Gallery = ({
     <Flex flexWrap="wrap">
       {images.map((image, i) => (
         <Box
-          key={image.src}
           as={Img}
+          key={image.src}
           fluid={image}
           flex={rowAspectRatioSumsByBreakpoints.map((rowAspectRatioSums, j) => {
             const rowIndex = Math.floor(i / itemsPerRowByBreakpoints[j]);
