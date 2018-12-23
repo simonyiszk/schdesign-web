@@ -2,6 +2,7 @@ import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 import { Heading, Link, Text } from 'rebass';
 import { Behance, Facebook, Instagram } from 'styled-icons/fa-brands';
+import IconLink from './IconLink';
 
 const ContactSection = () => (
   <Text as="section" textAlign="center">
@@ -22,18 +23,25 @@ const ContactSection = () => (
       `}
       render={data => (
         <>
-          <Text my={4} lineHeight={0}>
-            <Link href={data.site.siteMetadata.siteFacebookURL}>
-              <Facebook title="Facebook" size="2em" />
-            </Link>
+          <Text my={4} fontSize="2em" lineHeight={0}>
+            <IconLink
+              icon={Facebook}
+              href={data.site.siteMetadata.siteFacebookURL}
+              title="Facebook"
+            />
 
-            <Link href={data.site.siteMetadata.siteInstagramURL} mx={4}>
-              <Instagram title="Instagram" size="2em" />
-            </Link>
+            <IconLink
+              icon={Instagram}
+              href={data.site.siteMetadata.siteInstagramURL}
+              title="Instagram"
+              mx={4}
+            />
 
-            <Link href={data.site.siteMetadata.siteBehanceURL}>
-              <Behance title="Behance" size="2em" />
-            </Link>
+            <IconLink
+              icon={Behance}
+              href={data.site.siteMetadata.siteBehanceURL}
+              title="Behance"
+            />
           </Text>
 
           <Text as="p">
