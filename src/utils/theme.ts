@@ -6,6 +6,9 @@ const theme = {
     red: '#f8485e',
     darkgray: '#3d3d3d',
   },
+  fontWeights: {
+    bold: 600,
+  },
   Heading: {
     textTransform: 'lowercase',
   },
