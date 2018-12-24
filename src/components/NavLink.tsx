@@ -15,7 +15,7 @@ const NavLink = (props: Props) => (
       text-decoration: none;
       text-transform: lowercase;
       &:not(:hover) {
-        opacity: 0.8;
+        opacity: 0.75;
       }
     `}
   />
