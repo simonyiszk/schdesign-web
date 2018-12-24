@@ -1,8 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Heading, Text } from 'rebass';
+import { Heading } from 'rebass';
 import Container from '../components/Container';
 import Layout from '../components/Layout';
+import Paragraph from '../components/Paragraph';
 
 const NotFoundPage = () => (
   <Layout>
@@ -11,10 +12,8 @@ const NotFoundPage = () => (
         <title>404</title>
       </Helmet>
 
-      <Heading as="h1" mt={3}>
-        404
-      </Heading>
-      <Text as="p">A keresett oldal nem található.</Text>
+      <Heading mt={3}>404</Heading>
+      <Paragraph>A keresett oldal nem található.</Paragraph>
     </Container>
   </Layout>
 );

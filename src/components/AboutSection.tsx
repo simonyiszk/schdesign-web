@@ -1,28 +1,29 @@
 import React from 'react';
-import { Heading, Text } from 'rebass';
+import { Heading } from 'rebass';
 import Container from './Container';
+import Paragraph from './Paragraph';
 import Section, { Props } from './Section';
 
 const AboutSection = (props: Props) => (
   <Section {...props}>
     <Container>
-      <Heading as="h1">Rólunk</Heading>
+      <Heading>Rólunk</Heading>
 
-      <Text as="p">
+      <Paragraph>
         A Schönherz Design Stúdió a Simonyi Károly Szakkollégium kreatív
         alkotóműhelye.
-      </Text>
+      </Paragraph>
 
-      <Text as="p">
+      <Paragraph>
         Bármilyen designnal, arculattervezéssel kapcsolatos feladattal szívesen
         foglalkozunk, legyen az egy weboldal, egy plakát vagy akár egy
         mobilalkalmazás megtervezése.
-      </Text>
+      </Paragraph>
 
-      <Text as="p">
+      <Paragraph>
         Keress minket projektmunkákkal, vagy nyerj betekintést a világunkba
         workshopjaink alkalmával!
-      </Text>
+      </Paragraph>
     </Container>
   </Section>
 );

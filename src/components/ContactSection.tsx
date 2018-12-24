@@ -4,12 +4,13 @@ import { Heading, Link, Text } from 'rebass';
 import { Behance, Facebook, Instagram } from 'styled-icons/fa-brands';
 import Container from './Container';
 import IconLink from './IconLink';
+import Paragraph from './Paragraph';
 import Section, { Props } from './Section';
 
 const ContactSection = (props: Props) => (
   <Section {...props}>
     <Container as={Text} textAlign="center">
-      <Heading as="h1">Kapcsolat</Heading>
+      <Heading>Kapcsolat</Heading>
 
       <StaticQuery
         query={graphql`
@@ -47,7 +48,7 @@ const ContactSection = (props: Props) => (
               />
             </Text>
 
-            <Text as="p">
+            <Paragraph>
               Van egy projekted számunkra?
               <br />
               Küldj egy e-mailt a{' '}
@@ -59,7 +60,7 @@ const ContactSection = (props: Props) => (
                 {data.site.siteMetadata.email}
               </Text>{' '}
               címre!
-            </Text>
+            </Paragraph>
           </>
         )}
       />

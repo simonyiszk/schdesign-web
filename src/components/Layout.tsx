@@ -2,17 +2,45 @@ import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { Box, Flex } from 'rebass';
-import { ThemeProvider } from 'styled-components';
-import theme from '../utils/theme';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import defaultTheme from '../utils/theme';
 import Header from './Header';
+
+const GlobalStyle = createGlobalStyle`
+  html {
+    color: ${({ theme }: any) => theme.colors.darkgray};
+    font-family: ${({ theme }: any) => theme.fonts.sans};
+
+    @media (min-width: ${({ theme }: any) => theme.breakpoints[1]}px) {
+      font-size: 125%;
+    }
+
+    @media (min-width: ${({ theme }: any) => theme.breakpoints[3]}px) {
+      font-size: 150%;
+    }
+  }
+
+  body {
+    margin: 0;
+
+    /* Prevent adjustments of font size after orientation changes in iOS */
+    text-size-adjust: 100%;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+`;
 
 type Props = {
   children: React.ReactNode;
 };
 
 const Layout = ({ children }: Props) => (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={defaultTheme}>
     <Flex flexDirection="column" css="min-height: 100vh;">
+      <GlobalStyle />
+
       <StaticQuery
         query={graphql`
           {

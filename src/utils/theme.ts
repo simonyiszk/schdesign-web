@@ -7,10 +7,15 @@ const theme = {
     darkgray: '#3d3d3d',
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512].map(value => `${value / 16}rem`),
+  fonts: {
+    sans: 'Montserrat, system-ui, sans-serif',
+    mono: '"Roboto Mono", monospace',
+  },
   fontWeights: {
     bold: 600,
   },
   Heading: {
+    fontWeight: 500,
     textTransform: 'lowercase',
   },
   Link: {
@@ -24,9 +29,9 @@ const theme = {
 
 Heading.defaultProps = {
   ...Heading.defaultProps,
-  m: undefined,
-  fontSize: undefined,
-  fontWeight: undefined,
+  as: 'h1',
+  fontSize: 5,
+  fontFamily: 'mono',
 };
 
 Link.defaultProps = {
