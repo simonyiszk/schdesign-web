@@ -69,21 +69,23 @@ const Gallery = ({
         </Link>
       ))}
 
-      <ModalGateway>
-        {modalIsOpen && (
-          <Modal onClose={closeModal}>
-            <Carousel
-              views={images.map(({ originalImg, caption }) => ({
-                source: originalImg,
-                caption,
-              }))}
-              currentIndex={modalCurrentIndex}
-              formatters={carouselFormatters}
-              components={{ FooterCount: () => null }}
-            />
-          </Modal>
-        )}
-      </ModalGateway>
+      {ModalGateway && (
+        <ModalGateway>
+          {modalIsOpen && (
+            <Modal onClose={closeModal}>
+              <Carousel
+                views={images.map(({ originalImg, caption }) => ({
+                  source: originalImg,
+                  caption,
+                }))}
+                currentIndex={modalCurrentIndex}
+                formatters={carouselFormatters}
+                components={{ FooterCount: () => null }}
+              />
+            </Modal>
+          )}
+        </ModalGateway>
+      )}
     </Flex>
   );
 };
