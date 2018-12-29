@@ -55,7 +55,18 @@ const Gallery = ({
             openModal(i);
           }}
         >
-          <Box as={Img} fluid={image} title={image.caption} />
+          <Box
+            as={Img}
+            fluid={image}
+            title={image.caption}
+            css={`
+              transition: filter 0.3s;
+              filter: none;
+              :hover {
+                filter: brightness(87.5%);
+              }
+            `}
+          />
         </Link>
       ))}
 
