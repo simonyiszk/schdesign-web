@@ -15,7 +15,7 @@ const IconLink = ({ icon: Icon, title, ...props }: Props) => (
     {...props}
     css={`
       color: inherit;
-      &:hover {
+      :hover {
         color: ${({ theme }: any) => theme.colors.red};
       }
     `}

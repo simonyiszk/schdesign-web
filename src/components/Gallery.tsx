@@ -61,7 +61,6 @@ const Gallery = ({
             title={image.caption}
             css={`
               transition: filter 0.3s;
-              filter: none;
               :hover {
                 filter: brightness(87.5%);
               }

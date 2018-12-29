@@ -21,7 +21,7 @@ const theme = {
   Link: {
     textUnderlinePosition: 'under',
     textDecoration: 'none',
-    '&:hover': {
+    ':hover': {
       textDecoration: 'underline',
     },
   },

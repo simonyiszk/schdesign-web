@@ -31,17 +31,21 @@ const Footer = () => (
         `}
         render={data =>
           data.allSponsorsYaml.edges.map(({ node }: any) => (
-            <Link key={node.website} href={node.website} p={2}>
+            <Link
+              key={node.website}
+              href={node.website}
+              p={2}
+              css={`
+                :not(:hover) {
+                  opacity: 0.75;
+                }
+              `}
+            >
               <Image
                 src={node.logo.publicURL}
                 alt={node.name}
                 height="3em"
-                css={`
-                  display: inline-block;
-                  :not(:hover) {
-                    opacity: 0.75;
-                  }
-                `}
+                css="display: inline-block;"
               />
             </Link>
           ))
