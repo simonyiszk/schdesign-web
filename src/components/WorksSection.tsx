@@ -6,7 +6,9 @@ import Section, { Props } from './Section';
 
 const WorksSection = (props: Props) => (
   <Section {...props}>
-    <Heading textAlign="center">Munkáink</Heading>
+    <Heading id="works" textAlign="center">
+      Munkáink
+    </Heading>
 
     <StaticQuery
       query={graphql`

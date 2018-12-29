@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     color: ${({ theme }: any) => theme.colors.darkgray};
     font-family: ${({ theme }: any) => theme.fonts.sans};
+    scroll-behavior: smooth;
 
     @media (min-width: ${({ theme }: any) => theme.breakpoints[1]}px) {
       font-size: 125%;
