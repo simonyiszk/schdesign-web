@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import { Box, Flex } from 'rebass';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import defaultTheme from '../utils/theme';
+import Footer from './Footer';
 import Header from './Header';
 
 const GlobalStyle = createGlobalStyle`
@@ -74,7 +75,7 @@ const Layout = ({ children }: Props) => (
         {children}
       </Box>
 
-      <footer>{/* TODO */}</footer>
+      <Footer />
     </Flex>
   </ThemeProvider>
 );
