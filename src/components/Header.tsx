@@ -28,7 +28,7 @@ const Header = () => (
       </GatsbyLink>
 
       <Box as="nav" my={2}>
-        <List m={0}>
+        <List p={0} m={0}>
           <StaticQuery
             query={graphql`
               {
