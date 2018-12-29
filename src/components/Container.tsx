@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box } from 'rebass';
+import { ThemeConsumer } from 'styled-components';
 
 type Props = {
   children: React.ReactNode;
@@ -7,7 +8,24 @@ type Props = {
 };
 
 const Container = (props: Props) => (
-  <Box {...props} px={3} mx="auto" css="max-width: 1024px;" />
+  <ThemeConsumer>
+    {theme => (
+      <Box
+        {...props}
+        px={3}
+        mx="auto"
+        css={`
+          @media (min-width: ${theme.breakpoints[1]}px) {
+            max-width: 84vw;
+          }
+
+          @media (min-width: ${theme.breakpoints[3]}px) {
+            max-width: 68vw;
+          }
+        `}
+      />
+    )}
+  </ThemeConsumer>
 );
 
 export default Container;
