@@ -1,7 +1,9 @@
 import Img from 'gatsby-image';
-import React from 'react';
-import { Box, Flex } from 'rebass';
+import React, { useState } from 'react';
+import Carousel, { Modal, ModalGateway } from 'react-images';
+import { Box, Flex, Link } from 'rebass';
 import { chunk, sum } from '../utils/array';
+import carouselFormatters from '../utils/carouselFormatters';
 
 type Props = {
   images: {
@@ -9,6 +11,8 @@ type Props = {
     src: string;
     srcSet: string;
     sizes: string;
+    originalImg: string;
+    caption: string;
   }[];
   itemsPerRow?: number[];
 };
@@ -25,21 +29,51 @@ const Gallery = ({
       ),
   );
 
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalCurrentIndex, setModalCurrentIndex] = useState(0);
+
+  const closeModal = () => setModalIsOpen(false);
+  const openModal = (imageIndex: number) => {
+    setModalCurrentIndex(imageIndex);
+    setModalIsOpen(true);
+  };
+
   return (
     <Flex flexWrap="wrap">
       {images.map((image, i) => (
-        <Box
-          as={Img}
+        <Link
           key={image.src}
-          fluid={image}
+          href={image.originalImg}
           flex={rowAspectRatioSumsByBreakpoints.map((rowAspectRatioSums, j) => {
             const rowIndex = Math.floor(i / itemsPerRowByBreakpoints[j]);
             const rowAspectRatioSum = rowAspectRatioSums[rowIndex];
 
             return `${(image.aspectRatio / rowAspectRatioSum) * 100}%`;
           })}
-        />
+          onClick={(e: React.MouseEvent<HTMLLinkElement>) => {
+            e.preventDefault();
+            openModal(i);
+          }}
+        >
+          <Box as={Img} fluid={image} title={image.caption} />
+        </Link>
       ))}
+
+      <ModalGateway>
+        {modalIsOpen && (
+          <Modal onClose={closeModal}>
+            <Carousel
+              views={images.map(({ originalImg, caption }) => ({
+                source: originalImg,
+                caption,
+              }))}
+              currentIndex={modalCurrentIndex}
+              formatters={carouselFormatters}
+              components={{ FooterCount: () => null }}
+            />
+          </Modal>
+        )}
+      </ModalGateway>
     </Flex>
   );
 };

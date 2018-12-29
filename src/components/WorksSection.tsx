@@ -20,6 +20,7 @@ const WorksSection = (props: Props) => (
                   childImageSharp {
                     fluid {
                       ...GatsbyImageSharpFluid
+                      originalImg
                     }
                   }
                 }
@@ -30,9 +31,10 @@ const WorksSection = (props: Props) => (
       `}
       render={data => (
         <Gallery
-          images={data.allWorksYaml.edges.map(
-            ({ node }: any) => node.image.childImageSharp.fluid,
-          )}
+          images={data.allWorksYaml.edges.map(({ node }: any) => ({
+            ...node.image.childImageSharp.fluid,
+            caption: `${node.title} – ${node.author}`,
+          }))}
           itemsPerRow={[2, 3]}
         />
       )}

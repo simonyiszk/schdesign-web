@@ -8,4 +8,5 @@
 // declare module '*.png';
 
 declare module '*.svg';
+declare module 'react-images'; // TODO: Remove when typings for v1 are available
 declare module 'rebass'; // TODO: Remove when the type declarations are fixed
