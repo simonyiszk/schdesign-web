@@ -48,7 +48,7 @@ const ContactSection = (props: Props) => (
               />
             </Text>
 
-            <Paragraph>
+            <Paragraph pb={2}>
               Van egy projekted számunkra?
               <br />
               Küldj egy e-mailt a{' '}

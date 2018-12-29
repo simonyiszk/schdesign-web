@@ -3,6 +3,7 @@ import { Box } from 'rebass';
 
 export type Props = {
   variant?: 'light' | 'dark';
+  [propName: string]: any; // TODO: Extend type of `Box`
 };
 
 const Section = ({ variant, ...props }: Props) => (

@@ -8,7 +8,7 @@ const IndexPage = () => (
   <Layout>
     <AboutSection />
     <WorksSection variant="dark" />
-    <ContactSection />
+    <ContactSection my={[4, 5]} />
   </Layout>
 );
 

@@ -6,7 +6,7 @@ import Section, { Props } from './Section';
 
 const WorksSection = (props: Props) => (
   <Section {...props}>
-    <Heading id="works" textAlign="center">
+    <Heading id="works" textAlign="center" py={[3, 4]}>
       Munkáink
     </Heading>
 
