@@ -1,6 +1,6 @@
 {
   "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react"],
-  "plugins": ["typescript"],
+  "plugins": ["typescript", "react-hooks"],
   "env": {
     "browser": true
   },
@@ -10,6 +10,9 @@
         "extensions": [".ts", ".tsx", ".js", ".jsx"]
       }
     }
+  },
+  "rules": {
+    "react-hooks/rules-of-hooks": "error"
   },
   "overrides": [
     {
