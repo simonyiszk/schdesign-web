@@ -2,10 +2,15 @@ import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { Box, Flex } from 'rebass';
+import smoothscroll from 'smoothscroll-polyfill';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import defaultTheme from '../utils/theme';
 import Footer from './Footer';
 import Header from './Header';
+
+if (typeof window !== 'undefined') {
+  smoothscroll.polyfill();
+}
 
 const GlobalStyle = createGlobalStyle`
   html {
