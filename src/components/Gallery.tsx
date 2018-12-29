@@ -50,7 +50,7 @@ const Gallery = ({
 
             return `${(image.aspectRatio / rowAspectRatioSum) * 100}%`;
           })}
-          onClick={(e: React.MouseEvent<HTMLLinkElement>) => {
+          onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
             e.preventDefault();
             openModal(i);
           }}
