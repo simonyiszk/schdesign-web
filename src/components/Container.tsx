@@ -12,6 +12,7 @@ const Container = (props: Props) => (
     {theme => (
       <Box
         {...props}
+        width="100%"
         px={3}
         mx="auto"
         css={`
