@@ -65,6 +65,11 @@ const Layout = ({ children }: Props) => (
               name="description"
               content={data.site.siteMetadata.description}
             />
+
+            <link
+              href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Roboto+Mono:500"
+              rel="stylesheet"
+            />
           </Helmet>
         )}
       />
