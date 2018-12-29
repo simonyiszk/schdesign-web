@@ -11,9 +11,9 @@ const Container = (props: Props) => (
   <ThemeConsumer>
     {theme => (
       <Box
-        {...props}
         width="100%"
         px={3}
+        {...props}
         mx="auto"
         css={`
           @media (min-width: ${theme.breakpoints[1]}px) {
