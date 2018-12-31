@@ -23,22 +23,18 @@ const Footer = () => (
           }
         `}
         render={data =>
-          data.allSponsorsYaml.edges.map(({ node }: any) => (
+          data.allSponsorsYaml.edges.map(({ node }: any, i: number) => (
             <Link
               key={node.website}
               href={node.website}
+              ml={i !== 0 ? [4, 5] : null}
               css={`
                 :not(:hover) {
                   opacity: 0.75;
                 }
               `}
             >
-              <Image
-                src={node.logo.publicURL}
-                alt={node.name}
-                height="3em"
-                mx={3}
-              />
+              <Image src={node.logo.publicURL} alt={node.name} height="3em" />
             </Link>
           ))
         }
