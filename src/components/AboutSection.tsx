@@ -19,7 +19,7 @@ const AboutSection = (props: Props) => (
         css={`
           @media (min-width: ${theme.breakpoints[1]}px) {
             background-image: ${`url(${aboutSectionBackgroundSrc});`};
-            background-size: cover;
+            background-size: 100% 100%;
           }
         `}
       >
