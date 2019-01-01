@@ -19,10 +19,9 @@ const theme = {
     textTransform: 'lowercase',
   },
   Link: {
-    textUnderlinePosition: 'under',
     textDecoration: 'none',
-    ':hover': {
-      textDecoration: 'underline',
+    'p &:hover': {
+      borderBottom: '2px solid',
     },
   },
 };
