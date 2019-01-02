@@ -19,7 +19,7 @@ const NavLink = ({ to, ...props }: Props) => (
 
       if (element) {
         e.preventDefault();
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }}
     css={`
