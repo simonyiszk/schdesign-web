@@ -35,6 +35,7 @@ const Header = () => (
                 allHeaderMenuItemsYaml {
                   edges {
                     node {
+                      id
                       title
                       url
                     }
@@ -46,7 +47,7 @@ const Header = () => (
               data.allHeaderMenuItemsYaml.edges.map(
                 ({ node }: any, i: number) => (
                   <ListItem
-                    key={node.url}
+                    key={node.id}
                     m={-2}
                     ml={i !== 0 ? [4, 5] : null}
                     css="display: inline-block;"

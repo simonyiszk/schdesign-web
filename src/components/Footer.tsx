@@ -12,6 +12,7 @@ const Footer = () => (
             allSponsorsYaml {
               edges {
                 node {
+                  id
                   name
                   website
                   logo {
@@ -25,7 +26,7 @@ const Footer = () => (
         render={data =>
           data.allSponsorsYaml.edges.map(({ node }: any, i: number) => (
             <Link
-              key={node.website}
+              key={node.id}
               href={node.website}
               ml={i !== 0 ? [4, 5] : null}
               css={`

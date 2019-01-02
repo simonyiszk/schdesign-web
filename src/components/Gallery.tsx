@@ -7,6 +7,7 @@ import carouselFormatters from '../utils/carouselFormatters';
 
 type Props = {
   images: {
+    id: string;
     aspectRatio: number;
     src: string;
     srcSet: string;
@@ -42,7 +43,7 @@ const Gallery = ({
     <Flex flexWrap="wrap">
       {images.map((image, i) => (
         <Link
-          key={image.src}
+          key={image.id}
           href={image.originalImg}
           flex={rowAspectRatioSumsByBreakpoints.map((rowAspectRatioSums, j) => {
             const rowIndex = Math.floor(i / itemsPerRowByBreakpoints[j]);
