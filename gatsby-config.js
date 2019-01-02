@@ -28,6 +28,7 @@ module.exports = {
         theme_color: '#f8485e',
         display: 'standalone',
         icon: 'src/assets/favicon.png',
+        legacy: true,
       },
     },
     'gatsby-plugin-offline',
