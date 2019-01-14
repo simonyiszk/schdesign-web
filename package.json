@@ -44,7 +44,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.1",
     "eslint-plugin-react-hooks": "^0.0.0",
-    "eslint-plugin-typescript": "^0.14.0",
+    "eslint-plugin-typescript": "^1.0.0-rc.2",
     "prettier": "^1.15.3",
     "stylelint": "^9.9.0",
     "stylelint-config-idiomatic-order": "^6.2.0",
@@ -52,8 +52,7 @@
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.5.1",
-    "typescript": "^3.2.2",
-    "typescript-eslint-parser": "^21.0.2"
+    "typescript": "^3.2.2"
   },
   "resolutions": {
     "**/react": "16.7.0-alpha.2",
