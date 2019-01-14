@@ -1,7 +1,7 @@
 import Img from 'gatsby-image';
 import React, { useState } from 'react';
 import Carousel, { Modal, ModalGateway } from 'react-images';
-import { Box, Flex, Link } from 'rebass';
+import { Box, Link } from 'rebass';
 import { chunk, sum } from '../utils/array';
 import carouselFormatters from '../utils/carouselFormatters';
 
@@ -40,17 +40,11 @@ const Gallery = ({
   };
 
   return (
-    <Flex flexWrap="wrap">
+    <Box>
       {images.map((image, i) => (
         <Link
           key={image.id}
           href={image.originalImg}
-          flex={rowAspectRatioSumsByBreakpoints.map((rowAspectRatioSums, j) => {
-            const rowIndex = Math.floor(i / itemsPerRowByBreakpoints[j]);
-            const rowAspectRatioSum = rowAspectRatioSums[rowIndex];
-
-            return `${(image.aspectRatio / rowAspectRatioSum) * 100}%`;
-          })}
           onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
             e.preventDefault();
             openModal(i);
@@ -60,7 +54,17 @@ const Gallery = ({
             as={Img}
             fluid={image}
             title={image.caption}
+            width={rowAspectRatioSumsByBreakpoints.map(
+              (rowAspectRatioSums, j) => {
+                const rowIndex = Math.floor(i / itemsPerRowByBreakpoints[j]);
+                const rowAspectRatioSum = rowAspectRatioSums[rowIndex];
+
+                return `${(image.aspectRatio / rowAspectRatioSum) * 100}%`;
+              },
+            )}
             css={`
+              display: inline-block;
+              vertical-align: middle;
               transition: filter 0.3s;
               :hover {
                 filter: brightness(87.5%);
@@ -87,7 +91,7 @@ const Gallery = ({
           )}
         </ModalGateway>
       )}
-    </Flex>
+    </Box>
   );
 };
 
