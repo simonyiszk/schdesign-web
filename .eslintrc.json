@@ -26,8 +26,8 @@
       "files": ["**/*.ts", "**/*.tsx"],
       "parser": "eslint-plugin-typescript/parser",
       "rules": {
-        "typescript/no-unused-vars": "error",
-        "react/jsx-filename-extension": "off"
+        "react/jsx-filename-extension": "off",
+        "typescript/no-unused-vars": "error"
       }
     }
   ]
