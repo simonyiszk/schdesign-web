@@ -1,6 +1,5 @@
 {
   "root": true,
-  "parser": "eslint-plugin-typescript/parser",
   "plugins": ["react-hooks", "typescript"],
   "extends": [
     "airbnb",
@@ -20,11 +19,16 @@
     }
   },
   "rules": {
-    "react/jsx-filename-extension": [
-      "error",
-      { "extensions": [".tsx", ".jsx"] }
-    ],
-    "react-hooks/rules-of-hooks": "error",
-    "typescript/no-unused-vars": "error"
-  }
+    "react-hooks/rules-of-hooks": "error"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "parser": "eslint-plugin-typescript/parser",
+      "rules": {
+        "typescript/no-unused-vars": "error",
+        "react/jsx-filename-extension": "off"
+      }
+    }
+  ]
 }
