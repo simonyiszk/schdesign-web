@@ -40,7 +40,7 @@ const Gallery = ({
   };
 
   return (
-    <Box>
+    <>
       {images.map((image, i) => (
         <Link
           key={image.id}
@@ -91,7 +91,7 @@ const Gallery = ({
           )}
         </ModalGateway>
       )}
-    </Box>
+    </>
   );
 };
 
