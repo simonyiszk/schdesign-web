@@ -3,8 +3,7 @@
   "editor.formatOnSave": true,
   "eslint.autoFixOnSave": true,
 
-  // Use ESLint instead of TSLint
-  "tslint.enable": false,
+  // Use ESLint for TypeScript code
   "eslint.validate": [
     "javascript",
     "javascriptreact",

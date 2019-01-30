@@ -1,19 +1,16 @@
 {
   "root": true,
-  "plugins": ["react-hooks", "typescript"],
+  "plugins": ["@typescript-eslint", "react-hooks"],
   "extends": [
     "airbnb",
     "plugin:prettier/recommended",
-    "prettier/react",
-    "prettier/typescript"
+    "prettier/@typescript-eslint",
+    "prettier/react"
   ],
   "env": {
     "browser": true
   },
   "settings": {
-    "import/parsers": {
-      "typescript-eslint-parser": [".ts", ".tsx"]
-    },
     "import/resolver": {
       "typescript": {}
     }
@@ -24,10 +21,13 @@
   "overrides": [
     {
       "files": ["**/*.ts", "**/*.tsx"],
-      "parser": "eslint-plugin-typescript/parser",
+      "parser": "@typescript-eslint/parser",
       "rules": {
         "react/jsx-filename-extension": "off",
-        "typescript/no-unused-vars": "error"
+        "camelcase": "off",
+        "@typescript-eslint/camelcase": ["error", { "properties": "never" }],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "error"
       }
     }
   ]
