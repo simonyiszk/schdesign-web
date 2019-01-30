@@ -32,6 +32,7 @@
     "styled-icons": "^6.7.0"
   },
   "devDependencies": {
+    "@types/react": "^16.7.22",
     "@types/react-helmet": "^5.0.8",
     "@types/rebass": "^3.0.0",
     "@types/smoothscroll-polyfill": "^0.3.0",
