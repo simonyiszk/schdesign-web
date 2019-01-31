@@ -19,9 +19,11 @@ const theme = {
     textTransform: 'lowercase',
   },
   Link: {
+    padding: '0.125em 0',
     textDecoration: 'none',
     'p &:hover': {
-      borderBottom: '2px solid',
+      background: '#f8485e',
+      color: 'white',
     },
   },
 };
