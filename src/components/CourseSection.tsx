@@ -10,7 +10,7 @@ const CourseSection = () => {
   return (
     <Section>
       <Container as={Text} textAlign="center" mb={3}>
-        <Heading id="contact" mt={4} mb={4}>
+        <Heading id="courses" mt={4} mb={4}>
           Tanfolyamok
         </Heading>
 
