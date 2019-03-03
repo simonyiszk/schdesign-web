@@ -14,13 +14,6 @@ const CourseSection = () => {
           Tanfolyamok
         </Heading>
 
-        <Paragraph css="font-size: 1.2rem;">
-          A tanfolyamaink a{' '}
-          <Box as="span" css="font-weight: bold;">
-            Schönherz Kollégium 103
-          </Box>
-          -as termében lesznek.
-        </Paragraph>
         <Paragraph css="font-size: 1.2rem;" mb={4}>
           Jelentkezni{' '}
           <Text

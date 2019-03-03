@@ -1,6 +1,6 @@
 import Img from 'gatsby-image';
 import React from 'react';
-import { Box, Text } from 'rebass';
+import { Box, Flex, Text } from 'rebass';
 
 type Props = {
   course: {
@@ -28,27 +28,21 @@ const Course = ({ course }: Props) => (
         flex-basis: 50%;
         "
   >
-    <Box
-      as="div"
-      css="
-        display: flex;
-        @media (max-width: 710px) {
-          flex-direction: column;
-        }"
-    >
+    <Box as={Flex} flexDirection={['column', null, 'row']}>
       <Box
         as={Img}
         fluid={course}
         title={course.name}
         m={1}
-        css="width: 10rem; min-width: 100px; flex-shrink: 0; margin: auto;"
+        alignSelf={['center', null, 'flex-start']}
+        css="width: 10rem; min-width: 100px; flex-shrink: 0; margin: 0;"
       />
       <Box
         as="div"
+        ml={[0, null, 3]}
         css="
             flex-grow: 1;
             text-align: center;
-            margin-left: 1rem;
           "
       >
         <Text
@@ -58,32 +52,34 @@ const Course = ({ course }: Props) => (
           {course.name}
         </Text>
         {course.dates.map(date => (
-          <Text
+          <Box
             as="div"
             css={`
-              display: flex;
-              flex-wrap: wrap;
-              @media (max-width: 1170px) and (min-width: 1024px) {
-                flex-direction: column;
-              }
-              @media (max-width: 805px) and (min-width: 711px) {
-                flex-direction: column;
-              }
-              justify-content: center;
-              margin-bottom: 0.5rem;
               color: inherit;
               :hover {
                 color: ${({ theme }: any) => theme.colors.red};
               }
             `}
           >
-            <Text as="span" css="font-weight: bold;margin-right: 0.2rem;">
-              {date.date}
-            </Text>{' '}
-            <Text as="span">
-              {date.start}-{date.end}
-            </Text>
-          </Text>
+            <Box
+              as={Flex}
+              flexDirection={['column', 'row', 'column', 'row']}
+              css="
+                flex-wrap: wrap;
+                justify-content: center;
+              "
+            >
+              <Text as="span" css="font-weight: bold;margin-right: 0.2rem;">
+                {date.date}
+              </Text>{' '}
+              <Text as="span">
+                {date.start}-{date.end}
+              </Text>
+            </Box>
+            <Box as="div" mb={2}>
+              <Text as="span">({date.room})</Text>
+            </Box>
+          </Box>
         ))}
       </Box>
     </Box>
