@@ -25,13 +25,12 @@ const CourseSection = () => {
           Jelentkezni{' '}
           <Text
             as={Link}
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdIfkrJ85quQOFV1je7WQEV7GmmPB23hybc3XF19JrhvQ_XYA/viewform"
-            target="_blank"
+            href="mailto:balazs.frey@schdesign.hu"
             fontWeight="bold"
           >
-            ezen a linken
+            balazs.frey@schdesign.hu
           </Text>{' '}
-          tudtok. Várunk mindenkit sok szeretettel.
+          e-mail címen tudtok. Várunk mindenkit sok szeretettel.
         </Paragraph>
         <Box
           as="div"
