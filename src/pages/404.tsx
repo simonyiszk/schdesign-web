@@ -13,7 +13,7 @@ const NotFoundPage = () => (
       </Helmet>
 
       <Heading mt={3}>404</Heading>
-      <Paragraph>A keresett oldal nem található.</Paragraph>
+      <Paragraph>Oops. Page not found.</Paragraph>
     </Container>
   </Layout>
 );

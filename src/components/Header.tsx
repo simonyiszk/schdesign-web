@@ -6,10 +6,10 @@ import List from './List';
 import ListItem from './ListItem';
 import NavLink from './NavLink';
 
-import schdesignLogoSrc from '../assets/schdesign-logo.svg';
+import logo from '../assets/logo.svg';
 
 const Header = () => (
-  <Box as="header" bg="darkgray" color="white">
+  <Box as="header" bg="white" color="white">
     <Flex
       as={Container}
       flexDirection={['column', 'row']}
@@ -19,14 +19,15 @@ const Header = () => (
     >
       <GatsbyLink to="/">
         <Image
-          src={schdesignLogoSrc}
-          alt="schdesign"
-          height="2em"
+          src={logo}
+          alt="Shixie"
+          height=".65em"
           my={2}
           css="display: block;"
         />
       </GatsbyLink>
 
+      {/*
       <Box as="nav" my={2}>
         <List p={0} m={0}>
           <StaticQuery
@@ -62,8 +63,10 @@ const Header = () => (
           />
         </List>
       </Box>
+      */}
     </Flex>
   </Box>
+
 );
 
 export default Header;

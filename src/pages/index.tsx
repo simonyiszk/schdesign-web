@@ -7,10 +7,10 @@ import WorksSection from '../components/WorksSection';
 
 const IndexPage = () => (
   <Layout>
-    <AboutSection />
-    <CourseSection />
-    <WorksSection variant="dark" />
-    <ContactSection my={[4, 5]} />
+    {/* <AboutSection /> */}
+    {/* <CourseSection /> */}
+    <WorksSection />
+    {/* <ContactSection my={[4, 5]} /> */}
   </Layout>
 );
 

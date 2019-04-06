@@ -71,10 +71,8 @@ const Layout = ({ children }: Props) => (
               content={data.site.siteMetadata.description}
             />
 
-            <link
-              href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Roboto+Mono:500"
-              rel="stylesheet"
-            />
+            <link rel="stylesheet" href="https://use.typekit.net/pew7dup.css" />
+
           </Helmet>
         )}
       />

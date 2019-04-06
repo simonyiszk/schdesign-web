@@ -8,15 +8,14 @@ const theme = {
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512].map(value => `${value / 16}rem`),
   fonts: {
-    sans: 'Montserrat, system-ui, sans-serif',
-    mono: '"Roboto Mono", monospace',
+    sans: 'ibm-plex-sans, Helvetica Neue, Arial, sans-serif',
+    mono: 'ibm-plex-mono, monospace',
   },
   fontWeights: {
-    bold: 600,
+    bold: 400,
   },
   Heading: {
-    fontWeight: 500,
-    textTransform: 'lowercase',
+    // fontWeight: 300,
   },
   Link: {
     padding: '0.125em 0',
@@ -31,8 +30,8 @@ const theme = {
 Heading.defaultProps = {
   ...Heading.defaultProps,
   as: 'h1',
-  fontSize: '2rem',
-  fontFamily: 'mono',
+  fontSize: '1.5rem',
+  fontFamily: 'sans',
 };
 
 Link.defaultProps = {
