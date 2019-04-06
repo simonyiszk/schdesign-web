@@ -1,22 +1,19 @@
-# schdesign-web
+# Gallery pages
 
-[![Build status](https://img.shields.io/travis/simonyiszk/schdesign-web/master.svg)](https://travis-ci.org/simonyiszk/schdesign-web)
-[![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-
-Website of Schönherz Design Stúdió.
+Pages with fast, responsive gallery component for showcasing projects.
 
 ## 🚀 Getting started
 
 - Clone this project and install all the required dependencies using [`yarn`][yarn]
 - Start a development server with `yarn develop`
-  - _Other scripts like `build`, [`format`](#automatic-code-formatting), [`type-check`](#static-type-checking) and [`lint`](#linting) are also available_
 
-[yarn]: https://yarnpkg.com/
+- _Other scripts like `build`, [`format`](#automatic-code-formatting), [`type-check`](#static-type-checking) and [`lint`](#linting) are also available_
 
+
+<!---
 ### Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/simonyiszk/schdesign-web)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/simonyiszk/schdesign-web) -->
 
 ## ✨ Developer experience
 
