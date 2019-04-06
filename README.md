@@ -2,7 +2,7 @@
 
 Pages with fast, responsive gallery component for showcasing projects.
 
-## 🚀 Getting started
+## Setup
 
 - Clone this project and install all the required dependencies using [`yarn`][yarn]
 - Start a development server with `yarn develop`
@@ -13,9 +13,9 @@ Pages with fast, responsive gallery component for showcasing projects.
 <!---
 ### Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/simonyiszk/schdesign-web) -->
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/simonyiszk/schdesign-web)
 
-## ✨ Developer experience
+## Developer experience
 
 ### Automatic code formatting
 
@@ -38,3 +38,5 @@ Linters are tools that analyze source code to flag programming errors, bugs, sty
 [eslint]: https://eslint.org/
 [airbnb javascript style guide]: https://github.com/airbnb/javascript
 [eslint-config-airbnb]: https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb
+
+-->
