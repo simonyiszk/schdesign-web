@@ -4,9 +4,10 @@ import { Box, Image, Link, Text } from 'rebass';
 import Container from './Container';
 
 const Footer = () => (
-  <Box as="footer" bg="darkgray" color="white">
+  <Box as="footer">
     <Text as={Container} textAlign="center" pt={1} my={3}>
-      <StaticQuery
+      {/*
+       <StaticQuery
         query={graphql`
           {
             allSponsorsYaml {
@@ -40,6 +41,7 @@ const Footer = () => (
           ))
         }
       />
+      */}
     </Text>
   </Box>
 );
