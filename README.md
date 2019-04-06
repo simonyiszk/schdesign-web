@@ -1,6 +1,6 @@
 # Gallery pages
 
-Pages with fast, responsive gallery component for showcasing projects.
+Pages with a responsive gallery component for showcasing projects.
 
 ## Setup
 
