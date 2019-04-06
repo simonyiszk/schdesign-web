@@ -13,8 +13,7 @@ const Header = () => (
     <Flex
       as={Container}
       flexDirection={['column', 'row']}
-      justifyContent="space-between"
-      alignItems="center"
+      justifyContent="start"
       my={2}
     >
       <GatsbyLink to="/">
