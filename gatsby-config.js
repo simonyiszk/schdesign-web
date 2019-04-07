@@ -22,8 +22,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Schönherz Design Stúdió',
-        short_name: 'schdesign',
+        name: 'Shixie project showcase',
+        short_name: 'shixie',
         start_url: '/',
         background_color: '#3d3d3d',
         theme_color: '#f8485e',

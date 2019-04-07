@@ -65,7 +65,7 @@ const Gallery = ({
             css={`
               display: inline-block;
               vertical-align: middle;
-              transition: filter 0.3s;
+              transition: filter 0.1s;
               :hover {
                 filter: brightness(87.5%);
               }

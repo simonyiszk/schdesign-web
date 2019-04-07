@@ -47,6 +47,7 @@ const Arvrdg = (props: Props) => (
         {
           allWorksYaml {
             edges {
+              
               node {
                 title
                 author

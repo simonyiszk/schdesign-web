@@ -11,7 +11,7 @@ const IndexPage = () => (
     {/* <AboutSection /> */}
     {/* <CourseSection /> */}
     <CloudVR />
-    <Arvrdg />
+    {/* <Arvrdg /> */}
   </Layout>
 );
 
