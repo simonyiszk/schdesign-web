@@ -1,12 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: 'Schönherz Design Stúdió',
-    description: 'A Simonyi Károly Szakkollégium kreatív alkotóműhelye.',
-    language: 'hu',
-    email: 'hello@schdesign.hu',
-    siteBehanceURL: 'https://www.behance.net/wearethesds/',
-    siteFacebookURL: 'https://www.facebook.com/schonherzdesignstudio/',
-    siteInstagramURL: 'https://www.instagram.com/schdesign.hu/',
+    title: 'Shixie project showcase',
+    description: 'A collection of projects in design systems and XR',
+    language: 'en',
+    email: 'ohwellaye@gmail.com',
+    siteDribbbleURL: 'https://dribbble.com/shixie',
+    siteLinkedInURL: 'https://www.linkedin.com/in/shixie/',
+    siteTwitterURL: 'https://twitter.com/shixieshi',
+    siteInstagramURL: 'https://www.instagram.com/shixsketch/',
   },
   plugins: [
     {

@@ -1,6 +1,6 @@
 # Gallery pages
 
-Cleaned up pages with a responsive gallery component for showcasing projects. _Credit goes to simonyiszk/schdesign-web for original code._
+Simple pages with a responsive gallery component for showcasing projects. _Credit goes to simonyiszk/schdesign-web for original build._
 
 ## Setup
 

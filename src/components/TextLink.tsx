@@ -13,12 +13,11 @@ const TextLink = ({ onClick, ...props }: Props) => (
     onClick={onClick}
     {...props}
     css={`
-      color: #f8485e;
-      font-weight: bold;
-      text-transform: lowercase;
+      color: blue;
       cursor: pointer;
       :not(:hover) {
         opacity: 0.75;
+        color: blue;
       }
     `}
   />

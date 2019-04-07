@@ -4,7 +4,8 @@ const theme = {
   breakpoints: [600, 1024, 1440, 1920],
   colors: {
     red: '#f8485e',
-    darkgray: '#3d3d3d',
+    darkgray: '#1E1E1E',
+    blue: `#0043ff`,
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512].map(value => `${value / 16}rem`),
   fonts: {
@@ -36,7 +37,7 @@ Heading.defaultProps = {
 
 Link.defaultProps = {
   ...Link.defaultProps,
-  color: 'red',
+  color: 'blue',
 };
 
 export default theme;

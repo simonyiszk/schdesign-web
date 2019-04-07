@@ -19,11 +19,10 @@ const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
 
     @media (min-width: ${({ theme }: any) => theme.breakpoints[1]}px) {
-      font-size: 125%;
     }
 
     @media (min-width: ${({ theme }: any) => theme.breakpoints[3]}px) {
-      font-size: 150%;
+      font-size: 125%;
     }
   }
 
