@@ -1,6 +1,6 @@
 # Gallery pages
 
-Simple pages with a responsive gallery component for showcasing projects. Credit goes to ![simonyiszk/schdesign-web](https://github.com/simonyiszk/schdesign-web) for original build._
+Simple pages with a responsive gallery component for showcasing projects. Credit goes to [simonyiszk/schdesign-web](https://github.com/simonyiszk/schdesign-web) for original build._
 
 ## Setup
 
