@@ -8,11 +8,11 @@ import ListItem from './ListItem';
 import Gallery from './Gallery';
 import Section, { Props } from './Section';
 
-const CloudVR = (props: Props) => (
+const Arvrdg = (props: Props) => (
   <Section {...props}>
     <Container>
-      <Heading id="cloudvr" mt={4} py={2}>
-        Cloud Management VR
+      <Heading id="arvrdg" mt={4} py={2}>
+        AR/VR Design Guidelines
       </Heading>
       <Flex flexWrap="wrap">
         <Box width={[ 1, 1/2 ]} pb={4}>
@@ -85,4 +85,4 @@ const CloudVR = (props: Props) => (
   </Section>
 );
 
-export default CloudVR;
+export default Arvrdg;

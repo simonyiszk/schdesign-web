@@ -11,6 +11,7 @@ const Section = ({ variant, ...props }: Props) => (
     as="section"
     {...variant === 'dark' && { bg: 'darkgray', color: 'white' }}
     {...props}
+    mb={6}
   />
 );
 

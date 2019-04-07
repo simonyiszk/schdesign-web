@@ -13,7 +13,7 @@ const Header = () => (
     <Flex
       as={Container}
       flexDirection={['column', 'row']}
-      justifyContent="start"
+      justifyContent="space-between"
       my={2}
     >
       <GatsbyLink to="/">
@@ -26,7 +26,6 @@ const Header = () => (
         />
       </GatsbyLink>
 
-      {/*
       <Box as="nav" my={2}>
         <List p={0} m={0}>
           <StaticQuery
@@ -62,7 +61,7 @@ const Header = () => (
           />
         </List>
       </Box>
-      */}
+
     </Flex>
   </Box>
 
