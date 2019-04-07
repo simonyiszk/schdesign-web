@@ -1,6 +1,6 @@
 import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
-import { Heading, Box, Flex, Image } from 'rebass';
+import { Heading, Box, Flex, Image, Link } from 'rebass';
 import Paragraph from './Paragraph';
 import Container from './Container';
 import List from './List';
@@ -17,25 +17,21 @@ const Arvrdg = (props: Props) => (
       <Flex flexWrap="wrap">
         <Box width={[ 1, 1/2 ]} pb={4}>
           <Paragraph pb={1}>
-            A VR platform designed for monitoring, trouble shooting, and managing system architecture and resources of Cloud applications. A service manager can enter the VR experience to do root cause investigation of a reported issue, and drill down to a specific virtual machine or router on a large network topology.
+            Created as a late addition to the original <Link href="https://www.ibm.com/design/v1/language">IBM Design Language V1</Link>, the content consolidate learnings from multiple AR and VR projects big and small across IBM, completed with UX patterns packaged as problem specific solutions. The goal is to provide an easy entry point for people creating enterprise solutions with immersive technology.
           </Paragraph>
           <Paragraph pb={1}>
-          This is an explorative project and aimed to identify if VR held potential business value for IBM. Cloud management is selected as a use case after a period of research across company's offerings.
-          </Paragraph>
-          <Paragraph pb={1}>
-          The actual project evolved from a 3D visualization of the architecture and relationships of cloud services and infrastructure, to a more manageable scope that's simple data visualizations. I believe there is potential in both ends of the spectrum. This prototype uses data from Dec 2016. The hope is to pipe in live data to enable real time network monitoring capabilities.
+            From incubating the idea to finally releasing it to the world, this project took nearly two years. Unlike the rest of the design language content, all of the AR/VR chapter is created by volunteers or came as contributions from different parts of IBM.
           </Paragraph>
         </Box>
 
         <Box width={[ 1, 1/2 ]} pl={4} pb={4}>
         <List>
-          <ListItem>Creative direction: Adam Cutler</ListItem>
-          <ListItem>Research: Chris Hammond</ListItem>
-          <ListItem>Design lead: Shixie</ListItem>
-          <ListItem>Partner agency: Idean </ListItem>
-          <ListItem>Agency leads: Matthew Robinson, Jordan Winick, Matthew Wells</ListItem>
-          <ListItem>Development: Fox Buchele </ListItem>
-          <ListItem>Internal collaberation teams: IBM Design, IBM Cloud Platform, Softlayer, Bluebox, Mobile Innovation Lab</ListItem>
+          <ListItem>Creative direction and production lead: Shixie</ListItem>
+          <ListItem>Collaborator: Alfredo Ruiz </ListItem>
+          <ListItem>Design: Shixie, Brianna Benson, Jenna Goldberg</ListItem>
+          <ListItem>Front end development: Benjamin Resnick</ListItem>
+          <ListItem>Content: Benjamin Resnick, Jenna Goldberg </ListItem>
+          <ListItem>Contribution: Kris Schults, Aldis Sipolins, Mbiyimoh Ghogomu, Ramiro Galan, Daniel Shust, Emma Tucker, Adam Cutler, Glenn Jones, Rose M. Peng, Ryan Anderson, Taiji Hagino, Kyle Craig, Jack Mason, Hayley Hughes, Joe Pavitt, Scott M. Harris, James Griffin, Chris Hammond</ListItem>
         </List>
         </Box>
       </Flex>
@@ -47,7 +43,6 @@ const Arvrdg = (props: Props) => (
         {
           allWorksYaml {
             edges {
-              
               node {
                 title
                 author

@@ -17,7 +17,7 @@ const CloudVR = (props: Props) => (
       <Flex flexWrap="wrap">
         <Box width={[ 1, 1/2 ]} pb={4}>
           <Paragraph pb={1}>
-            A VR platform designed for monitoring, trouble shooting, and managing system architecture and resources of Cloud applications. A service manager can enter the VR experience to do root cause investigation of a reported issue, and drill down to a specific virtual machine or router on a large network topology.
+            The VR platform concept is designed for monitoring, trouble shooting, and managing system architecture and resources of Cloud applications. A service manager can enter the VR experience to do root cause investigation of a reported issue, and drill down to a specific virtual machine or router on a large network topology.
           </Paragraph>
           <Paragraph pb={1}>
           This is an explorative project and aimed to identify if VR held potential business value for IBM. Cloud management is selected as a use case after a period of research across company's offerings.
