@@ -20,7 +20,7 @@ const Header = () => (
         <Image
           src={logo}
           alt="Shixie"
-          height=".65em"
+          height=".75em"
           my={2}
           css="display: block;"
         />
