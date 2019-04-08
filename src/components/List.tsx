@@ -11,10 +11,10 @@ const List = (props: Props) =>
   <Box
     as="ul"
     {...props}
+    fontSize={'0.85rem'}
     css={`
       list-style-type: none;
       color: #737373;
-      font-size: .85rem;
     `}
   />;
 

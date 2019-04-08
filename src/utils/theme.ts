@@ -1,10 +1,10 @@
-import { Heading, Link } from 'rebass';
+import { Heading, Link, Text } from 'rebass';
 
 const theme = {
   breakpoints: [600, 1024, 1440, 1920],
   colors: {
     red: '#f8485e',
-    darkgray: '#1E1E1E',
+    darkgray: '#323232',
     blue: `#0043ff`,
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512].map(value => `${value / 16}rem`),
@@ -13,7 +13,10 @@ const theme = {
     mono: 'ibm-plex-mono, monospace',
   },
   fontWeights: {
-    bold: 400,
+    light: 300,
+    regular: 400,
+    semibold: 700,
+    bold: 800,
   },
   Link: {
     padding: '0.125em 0',
@@ -29,11 +32,20 @@ Heading.defaultProps = {
   as: 'h1',
   fontSize: '2rem',
   fontFamily: 'sans',
+  fontWeight: 'light',
 };
 
 Link.defaultProps = {
   ...Link.defaultProps,
   color: 'blue',
 };
+
+Text.defaultProps = {
+  ...Text.defaultProps,
+  as: 'p',
+  fontSize: '1rem',
+  lineHeight: '1.5', 
+};
+
 
 export default theme;

@@ -31,10 +31,11 @@ const GlobalStyle = createGlobalStyle`
 
     /* Prevent adjustments of font size after orientation changes in iOS */
     text-size-adjust: 100%;
+
   }
 
   p {
-    line-height: 1.5;
+    line-height: 1.25;
   }
 `;
 

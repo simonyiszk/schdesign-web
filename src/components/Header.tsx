@@ -1,6 +1,6 @@
 import { graphql, Link as GatsbyLink, StaticQuery } from 'gatsby';
 import React from 'react';
-import { Box, Flex, Image } from 'rebass';
+import { Box, Flex, Image, Text } from 'rebass';
 import Container from './Container';
 import List from './List';
 import ListItem from './ListItem';
@@ -16,7 +16,8 @@ const Header = () => (
       justifyContent="space-between"
       my={2}
     >
-      <GatsbyLink to="/">
+      {/*
+      <GatsbyLink my={2} to="/">
         <Image
           src={logo}
           alt="Shixie"
@@ -25,6 +26,19 @@ const Header = () => (
           css="display: block;"
         />
       </GatsbyLink>
+      */}
+
+      <Text
+        my={2}
+        css={`
+        color: darkgray;
+        font-size: .9rem;
+        font-weight: bold;
+        :not(:hover) {
+          }
+        `}>
+        Shixie XR Projects
+      </Text>
 
       <Box as="nav" my={2}>
         <List p={0} m={0}>
@@ -48,7 +62,7 @@ const Header = () => (
                   <ListItem
                     key={node.id}
                     m={-2}
-                    ml={i !== 0 ? [4, 5] : null}
+                    ml={i !== 0 ? [2, 3] : null}
                     css="display: inline-block;"
                   >
                     <NavLink as={GatsbyLink} to={node.url} p={2}>
