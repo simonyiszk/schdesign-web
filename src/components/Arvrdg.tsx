@@ -37,7 +37,7 @@ const Arvrdg = (props: Props) => (
       </Flex>
 
     </Container>
-
+    {/*
     <StaticQuery
       query={graphql`
         {
@@ -71,6 +71,7 @@ const Arvrdg = (props: Props) => (
         />
       )}
     />
+    */}
   </Section>
 );
 

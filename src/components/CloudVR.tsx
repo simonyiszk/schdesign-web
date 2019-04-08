@@ -41,7 +41,15 @@ const CloudVR = (props: Props) => (
         </Box>
       </Flex>
 
+      <iframe src="https://player.vimeo.com/video/329030713" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+      <iframe src="https://player.vimeo.com/video/234614700" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+      <iframe src="https://player.vimeo.com/video/236781525" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
     </Container>
+
 
     <StaticQuery
       query={graphql`
@@ -50,7 +58,6 @@ const CloudVR = (props: Props) => (
             edges {
               node {
                 title
-                author
                 image {
                   id
                   childImageSharp {
@@ -76,13 +83,6 @@ const CloudVR = (props: Props) => (
         />
       )}
     />
-
-    <Container>
-      <Heading>
-        Video
-      </Heading>
-      <iframe src="https://player.vimeo.com/video/234614700" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    </Container>
   </Section>
 );
 

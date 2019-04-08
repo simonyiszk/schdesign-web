@@ -44,7 +44,7 @@ Text.defaultProps = {
   ...Text.defaultProps,
   as: 'p',
   fontSize: '1rem',
-  lineHeight: '1.5', 
+  lineHeight: '1.5',
 };
 
 
