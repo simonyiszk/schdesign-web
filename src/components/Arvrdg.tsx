@@ -37,15 +37,14 @@ const Arvrdg = (props: Props) => (
       </Flex>
 
     </Container>
-    {/*
+
     <StaticQuery
       query={graphql`
         {
-          allWorksYaml {
+          allArvrdgYaml {
             edges {
               node {
                 title
-                author
                 image {
                   id
                   childImageSharp {
@@ -62,7 +61,7 @@ const Arvrdg = (props: Props) => (
       `}
       render={data => (
         <Gallery
-          images={data.allWorksYaml.edges.map(({ node }: any) => ({
+          images={data.allArvrdgYaml.edges.map(({ node }: any) => ({
             id: node.image.id,
             ...node.image.childImageSharp.fluid,
             caption: `${node.title}`,
@@ -71,7 +70,7 @@ const Arvrdg = (props: Props) => (
         />
       )}
     />
-    */}
+
   </Section>
 );
 
