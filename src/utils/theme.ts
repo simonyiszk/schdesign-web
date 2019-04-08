@@ -15,15 +15,11 @@ const theme = {
   fontWeights: {
     bold: 400,
   },
-  Heading: {
-    // fontWeight: 300,
-  },
   Link: {
     padding: '0.125em 0',
     textDecoration: 'none',
     'p &:hover': {
-      background: '#f8485e',
-      color: 'white',
+      textDecoration: 'underline',
     },
   },
 };
@@ -31,7 +27,7 @@ const theme = {
 Heading.defaultProps = {
   ...Heading.defaultProps,
   as: 'h1',
-  fontSize: '1.5rem',
+  fontSize: '2rem',
   fontFamily: 'sans',
 };
 

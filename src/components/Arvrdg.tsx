@@ -14,8 +14,8 @@ const Arvrdg = (props: Props) => (
       <Heading id="arvrdg" mt={4} py={2}>
         AR/VR Design Guidelines
       </Heading>
-      <Flex flexWrap="wrap">
-        <Box width={[ 1, 1/2 ]} pb={4}>
+      <Flex flexWrap="wrap" pb={4}>
+        <Box width={[ 1, 1/2 ]} >
           <Paragraph pb={1}>
             Created as a late addition to the original <Link href="https://www.ibm.com/design/v1/language">IBM Design Language V1</Link>, the content consolidate learnings from multiple AR and VR projects big and small across IBM, completed with UX patterns packaged as problem specific solutions. The goal is to provide an easy entry point for people creating enterprise solutions with immersive technology.
           </Paragraph>
@@ -24,15 +24,15 @@ const Arvrdg = (props: Props) => (
           </Paragraph>
         </Box>
 
-        <Box width={[ 1, 1/2 ]} pl={4} pb={4}>
-        <List>
-          <ListItem>Creative direction and production lead: Shixie</ListItem>
-          <ListItem>Collaborator: Alfredo Ruiz </ListItem>
-          <ListItem>Design: Shixie, Brianna Benson, Jenna Goldberg</ListItem>
-          <ListItem>Front end development: Benjamin Resnick</ListItem>
-          <ListItem>Content: Benjamin Resnick, Jenna Goldberg </ListItem>
-          <ListItem>Contribution: Kris Schults, Aldis Sipolins, Mbiyimoh Ghogomu, Ramiro Galan, Daniel Shust, Emma Tucker, Adam Cutler, Glenn Jones, Rose M. Peng, Ryan Anderson, Taiji Hagino, Kyle Craig, Jack Mason, Hayley Hughes, Joe Pavitt, Scott M. Harris, James Griffin, Chris Hammond</ListItem>
-        </List>
+        <Box width={[ 1, 1/2 ]}>
+          <List width={[ .95, .75 ]}>
+            <ListItem>Creative direction and production lead: Shixie</ListItem>
+            <ListItem>Collaborator & AR lead: Alfredo Ruiz </ListItem>
+            <ListItem>Design: Shixie, Brianna Benson, Jenna Goldberg</ListItem>
+            <ListItem>Development: Benjamin Resnick</ListItem>
+            <ListItem>Content: Benjamin Resnick, Jenna Goldberg </ListItem>
+            <ListItem>Contribution: Kris Schults, Aldis Sipolins, Mbiyimoh Ghogomu, Ramiro Galan, Daniel Shust, Emma Tucker, Adam Cutler, Glenn Jones, Rose M. Peng, Ryan Anderson, Taiji Hagino, Kyle Craig, Jack Mason, Hayley Hughes, Joe Pavitt, Scott M. Harris, James Griffin, Chris Hammond</ListItem>
+          </List>
         </Box>
       </Flex>
 
@@ -71,13 +71,6 @@ const Arvrdg = (props: Props) => (
         />
       )}
     />
-
-    <Container>
-      <Heading>
-        Video
-      </Heading>
-      <iframe src="https://player.vimeo.com/video/234614700" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    </Container>
   </Section>
 );
 
