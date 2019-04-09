@@ -44,13 +44,8 @@ const CloudVR = (props: Props) => (
       </Flex>
 
       <Vimeo vimeoid={329030713}/>
-
-      <iframe src="https://player.vimeo.com/video/329030713" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-      <iframe src="https://player.vimeo.com/video/234614700" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-      <iframe src="https://player.vimeo.com/video/236781525" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
+      <Vimeo vimeoid={234614700}/>
+      <Vimeo vimeoid={236781525}/>
 
     </Container>
 
