@@ -6,7 +6,9 @@ import Container from './Container';
 import List from './List';
 import ListItem from './ListItem';
 import Gallery from './Gallery';
+import Vimeo from './Vimeo';
 import Section, { Props } from './Section';
+
 
 const CloudVR = (props: Props) => (
   <Section {...props}>
@@ -40,6 +42,8 @@ const CloudVR = (props: Props) => (
           </List>
         </Box>
       </Flex>
+
+      <Vimeo vimeoid={329030713}/>
 
       <iframe src="https://player.vimeo.com/video/329030713" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
