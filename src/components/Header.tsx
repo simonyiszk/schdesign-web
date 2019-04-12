@@ -29,7 +29,7 @@ const Header = () => (
       */}
 
       <Text
-        width={[ 1, 1/2 ]}
+        width={[ 1, 2/5 ]}
         my={2}
         css={`
         color: darkgray;
@@ -41,7 +41,7 @@ const Header = () => (
         Shixie XR Projects
       </Text>
 
-      <Box as="nav" my={2} width={[ 1, 1/2 ]}>
+      <Box as="nav" my={2} width={[ 1, 3/5 ]}>
         <List p={0} m={0}>
           <StaticQuery
             query={graphql`

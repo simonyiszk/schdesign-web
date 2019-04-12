@@ -2,6 +2,7 @@ import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 import { Heading, Box, Flex, Image } from 'rebass';
 import Paragraph from './Paragraph';
+import H2 from './H2';
 import Container from './Container';
 import List from './List';
 import ListItem from './ListItem';
@@ -15,7 +16,7 @@ const CloudVR = (props: Props) => (
     <Container>
       <Flex flexWrap="wrap" mt={4}>
 
-        <Box width={[ 1, 1/2 ]} >
+        <Box width={[ 1, 2/5 ]} >
           <Heading id="cloudvr" py={2}>
             Cloud Management VR
           </Heading>
@@ -31,30 +32,41 @@ const CloudVR = (props: Props) => (
           </List>
         </Box>
 
-        <Box width={[ 1, 1/2 ]} >
+        <Box width={[ 1, 3/5 ]} >
           <Paragraph>
           The VR platform concept is designed for monitoring, trouble shooting, and managing system architecture and resources of Cloud applications. A service manager can enter the VR experience to do root cause investigation of a reported issue, and drill down to a specific virtual machine or router on a large network topology.
           </Paragraph>
-          <Paragraph>
-          This is an explorative project and aimed to identify if VR held potential business value for IBM. Cloud management is selected as a use case after a period of research across company's offerings.
-          </Paragraph>
-          <Paragraph>
-          The actual project evolved from a 3D visualization of the architecture and relationships of cloud services and infrastructure, to a more manageable scope that's simple data visualizations. I believe there is potential in both ends of the spectrum. This prototype uses data from Dec 2016. The hope is to pipe in live data to enable real time network monitoring capabilities.
-          </Paragraph>
-        </Box>
 
-        <Box width={[ 1, 1/2 ]} >
+          <Paragraph>
+          This is an explorative project and aimed to identify if VR held potential business value for IBM. Cloud management is selected as a use case after research across company's offerings.
+          </Paragraph>
+
+
+
+          <H2> VR demo </H2>
+
           <Vimeo vimeoid={329030713} />
-        </Box>
 
-        <Box width={[ 1, 1/2 ]} >
+          <Paragraph>
+          The project evolved from an spatial mapping of the objects throughout the stack and their relationships, to a simple 3D scatter plot with a world of resources hidden inside each data point. This prototype uses data from Dec 2016. The hope is to pipe in live data to enable real time network monitoring capabilities.
+          </Paragraph>
+
+          <H2> Concept & design </H2>
+          <Paragraph>
+          I designed the nodes to express their data via shape, light and motion. This makes data "glancible" and intuitive while avoiding explicit numbers and graphs, which work well on a screen, but in VR are difficult to interactive with, and easily overwhelm users. These nodes may denote an app, a server, or a bare metal machine.
+          </Paragraph>
+
           <Vimeo vimeoid={234614700} />
-        </Box>
 
-        <Box width={[ 1, 1/2 ]} >
+
+          <Paragraph>
+          My original vision of the project is best explained in the TiltBrush sketch. Picturing healthy, running services and aplications floating in the air, while databases and containers sit on the ground. All layers in the stack are connected. By monitoring the health of objects and their relationships in the system, maintainance workers can quickly diagnose the root cause and search for a solution.
+          </Paragraph>
+
           <Vimeo vimeoid={236781525} />
-        </Box>
 
+
+        </Box>
       </Flex>
 
 
