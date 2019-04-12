@@ -47,5 +47,4 @@ Text.defaultProps = {
   lineHeight: '1.5',
 };
 
-
 export default theme;

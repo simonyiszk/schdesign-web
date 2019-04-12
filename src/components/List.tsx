@@ -15,6 +15,7 @@ const List = (props: Props) =>
     css={`
       list-style-type: none;
       color: #737373;
+      padding: 0;
     `}
   />;
 

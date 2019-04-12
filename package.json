@@ -25,6 +25,7 @@
     "react": "^16.8.0-alpha.1",
     "react-dom": "^16.8.0-alpha.1",
     "react-helmet": "^5.2.0",
+    "react-iframe": "^1.7.11",
     "react-images": "^1.0.0-alpha.3",
     "rebass": "^3.0.1",
     "smoothscroll-polyfill": "^0.4.3",

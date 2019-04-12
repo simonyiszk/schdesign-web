@@ -29,6 +29,7 @@ const Header = () => (
       */}
 
       <Text
+        width={[ 1, 1/2 ]}
         my={2}
         css={`
         color: darkgray;
@@ -40,7 +41,7 @@ const Header = () => (
         Shixie XR Projects
       </Text>
 
-      <Box as="nav" my={2}>
+      <Box as="nav" my={2} width={[ 1, 1/2 ]}>
         <List p={0} m={0}>
           <StaticQuery
             query={graphql`
@@ -65,7 +66,7 @@ const Header = () => (
                     ml={i !== 0 ? [2, 3] : null}
                     css="display: inline-block;"
                   >
-                    <NavLink as={GatsbyLink} to={node.url} p={2}>
+                    <NavLink as={GatsbyLink} to={node.url} pr={4}>
                       {node.title}
                     </NavLink>
                   </ListItem>
