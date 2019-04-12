@@ -1,5 +1,6 @@
 # AR/VR Design Guidelines
 
-- title: Parkett Klub redesign
-  author: Antók Benedek Solt
+- title: Diegetic UI, Spatial UI and Non-diegetic UI
+  image: ./works/arvrdg/ui-types.png
+- title: Usage rationale of teleport waypoint
   image: ./works/arvrdg/vr-dodont-01.png
