@@ -6,6 +6,7 @@ import List from './List';
 import ListItem from './ListItem';
 import NavLink from './NavLink';
 
+
 import logo from '../assets/logo.svg';
 
 const Header = () => (
@@ -34,11 +35,11 @@ const Header = () => (
         css={`
         color: darkgray;
         font-size: .9rem;
-        font-weight: bold;
+        font-weight: 700;
         :not(:hover) {
           }
         `}>
-        Shixie XR Projects
+        Shixie's selected projects
       </Text>
 
       <Box as="nav" my={2} width={[ 1, 3/5 ]}>

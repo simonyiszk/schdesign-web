@@ -58,21 +58,50 @@ const CloudVR = (props: Props) => (
 
           <Vimeo vimeoid={234614700} />
 
-
+          <Vimeo vimeoid={329957785} />
           <Paragraph>
-          My original vision of the project is best explained in the TiltBrush sketch. Picturing healthy, running services and aplications floating in the air, while databases and containers sit on the ground. All layers in the stack are connected. By monitoring the health of objects and their relationships in the system, maintainance workers can quickly diagnose the root cause and search for a solution.
+          My original vision of the project is best explained in above TiltBrush sketch. Picturing healthy, running services and aplications floating in the air, while databases and containers sit on the ground. All layers in the stack are connected. By monitoring the health of objects and their relationships in the system, maintainance workers can quickly diagnose the root cause and search for a solution.
           </Paragraph>
 
-          <Vimeo vimeoid={236781525} />
-
-
+          <H2> Stills </H2>
+          <StaticQuery
+            query={graphql`
+              {
+                allWorksYaml {
+                  edges {
+                    node {
+                      title
+                      image {
+                        id
+                        childImageSharp {
+                          fluid {
+                            ...GatsbyImageSharpFluid
+                            originalImg
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `}
+            render={data => (
+              <Gallery
+                images={data.allWorksYaml.edges.map(({ node }: any) => ({
+                  id: node.image.id,
+                  ...node.image.childImageSharp.fluid,
+                  caption: `${node.title}`,
+                }))}
+                itemsPerRow={[1, 2]}
+              />
+            )}
+          />
         </Box>
       </Flex>
 
-
     </Container>
 
-
+{/*
     <StaticQuery
       query={graphql`
         {
@@ -105,7 +134,10 @@ const CloudVR = (props: Props) => (
         />
       )}
     />
+    */}
   </Section>
+
+
 );
 
 export default CloudVR;

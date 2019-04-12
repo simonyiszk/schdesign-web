@@ -9,6 +9,7 @@ type Props = {
 
 const Vimeo = (props: Props) => (
   <Box
+    mb={4}
     css={`
       position: relative;
       padding-bottom: 56.25%;
