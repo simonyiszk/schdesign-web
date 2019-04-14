@@ -20,33 +20,41 @@ const Carbon = (props: Props) => (
         </Heading>
 
         <List width={[ .95, .75 ]}>
-          <ListItem>Creative direction and production lead: Shixie</ListItem>
-          <ListItem>Collaborator & AR lead: Alfredo Ruiz </ListItem>
-          <ListItem>Design: Shixie, Brianna Benson, Jenna Goldberg</ListItem>
-          <ListItem>Development: Benjamin Resnick</ListItem>
-          <ListItem>Content: Benjamin Resnick, Jenna Goldberg </ListItem>
-          <ListItem>Contribution: Kris Schults, Aldis Sipolins, Mbiyimoh Ghogomu, Ramiro Galan, Daniel Shust, Emma Tucker, Adam Cutler, Glenn Jones, Rose M. Peng, Ryan Anderson, Taiji Hagino, Kyle Craig, Jack Mason, Hayley Hughes, Joe Pavitt, Scott M. Harris, James Griffin, Chris Hammond</ListItem>
+          <ListItem>Exacutive director: Jeoff Wilks</ListItem>
+          <ListItem>Creative direction: Todd Simmons, Mike Abbink</ListItem>
+          <ListItem>Design lead: Chiu-Ping Chiu, Shixie, Jean a. Servaas</ListItem>
+          <ListItem>Design: Anna Gonzolas, Lauren Rice, Tyler Tate, Peter Garvin, Conrad Ennis, Sadek Bazaraa, Wonil Suh</ListItem>
+          <ListItem>Development: Josh Black, Akira Sudoh, Alessandra Davila, Alison Joseph, Andrew Wang, TJ Egan, Josefina Mancilla, Audrey Moon, D.A. Kahn, Matt Rosno, Robin Cannon, Mari Johannessen</ListItem>
+          <ListItem>Motion design: Shixie, Wonil Suh</ListItem>
+          <ListItem>Content: Connor Leech, Clay Crenshaw </ListItem>
+          <ListItem>Internal collaberation teams: IBM Brand Experience & Design, IBM Security, IBM Cloud, IBM Watson, IBM Watson Health</ListItem>
         </List>
       </Box>
 
       <Box width={[ 1, 3/5 ]} >
         <Paragraph>
-          Created as a late addition to the original <Link href="https://www.ibm.com/design/v1/language">IBM Design Language V1</Link>, the guidelines consolidate learnings from multiple AR and VR projects big and small across IBM, completed with UX patterns packaged as problem specific solutions. The goal is to provide an easy entry point for people creating enterprise solutions with immersive technology.
+          IBM Design System, also known as Carbon, is the open source design system for digital products and experiences. On April 2, Carbon V10 is released, a complete redesign of all elements and components with the <Link href="https://www.ibm.com/design/language">new IBM Design Language</Link> as its foundation. The system consists of working code, design tools and resources, human interface guidelines, and a vibrant community of contributors.
         </Paragraph>
-        <H2><Link href="https://www.ibm.com/design/v1/language/experience/vrar/">↳ Go to: IBM AR/VR Design Guidelines</Link></H2>
+        <H2><Link href="https://www.carbondesignsystem.com">↳ Go to: IBM Design System (Carbon)</Link></H2>
+
+        <H2>Motion design</H2>
         <Paragraph>
-          I initiated the project in 2016 and wore many different hats in this production. I was the project manager, writer and editor, illustrator, and front end developer to varying extends. Unlike the rest of the design language, the AR/VR chapter is a grassroot effort, and consists of a lot of contribution from volunteers in different parts of IBM.
+          I was fortunate to be a part of the Design Language team before joining Carbon, specializing on defining the new motion guidelines. After transition from the Design Language team to Design System team, I assisted with implementing the new guidelines throughout the elements and components that Carbon delivers. This include implementing motion in Carbon components, craft UI motion guidelines, and work with developers to create the <Link href="https://github.com/IBM/carbon-elements/tree/master/packages/motion">Motion package</Link> that facilitate users adopting motion design.
         </Paragraph>
 
+        <Vimeo vimeoid={330279772} />
+        <Vimeo vimeoid={330274406} />
+
+        <H2>Data visualization</H2>
         <Paragraph>
-          Read the full story of the <Link href="https://medium.com/design-ibm/making-of-ar-vr-design-guidelines-5370a0091f7b">Making of AR/VR design guidelines</Link> on Medium.
+          I was tasked with redesigning the data visualization section of the system. This work is still in progress, some of the latest explorations are included below.
         </Paragraph>
 
         <H2> Stills </H2>
         <StaticQuery
           query={graphql`
             {
-              allArvrdgYaml {
+              allCarbonYaml {
                 edges {
                   node {
                     title
@@ -66,7 +74,7 @@ const Carbon = (props: Props) => (
           `}
           render={data => (
             <Gallery
-              images={data.allArvrdgYaml.edges.map(({ node }: any) => ({
+              images={data.allCarbonYaml.edges.map(({ node }: any) => ({
                 id: node.image.id,
                 ...node.image.childImageSharp.fluid,
                 caption: `${node.title}`,
