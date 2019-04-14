@@ -26,7 +26,7 @@ const NavLink = ({ to, ...props }: Props) => (
       text-decoration: none;
       color: blue;
       :not(:hover) {
-        color: darkgray;
+        color: #737373;
       }
     `}
   />

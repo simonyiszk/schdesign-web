@@ -10,13 +10,13 @@ import Gallery from './Gallery';
 import Vimeo from './Vimeo';
 import Section, { Props } from './Section';
 
-const Arvrdg = (props: Props) => (
+const Carbon = (props: Props) => (
   <Section {...props}>
     <Container>
     <Flex flexWrap="wrap" mt={4}>
       <Box width={[ 1, 2/5 ]} >
-        <Heading id="arvrdg" py={2}>
-          AR/VR Design Guidelines
+        <Heading id="carbon" py={2}>
+          IBM Design System
         </Heading>
 
         <List width={[ .95, .75 ]}>
@@ -83,4 +83,4 @@ const Arvrdg = (props: Props) => (
   </Section>
 );
 
-export default Arvrdg;
+export default Carbon;

@@ -1,6 +1,8 @@
 # AR/VR Design Guidelines
 
-- title: Diegetic UI, Spatial UI and Non-diegetic UI
-  image: ./works/arvrdg/ui-types.png
+- title: AR/VR site screenshots
+  image: ./works/arvrdg/arvr-site.png
 - title: Usage rationale of teleport waypoint
   image: ./works/arvrdg/vr-dodont-01.png
+- title: Diegetic UI, Spatial UI and Non-diegetic UI
+  image: ./works/arvrdg/ui-types.png

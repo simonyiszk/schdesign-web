@@ -10,7 +10,7 @@ import NavLink from './NavLink';
 import logo from '../assets/logo.svg';
 
 const Header = () => (
-  <Box as="header" bg="white" color="white">
+  <Box as="header">
     <Flex
       as={Container}
       flexDirection={['column', 'row']}

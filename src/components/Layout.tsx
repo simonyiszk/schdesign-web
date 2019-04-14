@@ -14,7 +14,7 @@ if (typeof window !== 'undefined') {
 
 const GlobalStyle = createGlobalStyle`
   html {
-    color: ${({ theme }: any) => theme.colors.darkgray};
+    background: #F6F6F6;
     font-family: ${({ theme }: any) => theme.fonts.sans};
     scroll-behavior: smooth;
 

@@ -7,7 +7,9 @@
 - title: Node unit legend
   image: ./works/cloudvr/nodeExpDat_v4.png
 - title: Connections between nodes are lit up by traveling data packets
-  image: ./works/cloudvr/schematic.png
+  image: ./works/cloudvr/connection.png
+  - title: Connections between nodes are lit up by traveling data packets
+    image: ./works/cloudvr/schematic.png
 
 # - title: Nested data nodes
 #   vimeo: 234614700
