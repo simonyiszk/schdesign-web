@@ -33,13 +33,13 @@ const Carbon = (props: Props) => (
 
       <Box width={[ 1, 3/5 ]} >
         <Paragraph>
-          IBM Design System, also known as Carbon, is the open source design system for digital products and experiences. On April 2, Carbon V10 is released, a complete redesign of all elements and components with the <Link href="https://www.ibm.com/design/language">new IBM Design Language</Link> as its foundation. The system consists of working code, design tools and resources, human interface guidelines, and a vibrant community of contributors.
+          IBM Design System, also known as Carbon, is the open source design system for digital products and experiences. On April 2, Carbon V10 is released, a complete redesign of all elements and components with the new<Link href="https://www.ibm.com/design/language"> IBM Design Language</Link> as its foundation. The system consists of working code, design tools and resources, human interface guidelines, and a vibrant community of contributors.
         </Paragraph>
         <H2><Link href="https://www.carbondesignsystem.com">↳ Go to: IBM Design System (Carbon)</Link></H2>
 
         <H2>Motion design</H2>
         <Paragraph>
-          I was fortunate to be a part of the Design Language team before joining Carbon, specializing on defining the new motion guidelines. After transition from the Design Language team to Design System team, I assisted with implementing the new guidelines throughout the elements and components that Carbon delivers. This include implementing motion in Carbon components, craft UI motion guidelines, and work with developers to create the <Link href="https://github.com/IBM/carbon-elements/tree/master/packages/motion">Motion package</Link> that facilitate users adopting motion design.
+          I was fortunate to be a part of the Design Language team before joining Carbon, specializing on defining the <Link href="https://www.carbondesignsystem.com/guidelines/motion/basics"> motion guidelines</Link>. After transition from the Design Language team to Design System team, I assisted with implementing the new guidelines throughout the elements and components that Carbon delivers. This include craft UI motion guidelines, implementing motion in Carbon components, and work with developers to create the code package that facilitates adoption.
         </Paragraph>
 
         <Vimeo vimeoid={330279772} />
@@ -47,7 +47,7 @@ const Carbon = (props: Props) => (
 
         <H2>Data visualization</H2>
         <Paragraph>
-          I was tasked with redesigning the data visualization section of the system. This work is still in progress, some of the latest explorations are included below.
+          In addition to motion, I was tasked with redesigning the data visualization sector of the system. While Carbon as a system aims to be highly accessible (meeting and exceeding WCAG recommendations), the standard for accessibility around data visualization is less well defined. This work is still in progress, but some of the latest explorations are included below.
         </Paragraph>
 
         <H2> Stills </H2>
