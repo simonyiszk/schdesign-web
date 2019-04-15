@@ -67,7 +67,7 @@ const CloudVR = (props: Props) => (
           <StaticQuery
             query={graphql`
               {
-                allWorksYaml {
+                allCloudvrYaml {
                   edges {
                     node {
                       title
@@ -87,7 +87,7 @@ const CloudVR = (props: Props) => (
             `}
             render={data => (
               <Gallery
-                images={data.allWorksYaml.edges.map(({ node }: any) => ({
+                images={data.allCloudvrYaml.edges.map(({ node }: any) => ({
                   id: node.image.id,
                   ...node.image.childImageSharp.fluid,
                   caption: `${node.title}`,

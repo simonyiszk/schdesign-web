@@ -4,19 +4,11 @@
   image: ./works/cloudvr/demo-still1.png
 - title: Nested data nodes
   image: ./works/cloudvr/cpu-nodes.png
-- title: Node unit legend
+- title: Virtual server representation
   image: ./works/cloudvr/nodeExpDat_v4.png
 - title: Connections between nodes are lit up by traveling data packets
-  image: ./works/cloudvr/connection.png
-- title: Connections between nodes are lit up by traveling data packets
-  image: ./works/cloudvr/schematic.png
-
-# - title: Nested data nodes
-#   vimeo: 234614700
-#   caption: lorem ipsum
-# - title: Cloud VR demo
-#   vimeo: 329030713
-#   caption: Cloud VR demo video full
-# - title: Visualizing cloud infrastructure
-#   vimeo: 236781525
-#   caption: Visualizing cloud infrastructure
+  image: ./works/cloudvr/connections1.png
+- title: Nodes are connected to each other via ports. A node may have one to many ports open listening for events.
+  image: ./works/cloudvr/connections2.png
+- title: An alternative immersive enviornment
+  image: ./works/cloudvr/scifi_enviorn_concept1-01.png

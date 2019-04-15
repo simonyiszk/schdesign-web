@@ -23,7 +23,7 @@ const Header = () => (
         left: 0;
         margin-right: auto;
         margin-left: auto;
-        z-index: 1000;
+        z-index: 1;
       `}
     >
       {/*
