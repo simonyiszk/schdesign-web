@@ -19,7 +19,9 @@ const NavLink = ({ to, ...props }: Props) => (
 
       if (element) {
         e.preventDefault();
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        //element.scrollIntoView({ behavior: 'smooth', block: 'start'});
+        var d = element.offsetTop;
+        window.scroll(0,d-100);
       }
     }}
     css={`
