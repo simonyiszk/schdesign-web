@@ -10,12 +10,21 @@ import NavLink from './NavLink';
 import logo from '../assets/logo.svg';
 
 const Header = () => (
-  <Box as="header">
+  <Box as="header" mb={5}>
     <Flex
       as={Container}
       flexDirection={['column', 'row']}
       justifyContent="space-between"
-      my={2}
+      py={2}
+      css={`
+        background: #F6F6F6;
+        position: fixed;
+        right: 0;
+        left: 0;
+        margin-right: auto;
+        margin-left: auto;
+        z-index: 1000;
+      `}
     >
       {/*
       <GatsbyLink my={2} to="/">

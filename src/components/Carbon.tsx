@@ -47,7 +47,10 @@ const Carbon = (props: Props) => (
 
         <H2>Data visualization</H2>
         <Paragraph>
-          In addition to motion, I was tasked with redesigning the data visualization sector of the system. While Carbon as a system aims to be highly accessible (meeting and exceeding WCAG recommendations), the standard for accessibility around data visualization is less well defined. This work is still in progress, but some of the latest explorations are included below.
+          In addition to motion, I was tasked with redesigning the data visualization section of the system. While Carbon as a system aims to be highly accessible (meeting and exceeding WCAG recommendations), the standard for accessibility around data visualization is less well defined. I reworked the color palette to improve overall accessibility, and stylized the chart designs to better express the philosophy of the new design language.
+        </Paragraph>
+        <Paragraph>
+          This work is still in progress, but some of the latest explorations are included as stills below.
         </Paragraph>
 
         <H2> Stills </H2>
