@@ -56,9 +56,9 @@ const CloudVR = (props: Props) => (
           I designed the nodes to express their data via shape, light and motion. This makes data "glancible" and intuitive while avoiding explicit numbers and graphs, which work well on a screen, but in VR are difficult to interactive with, and easily overwhelm users. These nodes may denote an app, a server, or a bare metal machine.
           </Paragraph>
 
-          <Vimeo vimeoid={234614700} />
+          <Vimeo vimeoid={234614700} caption={"Design mockups and spec videos created to assist development."} />
 
-          <Vimeo vimeoid={329957785} />
+          <Vimeo vimeoid={329957785} caption={"An early concept done in TiltBrush."}/>
           <Paragraph>
           My original vision of the project is best explained in above TiltBrush sketch. Picturing healthy, running services and aplications floating in the air, while databases and containers sit on the ground. All layers in the stack are connected. By monitoring the health of objects and their relationships in the system, maintainance workers can quickly diagnose the root cause and search for a solution.
           </Paragraph>

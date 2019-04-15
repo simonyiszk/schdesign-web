@@ -42,8 +42,8 @@ const Carbon = (props: Props) => (
           I was fortunate to be a part of the Design Language team before joining Carbon, specializing on defining the <Link href="https://www.carbondesignsystem.com/guidelines/motion/basics"> motion guidelines</Link>. After transition from the Design Language team to Design System team, I assisted with implementing the new guidelines throughout the elements and components that Carbon delivers. This include craft UI motion guidelines, implementing motion in Carbon components, and work with developers to create the code package that facilitates adoption.
         </Paragraph>
 
-        <Vimeo vimeoid={330279772} />
-        <Vimeo vimeoid={330274406} />
+        <Vimeo vimeoid={325231776} caption={"Introduction to Motion. Video created in partnership with external agency Buck."}/>
+        <Vimeo vimeoid={330274406} caption={"Motion in UI demo with Watson Conversation."}/>
 
         <H2>Data visualization</H2>
         <Paragraph>
