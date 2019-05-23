@@ -33,7 +33,7 @@ module.exports = {
         /* eslint-enable */
       },
     },
-    'gatsby-plugin-offline',
+    'gatsby-plugin-remove-serviceworker',
     '@rhysforyou/gatsby-plugin-react-helmet-async',
     'gatsby-plugin-sharp',
     'gatsby-plugin-styled-components',
