@@ -1,7 +1,7 @@
 import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 import { Heading, Link, Text } from 'rebass';
-import { Behance, Facebook, Instagram } from 'styled-icons/fa-brands';
+import { Behance, FacebookSquare, Instagram } from 'styled-icons/fa-brands';
 import Container from './Container';
 import IconLink from './IconLink';
 import Paragraph from './Paragraph';
@@ -29,7 +29,7 @@ const ContactSection = (props: Props) => (
           <>
             <Text my={4} fontSize="2em">
               <IconLink
-                icon={Facebook}
+                icon={FacebookSquare}
                 href={data.site.siteMetadata.siteFacebookURL}
                 title="Facebook"
               />
