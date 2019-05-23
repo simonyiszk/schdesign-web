@@ -1,11 +1,11 @@
 import React from 'react';
 import { Box } from 'rebass';
 
-type Props = {
+interface Props {
   children: React.ReactNode;
   onClick: () => void;
   [propName: string]: any; // TODO: Extend type of `Box`
-};
+}
 
 const TextLink = ({ onClick, ...props }: Props) => (
   <Box

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Box } from 'rebass';
 
-type Props = {
+interface Props {
   children: React.ReactNode;
   to: string;
   [propName: string]: any; // TODO: Extend type of `Box`
-};
+}
 
 const NavLink = ({ to, ...props }: Props) => (
   <Box

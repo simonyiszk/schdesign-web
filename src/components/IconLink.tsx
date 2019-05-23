@@ -1,13 +1,13 @@
 import React from 'react';
 import { Box } from 'rebass';
-import { StyledIcon } from 'styled-icons';
+import { StyledIcon } from 'styled-icons/types';
 
-type Props = {
+interface Props {
   icon: StyledIcon;
   href?: string;
   title?: string;
   [propName: string]: any; // TODO: Extend type of `Box`
-};
+}
 
 const IconLink = ({ icon: Icon, title, ...props }: Props) => (
   <Box

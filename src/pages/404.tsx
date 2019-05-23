@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Heading } from 'rebass';
 import Container from '../components/Container';
 import Layout from '../components/Layout';

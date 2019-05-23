@@ -2,10 +2,10 @@ import React from 'react';
 import { Box } from 'rebass';
 import { ThemeConsumer } from 'styled-components';
 
-type Props = {
+interface Props {
   children: React.ReactNode;
   [propName: string]: any; // TODO: Extend type of `Box`
-};
+}
 
 const Container = (props: Props) => (
   <ThemeConsumer>

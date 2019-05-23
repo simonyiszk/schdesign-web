@@ -2,7 +2,7 @@ import Img from 'gatsby-image';
 import React from 'react';
 import { Box, Flex, Text } from 'rebass';
 
-type Props = {
+interface Props {
   course: {
     aspectRatio: number;
     src: string;
@@ -17,7 +17,7 @@ type Props = {
       end: string;
     }[];
   };
-};
+}
 
 const Course = ({ course }: Props) => (
   <Box

@@ -5,7 +5,7 @@ import { Box, Link } from 'rebass';
 import { chunk, sum } from '../utils/array';
 import carouselFormatters from '../utils/carouselFormatters';
 
-type Props = {
+interface Props {
   images: {
     id: string;
     aspectRatio: number;
@@ -16,7 +16,7 @@ type Props = {
     caption: string;
   }[];
   itemsPerRow?: number[];
-};
+}
 
 const Gallery = ({
   images,

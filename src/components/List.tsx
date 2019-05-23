@@ -1,11 +1,11 @@
 import React from 'react';
 import { Box } from 'rebass';
 
-type Props = {
+interface Props {
   children: React.ReactNode;
   as?: 'ul' | 'ol';
   [propName: string]: any; // TODO: Extend type of `Box`
-};
+}
 
 const List = (props: Props) => <Box as="ul" {...props} />;
 

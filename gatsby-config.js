@@ -21,6 +21,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
+        /* eslint-disable @typescript-eslint/camelcase */
         name: 'Schönherz Design Stúdió',
         short_name: 'schdesign',
         start_url: '/',
@@ -29,10 +30,11 @@ module.exports = {
         display: 'standalone',
         icon: 'src/assets/favicon.png',
         legacy: true,
+        /* eslint-enable */
       },
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-react-helmet',
+    '@rhysforyou/gatsby-plugin-react-helmet-async',
     'gatsby-plugin-sharp',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-typescript',

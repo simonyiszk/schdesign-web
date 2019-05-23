@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box } from 'rebass';
 
-export type Props = {
+export interface Props {
   variant?: 'light' | 'dark';
   [propName: string]: any; // TODO: Extend type of `Box`
-};
+}
 
 const Section = ({ variant, ...props }: Props) => (
   <Box

@@ -1,6 +1,6 @@
 import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Box, Flex } from 'rebass';
 import smoothscroll from 'smoothscroll-polyfill';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
@@ -39,9 +39,9 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-type Props = {
+interface Props {
   children: React.ReactNode;
-};
+}
 
 const Layout = ({ children }: Props) => (
   <ThemeProvider theme={defaultTheme}>
