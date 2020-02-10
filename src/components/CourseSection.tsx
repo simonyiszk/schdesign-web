@@ -15,16 +15,18 @@ const CourseSection = () => {
         </Heading>
 
         <Paragraph css="font-size: 1.2rem;" mb={4}>
-          Jelentkezni{' '}
+          Jelentkezni az{' '}
           <Text
             as={Link}
-            href="mailto:balazs.frey@schdesign.hu"
+            href="https://schdesign.hu/tanfolyam"
             fontWeight="bold"
           >
-            balazs.frey@schdesign.hu
+            schdesign.hu/tanfolyam
           </Text>{' '}
-          e-mail címen tudtok. Várunk mindenkit sok szeretettel.
+          google formon tudtok. Az időpontok később kerülnek kihírdetésre.
+          Várunk mindenkit sok szeretettel.
         </Paragraph>
+        {/*
         <Box
           as="div"
           css="
@@ -75,6 +77,7 @@ const CourseSection = () => {
             }}
           />
         </Box>
+          */}
       </Container>
     </Section>
   );
