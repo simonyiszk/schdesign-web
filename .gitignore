@@ -61,3 +61,5 @@ typings/
 # gatsby cache and build output
 .cache/
 public/
+
+oldlive/
