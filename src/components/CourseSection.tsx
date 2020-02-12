@@ -23,10 +23,11 @@ const CourseSection = () => {
           >
             schdesign.hu/tanfolyam
           </Text>{' '}
-          google formon tudtok, február 14. Péntek, 23:59-ig. Az időpontok
-          később kerülnek kihírdetésre. <br /> Várunk mindenkit sok szeretettel.
+          google formon tudtok.
+          <br />
+          Várunk mindenkit sok szeretettel.
         </Paragraph>
-        {/*
+
         <Box
           as="div"
           css="
@@ -77,7 +78,6 @@ const CourseSection = () => {
             }}
           />
         </Box>
-          */}
       </Container>
     </Section>
   );
