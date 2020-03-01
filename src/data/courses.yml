@@ -24,8 +24,8 @@
       end: '19:00'
     - date: '03.04. Szerda'
       room: 'SCH103'
-      start: '20:00'
-      end: '22:00'
+      start: '18:00'
+      end: '20:00'
   image: ./courseicons/ps.png
 - name: Illustrator
   dates:
