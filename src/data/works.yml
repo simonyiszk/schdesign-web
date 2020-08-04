@@ -1,12 +1,30 @@
+- title: Magyar Jugger Szövetség plakát
+  author: Almási Nóra
+  image: ./works/jugger-plakat.webp
+- title: XII. Schönherz Meetup
+  author: Varga Ádám
+  image: ./works/meetup-2019.png
+- title: Bűvész kör kártyák
+  author: Frey Balázs Konrád
+  image: ./works/buvesz-cards.webp
+- title: Schönherz Telekom logó
+  author: Almási Nóra
+  image: ./works/schtelekom-logo.webp
+- title: Schönherz QPA Web háttér
+  author: Tóth Klaudia
+  image: ./works/qpa-2019-hatter.webp
+- title: Csendélet 3D Render
+  author: Ábrahám Zoltán
+  image: ./works/moody-render.webp
 - title: Isometric clock radio
   author: Antók Benedek Solt
-  image: ./works/isometric-clock-radio.png
+  image: ./works/isometric-clock-radio.webp
 - title: Parkett Klub redesign
   author: Antók Benedek Solt
-  image: ./works/parkett-klub-redesign.png
+  image: ./works/parkett-klub-redesign.webp
 - title: Building Elements
   author: Kovács Gergő
-  image: ./works/building-elements.jpg
+  image: ./works/building-elements.webp
 - title: Game of Thrones inspired graphics
   author: Ács Patrik
   image: ./works/game-of-thrones-inspired-graphics.png
@@ -15,4 +33,4 @@
   image: ./works/bee-eater-vector-bird-illustration.jpg
 - title: Parkett Klub 2017 tavasz
   author: Kovács Gergő
-  image: ./works/parkett-klub-2017-tavasz.jpg
+  image: ./works/parkett-klub-2017-tavasz.webp
