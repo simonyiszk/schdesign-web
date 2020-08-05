@@ -39,7 +39,7 @@ const WorksSection = (props: Props) => (
             ...node.image.childImageSharp.fluid,
             caption: `${node.title} – ${node.author}`,
           }))}
-          itemsPerRow={[2, 3]}
+          itemsPerRow={[1, 2, 3]}
         />
       )}
     />

@@ -1,7 +1,7 @@
 import { Heading, Link } from 'rebass';
 
 const theme = {
-  breakpoints: [600, 1024, 1440, 1920],
+  breakpoints: [545, 1024, 1440, 1920],
   colors: {
     red: '#f8485e',
     darkgray: '#3d3d3d',
