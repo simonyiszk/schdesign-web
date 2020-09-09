@@ -2,7 +2,7 @@
   // Reference: https://blogs.msdn.microsoft.com/typescript/2018/08/27/typescript-and-babel-7/
   "compilerOptions": {
     "strict": true,
-    "target": "esnext",
+    "target": "ESNext",
     "moduleResolution": "node",
     "jsx": "react",
     "allowJs": true,

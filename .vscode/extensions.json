@@ -3,8 +3,10 @@
     "dbaeumer.vscode-eslint",
     "EditorConfig.EditorConfig",
     "esbenp.prettier-vscode",
-    "jpoissonnier.vscode-styled-components",
-    "prisma.vscode-graphql",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "CoenraadS.bracket-pair-colorizer-2",
+    "saionaro.smart-css-autocomplete",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "bradlc.vscode-tailwindcss"
   ]
 }
