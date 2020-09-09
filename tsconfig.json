@@ -1,15 +1,21 @@
 {
-  // Reference: https://blogs.msdn.microsoft.com/typescript/2018/08/27/typescript-and-babel-7/
   "compilerOptions": {
-    "strict": true,
-    "noEmit": true,
-    "target": "ESNext",
-    "moduleResolution": "node",
-    "jsx": "react",
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "isolatedModules": true
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": "./src/",
+    "importsNotUsedAsValues": "error"
   },
-  "include": ["src/**/*", "./postcss.config.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "*.config.js"],
   "exclude": ["node_modules"]
 }

@@ -1,6 +1,8 @@
 {
   "root": true,
   "extends": [
+    "airbnb/hooks",
+    "airbnb-typescript",
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -9,9 +11,6 @@
     "plugin:import/typescript",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "airbnb",
-    "airbnb/hooks",
-    "airbnb-typescript",
     "plugin:prettier/recommended",
     "prettier",
     "prettier/react",
@@ -31,6 +30,7 @@
     "import/order": "off",
     "import/no-unresolved": "error",
     "jsx-a11y/href-no-hash": ["off"],
+    "jsx-a11y/anchor-is-valid": "warn",
     "@typescript-eslint/no-unused-vars": "warn",
     "react/jsx-filename-extension": [
       "off",
@@ -65,5 +65,11 @@
         "project": "./" // use <root>/path/to/folder/tsconfig.json
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "rules": { "@typescript-eslint/no-var-requires": "off" }
+    }
+  ]
 }

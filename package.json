@@ -2,6 +2,11 @@
   "name": "schdesign-web",
   "version": "1.0.0",
   "description": "Website of schdesign",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/simonyiszk/schdesign-web.git"
@@ -13,9 +18,13 @@
   "homepage": "https://schdesign.hu",
   "dependencies": {
     "@types/react": "^16.9.49",
-    "autoprefixer": "^9.8.6",
+    "babel-plugin-optimize-clsx": "^2.6.1",
+    "clsx": "^1.1.1",
+    "css-homogenizer": "^1.1.0",
+    "modern-normalize": "^1.0.0",
     "next": "^9.5.3",
     "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.7.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "tailwindcss": "^1.8.6",
@@ -26,7 +35,6 @@
     "@typescript-eslint/eslint-plugin": "^4.1.0",
     "@typescript-eslint/parser": "^4.1.0",
     "eslint": "^7.8.1",
-    "eslint-config-airbnb": "^18.2.0",
     "eslint-config-airbnb-typescript": "^10.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-import-resolver-typescript": "^2.3.0",
@@ -38,6 +46,7 @@
     "eslint-plugin-simple-import-sort": "^5.0.3",
     "husky": "^4.3.0",
     "lint-staged": "^10.3.0",
-    "prettier": "^2.1.1"
+    "prettier": "^2.1.1",
+    "prettier-plugin-tailwind-css": "^1.4.0"
   }
 }

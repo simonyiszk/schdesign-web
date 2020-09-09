@@ -15,5 +15,7 @@
   ],
 
   // Use workspace version of TypeScript instead of the one built-in
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+
+  "css.validate": false
 }
