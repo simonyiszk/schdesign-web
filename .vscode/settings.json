@@ -1,6 +1,10 @@
 {
   // Enable automatic file formatting and fixing
   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
 
   // Use ESLint for TypeScript code
   "eslint.validate": [

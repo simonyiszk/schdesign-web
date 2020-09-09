@@ -1,21 +1,69 @@
 {
   "root": true,
-  "plugins": ["react-hooks"],
   "extends": [
-    "airbnb",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
     "plugin:import/typescript",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript",
     "plugin:prettier/recommended",
-    "prettier/@typescript-eslint",
-    "prettier/react"
+    "prettier",
+    "prettier/react",
+    "prettier/@typescript-eslint"
   ],
   "env": {
     "browser": true
   },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+
   "rules": {
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }]
+    "prettier/prettier": "error",
+    "sort-imports": "off",
+    "import/order": "off",
+    "import/no-unresolved": "error",
+    "jsx-a11y/href-no-hash": ["off"],
+    "@typescript-eslint/no-unused-vars": "warn",
+    "react/jsx-filename-extension": [
+      "off",
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "max-len": [
+      "warn",
+      {
+        "tabWidth": 2,
+        "comments": 100,
+        "ignoreUrls": true
+      }
+    ],
+    "simple-import-sort/sort": "error",
+
+    // Using a type system makes it safe enough to spread props
+    "react/jsx-props-no-spreading": "off",
+
+    //temp fix
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/naming-convention": "off"
+  },
+  "plugins": ["simple-import-sort", "@typescript-eslint", "import"],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      // use <root>/tsconfig.json
+      "typescript": {
+        "alwaysTryTypes": true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+        "project": "./" // use <root>/path/to/folder/tsconfig.json
+      }
+    }
   }
 }
