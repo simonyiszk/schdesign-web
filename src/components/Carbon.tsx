@@ -16,7 +16,7 @@ const Carbon = (props: Props) => (
     <Flex flexWrap="wrap" mt={4}>
       <Box width={[ 1, 2/5 ]} >
         <Heading id="carbon" py={2}>
-          IBM Design System
+          Carbon Design System
         </Heading>
 
         <List width={[ .95, .75 ]}>
@@ -33,9 +33,9 @@ const Carbon = (props: Props) => (
 
       <Box width={[ 1, 3/5 ]} >
         <Paragraph>
-          IBM Design System, also known as Carbon, is the open source design system for digital products and experiences. On April 2, Carbon V10 is released, a complete redesign of all elements and components with the new<Link href="https://www.ibm.com/design/language"> IBM Design Language</Link> as its foundation. The system consists of working code, design tools and resources, human interface guidelines, and a vibrant community of contributors.
+          Carbon Design System is an open source design system for all IBM digital products and experiences. On April 2, Carbon V10 is released, a complete redesign of all elements and components with the new<Link href="https://www.ibm.com/design/language"> IBM Design Language</Link> as its foundation. The system consists of working code, design tools and resources, human interface guidelines, and a vibrant community of contributors.
         </Paragraph>
-        <H2><Link href="https://www.carbondesignsystem.com">↳ Go to: IBM Design System (Carbon)</Link></H2>
+        <H2><Link href="https://www.carbondesignsystem.com">↳ Go to: Carbon Design System</Link></H2>
 
         <H2>Motion design</H2>
         <Paragraph>
