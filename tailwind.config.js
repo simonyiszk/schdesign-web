@@ -1,51 +1,54 @@
-const plugin = require('tailwindcss/plugin');
-
-function half(value) {
-  return value.replace(/\d+(.\d+)?/, (number) => number / 2);
-}
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
+const aspectRatio = require("@tailwindcss/aspect-ratio");
 
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  purge: ['./src/**/*.{js,ts,tsx}'],
-  corePlugins: {
-    animation: false,
-    preflight: false,
-  },
-  plugins: [
-    plugin(({ addUtilities, e, theme, variants }) => {
-      /* TODO: Remove 'flex-gap' polyfills once supported natively with 'gap' */
-      Object.entries(theme('gap')).forEach(([key, value]) => {
-        addUtilities(
-          {
-            [`.flex-gap-${e(key)}`]: {
-              margin: `-${half(value)}`,
-              '& > *': {
-                margin: half(value),
-              },
-            },
-            [`.flex-gap-x-${e(key)}`]: {
-              marginRight: `-${half(value)}`,
-              marginLeft: `-${half(value)}`,
-              '& > *': {
-                marginRight: half(value),
-                marginLeft: half(value),
-              },
-            },
-            [`.flex-gap-y-${e(key)}`]: {
-              marginTop: `-${half(value)}`,
-              marginBottom: `-${half(value)}`,
-              '& > *': {
-                marginTop: half(value),
-                marginBottom: half(value),
-              },
-            },
-          },
-          variants('gap'),
-        );
-      });
-    }),
-  ],
+	mode: "jit",
+	purge: ["./src/**/*.{js,ts,tsx,scss,mdx}"],
+	theme: {
+		colors,
+		extend: {
+			transitionTimingFunction: {
+				DEFAULT: defaultTheme.transitionTimingFunction.out,
+			},
+			colors: {
+				banner: {
+					DEFAULT: "#1b1f44",
+					dark: "#12142b",
+				},
+				button: {
+					DEFAULT: "#ffb80e",
+				},
+			},
+			fontFamily: {
+				NeueHGD: [
+					"NeueHaasGroteskDisp",
+					"ui-sans-serif",
+					"system-ui",
+					"-apple-system",
+					'"Segoe UI"',
+					"Roboto",
+				],
+				NeueHGT: [
+					"NeueHaasGroteskText",
+					"ui-sans-serif",
+					"system-ui",
+					"-apple-system",
+					'"Segoe UI"',
+					"Roboto",
+				],
+			},
+		},
+	},
+	variants: {
+		extend: {
+			placeholderOpacity: ["dark"],
+			ringWidth: ["focus-visible"],
+			transitionProperty: ["motion-reduce"],
+		},
+	},
+	corePlugins: {
+		// animation: false,
+	},
+	plugins: [aspectRatio],
 };

@@ -3,5 +3,6 @@ module.exports = {
     'postcss-import': {},
     tailwindcss: {},
     'postcss-preset-env': {},
+    autoprefixer: {},
   },
 };
