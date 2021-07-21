@@ -4,7 +4,7 @@ const aspectRatio = require("@tailwindcss/aspect-ratio");
 
 module.exports = {
 	mode: "jit",
-	purge: ["./src/**/*.{js,ts,tsx,scss,mdx}"],
+	purge: ["./src/**/*.{js,ts,tsx,css,scss,mdx}"],
 	theme: {
 		colors,
 		extend: {
@@ -12,40 +12,37 @@ module.exports = {
 				DEFAULT: defaultTheme.transitionTimingFunction.out,
 			},
 			colors: {
-				banner: {
-					DEFAULT: "#1b1f44",
-					dark: "#12142b",
-				},
-				button: {
-					DEFAULT: "#ffb80e",
+				primary: {
+					DEFAULT: "#F8485E",
 				},
 			},
 			fontFamily: {
-				NeueHGD: [
-					"NeueHaasGroteskDisp",
+				schdesign: "schdesign",
+				RobotoMono: [
+					"Roboto Mono",
 					"ui-sans-serif",
 					"system-ui",
 					"-apple-system",
 					'"Segoe UI"',
 					"Roboto",
 				],
-				NeueHGT: [
-					"NeueHaasGroteskText",
+				Montserrat: [
+					"Montserrat",
 					"ui-sans-serif",
 					"system-ui",
 					"-apple-system",
 					'"Segoe UI"',
 					"Roboto",
 				],
+			},
+			boxShadow: {
+				darker:
+					"0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15)",
 			},
 		},
 	},
 	variants: {
-		extend: {
-			placeholderOpacity: ["dark"],
-			ringWidth: ["focus-visible"],
-			transitionProperty: ["motion-reduce"],
-		},
+		extend: {},
 	},
 	corePlugins: {
 		// animation: false,

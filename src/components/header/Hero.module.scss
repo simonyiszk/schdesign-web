@@ -1,0 +1,56 @@
+.textHero {
+	font-size: 44rem;
+	mix-blend-mode: lighten;
+	background: #000;
+	color: #fff;
+
+	line-height: 1;
+
+	margin-bottom: -156px;
+	margin-top: -1px;
+
+	@screen sm {
+		font-size: 28rem;
+		margin-bottom: -70px;
+	}
+
+	@screen xl {
+		font-size: 32rem;
+		margin-bottom: 0;
+	}
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		max-height: 120% !important;
+		height: 120% !important;
+
+		background-image: url("@/assets/images/hero.jpg");
+		background-image: -webkit-image-set(
+			url("@/assets/images/hero.jpg") 0.25x,
+			url("@/assets/images/hero.webp") 0.5x,
+			url("@/assets/images/hero.png") 1x
+		);
+		background-image: -moz-image-set(
+			url("@/assets/images/hero.jpg") 0.25x,
+			url("@/assets/images/hero.webp") 0.5x,
+			url("@/assets/images/hero.png") 1x
+		);
+		background-image: image-set(
+			url("@/assets/images/hero.jpg") 0.25x,
+			url("@/assets/images/hero.webp") 0.5x,
+			url("@/assets/images/hero.png") 1x
+		);
+		background-repeat: repeat;
+		background-size: cover;
+		background-position: center 70%;
+		pointer-events: none;
+		mix-blend-mode: multiply;
+	}
+}

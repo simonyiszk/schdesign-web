@@ -1,0 +1,9 @@
+{
+	"links": [
+		{ "href": "/rolunk", "label": "Rólunk" },
+		{ "href": "/munkaink", "label": "Munkáink" },
+		{ "href": "/csapatunk", "label": "Csapatunk" },
+		{ "href": "https://logotar.schdesign.hu", "label": "Logótár" },
+		{ "href": "https://roadmap.schdesign.hu", "label": "Roadmap" }
+	]
+}

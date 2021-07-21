@@ -1,12 +1,11 @@
 {
-  "recommendations": [
-    "dbaeumer.vscode-eslint",
-    "EditorConfig.EditorConfig",
-    "esbenp.prettier-vscode",
-    "stylelint.vscode-stylelint",
-    "CoenraadS.bracket-pair-colorizer-2",
-    "saionaro.smart-css-autocomplete",
-    "VisualStudioExptTeam.vscodeintellicode",
-    "bradlc.vscode-tailwindcss"
-  ]
+	"recommendations": [
+		"bradlc.vscode-tailwindcss",
+		"csstools.postcss",
+		"dbaeumer.vscode-eslint",
+		"EditorConfig.EditorConfig",
+		"esbenp.prettier-vscode",
+		"stylelint.vscode-stylelint"
+	],
+	"unwantedRecommendations": ["zignd.html-css-class-completion"]
 }

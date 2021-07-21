@@ -1,76 +1,74 @@
 {
-  "root": true,
-  "extends": [
-    "react-app",
-    "airbnb/hooks",
-    "airbnb-typescript",
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:import/typescript",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:prettier/recommended",
-    "prettier",
-    "prettier/react",
-    "prettier/@typescript-eslint"
-  ],
-  "env": {
-    "browser": true
-  },
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  },
+	"root": true,
+	"env": {
+		"browser": true
+	},
+	"parserOptions": {
+		"project": "./tsconfig.json"
+	},
+	"extends": [
+		"airbnb-typescript",
+		"airbnb/hooks",
+		"react-app",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:eslint-comments/recommended",
+		"plugin:etc/recommended",
+		"plugin:react-etc/recommended",
+		"prettier",
+		"prettier/prettier"
+	],
+	"plugins": ["simple-import-sort"],
+	"rules": {
+		/* Auto-sort imports and exports */
+		"sort-imports": "off",
+		"import/order": "off",
+		"simple-import-sort/imports": "error",
+		"simple-import-sort/exports": "error",
 
-  "rules": {
-    "prettier/prettier": "error",
-    "sort-imports": "off",
-    "import/order": "off",
-    "import/no-unresolved": "error",
-    "jsx-a11y/href-no-hash": ["off"],
-    "jsx-a11y/anchor-is-valid": "warn",
-    "@typescript-eslint/no-unused-vars": "warn",
-    "react/jsx-filename-extension": [
-      "off",
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
-    ],
-    "max-len": [
-      "warn",
-      {
-        "tabWidth": 2,
-        "comments": 100,
-        "ignoreUrls": true
-      }
-    ],
-    "simple-import-sort/sort": "error",
+		/* Custom preferences */
+		"@typescript-eslint/array-type": "error",
+		"@typescript-eslint/consistent-indexed-object-style": [
+			"error",
+			"index-signature" // Prevent ambiguity with Records & Tuples
+		],
+		"@typescript-eslint/consistent-type-assertions": "error",
+		"@typescript-eslint/explicit-module-boundary-types": "off", // Reduce bloat
+		"@typescript-eslint/method-signature-style": "error", // Force type safety
+		"@typescript-eslint/no-invalid-void-type": "error", // Force type safety
+		"@typescript-eslint/prefer-ts-expect-error": "error", // Force type safety
+		"import/no-anonymous-default-export": "error", // For named React components
+		"import/no-default-export": "error", // Default exports are confusing
+		"import/prefer-default-export": "off",
+		"jsx-a11y/anchor-is-valid": "off", // Doesn't play well with Next `<Link>`
+		"prefer-exponentiation-operator": "error", // Auto-fix for an inherited rule
+		// "react/react-in-jsx-scope": "off", // React is always in scope with Next
+		"react/require-default-props": "off", // React `defaultProps` are deprecated
 
-    // Using a type system makes it safe enough to spread props
-    "react/jsx-props-no-spreading": "off",
+		"react/jsx-no-target-blank": "off", // Links on the site should be safe
+		"no-plusplus": "off"
+	},
 
-    //temp fix
-    "@typescript-eslint/camelcase": "off",
-    "@typescript-eslint/naming-convention": "off"
-  },
-  "plugins": ["simple-import-sort", "@typescript-eslint", "import"],
-  "settings": {
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
-    },
-    "import/resolver": {
-      // use <root>/tsconfig.json
-      "typescript": {
-        "alwaysTryTypes": true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
-        "project": "./" // use <root>/path/to/folder/tsconfig.json
-      }
-    }
-  },
-  "overrides": [
-    {
-      "files": ["*.js"],
-      "rules": { "@typescript-eslint/no-var-requires": "off" }
-    }
-  ]
+	"overrides": [
+		{
+			"files": ["*.js"],
+			"rules": {
+				"@typescript-eslint/no-var-requires": "off", // Allow CommonJS imports
+				"global-require": "off" // Allow dynamic imports for Node
+			}
+		},
+		{
+			"files": ["*.tsx"],
+			"rules": {
+				"@typescript-eslint/consistent-type-definitions": ["error", "type"],
+				"react/jsx-props-no-spreading": "off" // TypeScript makes this safe
+			}
+		},
+		{
+			"files": ["./src/pages/**"],
+			"rules": {
+				"import/no-default-export": "off",
+				"import/prefer-default-export": "error"
+			}
+		}
+	]
 }

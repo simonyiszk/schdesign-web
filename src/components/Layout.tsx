@@ -1,17 +1,19 @@
-import type { AppProps } from 'next/app';
-import React, { Children } from 'react';
+import React from "react";
 
-import Nav from './placeholder/PlaceholderNav';
+import { Navbar } from "@/components/header/Navbar";
 
-export default function Layout({
-  children,
+import { Footer } from "./footer/Footer";
+
+export function Layout({
+	children,
 }: {
-  children: JSX.Element;
+	children: React.ReactNode;
 }): JSX.Element {
-  return (
-    <>
-      <Nav />
-      <main>{children}</main>
-    </>
-  );
+	return (
+		<>
+			<Navbar />
+			<main>{children}</main>
+			<Footer />
+		</>
+	);
 }
