@@ -2,14 +2,14 @@ import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import React from "react";
 
-import { ParagraphLink } from "./ParagraphLink";
+import { PLink, PP } from "./ParagraphComponents";
 
 export type ParagraphProps = {
 	title: string;
 	children: string;
 };
 
-const components = { a: ParagraphLink };
+const components = { a: PLink, p: PP };
 
 export function Paragraph({ title, children }: ParagraphProps) {
 	return (
