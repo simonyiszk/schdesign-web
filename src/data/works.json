@@ -1,0 +1,102 @@
+[
+	{
+		"title": "SCH Discord plakát",
+		"author": "Bajkai Boglárka",
+		"image": { "src": "sch-discord-plakat.png" }
+	},
+	{
+		"title": "BME E épület lowpoly modellje",
+		"author": "Varga Levente",
+		"image": { "src": "bme-e-lowpoly.png" }
+	},
+	{
+		"title": "Maszk plakát",
+		"author": "Hegedűs András",
+		"image": { "src": "maszk-plakat.png" }
+	},
+	{
+		"title": "Sci-fi pálya 3D modell",
+		"author": "Bódog Julianna és Ábrahám Zoltán",
+		"image": { "src": "scifi-map.png" }
+	},
+	{
+		"title": "Tanulósch plakát",
+		"author": "Gergály Anna",
+		"image": { "src": "tanulosch-plakat.png" }
+	},
+	{
+		"title": "Vegyészkör logó",
+		"author": "Marton Balázs",
+		"image": { "src": "vegyeszkor-logo.png" }
+	},
+	{
+		"title": "Magyar Jugger Szövetség plakát",
+		"author": "Almási Nóra",
+		"image": { "src": "jugger-plakat.png" }
+	},
+	{
+		"title": "XII. Schönherz Meetup",
+		"author": "Varga Ádám",
+		"image": { "src": "meetup-2019.png" }
+	},
+	{
+		"title": "Bűvész kör kártyák",
+		"author": "Bajmóczy Eszter",
+		"image": { "src": "buvesz-cards.png" }
+	},
+	{
+		"title": "Schönherz QPA Web háttér",
+		"author": "Tóth Klaudia",
+		"image": { "src": "qpa-2019-hatter.png" }
+	},
+	{
+		"title": "Schönherz Telekom logó",
+		"author": "Almási Nóra",
+		"image": { "src": "schtelekom-logo.png" }
+	},
+	{
+		"title": "Csendélet 3D Render",
+		"author": "Ábrahám Zoltán",
+		"image": { "src": "moody-render.png" }
+	},
+	{
+		"title": "Isometric clock radio",
+		"author": "Antók Benedek Solt",
+		"image": {
+			"src": "isometric-clock-radio.png"
+		}
+	},
+	{
+		"title": "Parkett Klub redesign",
+		"author": "Antók Benedek Solt",
+		"image": {
+			"src": "parkett-klub-redesign.png"
+		}
+	},
+	{
+		"title": "Building Elements",
+		"author": "Kovács Gergő",
+		"image": { "src": "building-elements.png" }
+	},
+	{
+		"title": "Game of Thrones inspired graphics",
+		"author": "Ács Patrik",
+		"image": {
+			"src": "game-of-thrones-inspired-graphics.png"
+		}
+	},
+	{
+		"title": "Bee eater vector bird illustration",
+		"author": "Takács Anna",
+		"image": {
+			"src": "bee-eater-vector-bird-illustration.jpg"
+		}
+	},
+	{
+		"title": "Parkett Klub 2017 tavasz",
+		"author": "Kovács Gergő",
+		"image": {
+			"src": "parkett-klub-2017-tavasz.png"
+		}
+	}
+]

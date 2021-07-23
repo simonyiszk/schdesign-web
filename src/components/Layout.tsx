@@ -12,7 +12,9 @@ export function Layout({
 	return (
 		<>
 			<Navbar />
+
 			<main>{children}</main>
+
 			<Footer />
 		</>
 	);

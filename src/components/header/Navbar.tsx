@@ -14,10 +14,11 @@ export function Navbar() {
 		>
 			<div className="flex flex-wrap items-center justify-between mx-auto p-4 w-full lg:p-8">
 				<div className="relative flex justify-between w-full lg:static lg:block lg:justify-start lg:w-auto">
-					<Link to="/">
-						<a className="no-underline font-schdesign text-4xl lg:text-7xl">
-							sch<span className="text-primary">design</span>
-						</a>
+					<Link
+						to="/"
+						className="no-underline font-schdesign text-4xl lg:text-7xl"
+					>
+						sch<span className="text-primary">design</span>
 					</Link>
 					<button
 						className="bg-transparent border-transparent block px-3 py-2 text-xl leading-none border border-solid rounded outline-none focus:outline-none cursor-pointer lg:hidden"

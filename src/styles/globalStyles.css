@@ -4,13 +4,25 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-	@apply font-Montserrat;
-}
+@layer utilities {
+	.text-shadow-2 {
+		text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+	}
 
-code {
-	@apply font-RobotoMono;
+	.bg-blur-5 {
+		background-color: rgba(255, 255, 255, 0.66);
+	}
+
+	@supports (
+		(-webkit-backdrop-filter: blur(5px)) or (backdrop-filter: blur(5px))
+	) {
+		.bg-blur-5 {
+			opacity: 0.99;
+			background-color: rgba(255, 255, 255, 0);
+			-webkit-backdrop-filter: blur(5px);
+			backdrop-filter: blur(5px);
+		}
+	}
 }
 
 @layer components {
@@ -26,24 +38,16 @@ body {
 	@apply background-figures;
 }
 
-.team-header-bg {
-	background-image: url("@/assets/images/hero.jpg");
-	background-image: -webkit-image-set(
-		url("@/assets/images/hero.jpg") 0.25x,
-		url("@/assets/images/hero.webp") 0.5x,
-		url("@/assets/images/hero.png") 1x
-	);
-	background-image: -moz-image-set(
-		url("@/assets/images/hero.jpg") 0.25x,
-		url("@/assets/images/hero.webp") 0.5x,
-		url("@/assets/images/hero.png") 1x
-	);
-	background-image: image-set(
-		url("@/assets/images/hero.jpg") 0.25x,
-		url("@/assets/images/hero.webp") 0.5x,
-		url("@/assets/images/hero.png") 1x
-	);
-	background-repeat: repeat;
-	background-size: cover;
-	background-position: center 70%;
+html,
+body {
+	@apply font-Montserrat;
+}
+
+code {
+	@apply font-RobotoMono;
+}
+
+.react-images__view-image {
+	max-height: 100vh !important;
+	@apply mx-auto;
 }

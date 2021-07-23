@@ -3,7 +3,7 @@
 		"target": "esnext",
 		"module": "esnext",
 		"lib": ["dom", "es2017"],
-		"jsx": "react",
+		"jsx": "preserve",
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
 		"noEmit": true,
