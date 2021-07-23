@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { FaFacebookSquare, FaInstagram } from "react-icons/fa";
@@ -6,9 +7,13 @@ import schsvg from "@/assets/images/sch.svg";
 import simonyisvg from "@/assets/images/simonyi_color.svg";
 import viksvg from "@/assets/images/vik.svg";
 
+import * as styles from "./Footer.module.scss";
+
 export function Footer() {
 	return (
-		<footer className="p-8 w-full text-white bg-blueGray-900" id="footer">
+		<footer
+			className={clsx(styles.footer, "p-8 w-full text-white bg-blueGray-900")}
+		>
 			<div className="container flex flex-col content-center justify-center mx-auto text-center">
 				<h3 className="mb-4 mt-4 font-RobotoMono text-2xl">kapcsolat</h3>
 				<p className="mb-4 text-xl">
@@ -16,7 +21,7 @@ export function Footer() {
 					Küldj egy e-mailt a{" "}
 					<a
 						href="mailto:hello@schdesign.hu"
-						className="text-pink hover:opacity-75"
+						className="text-primary hover:underline"
 					>
 						hello@schdesign.hu
 					</a>{" "}
@@ -24,16 +29,16 @@ export function Footer() {
 				</p>
 				<div className="flex justify-evenly mx-auto pb-4 w-full lg:w-1/3">
 					<a href="https://www.instagram.com/schdesign.hu/">
-						<FaInstagram className="w-10 h-auto" />
+						<FaInstagram className="w-10 h-auto hover:text-primary" />
 					</a>
 					<a href="https://www.facebook.com/schonherzdesignstudio/">
-						<FaFacebookSquare className="w-10 h-auto" />
+						<FaFacebookSquare className="w-10 h-auto hover:text-primary" />
 					</a>
 				</div>
 				<div className="flex flex-col items-center justify-evenly mx-auto pb-4 md:flex-row md:w-2/3">
 					<a href="https://sch.bme.hu" target="_blank" rel="noreferrer">
 						<img
-							className="pb-4 w-40 md:pb-0 md:h-24"
+							className="pb-4 w-40 hover:text-primary md:pb-0 md:h-24"
 							src={schsvg}
 							alt="Schönherz Zoltán Kollégium logó"
 						/>
@@ -53,7 +58,9 @@ export function Footer() {
 						/>
 					</a>
 				</div>
-				<p className="text-gray-400 text-xs">© schdesign 2021</p>
+				<p className="text-gray-400 text-xs">
+					© schdesign {new Date().getFullYear()}
+				</p>
 			</div>
 		</footer>
 	);

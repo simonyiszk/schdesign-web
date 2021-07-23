@@ -877,6 +877,7 @@ type ContentfulParagraph = ContentfulReference & ContentfulEntry & Node & {
   readonly id: Scalars['ID'];
   readonly node_locale: Scalars['String'];
   readonly title: Maybe<Scalars['String']>;
+  readonly order: Maybe<Scalars['Int']>;
   readonly content: Maybe<contentfulParagraphContentTextNode>;
   readonly spaceId: Maybe<Scalars['String']>;
   readonly createdAt: Maybe<Scalars['Date']>;
@@ -1389,6 +1390,7 @@ type Query_contentfulParagraphArgs = {
   id: Maybe<StringQueryOperatorInput>;
   node_locale: Maybe<StringQueryOperatorInput>;
   title: Maybe<StringQueryOperatorInput>;
+  order: Maybe<IntQueryOperatorInput>;
   content: Maybe<contentfulParagraphContentTextNodeFilterInput>;
   spaceId: Maybe<StringQueryOperatorInput>;
   createdAt: Maybe<DateQueryOperatorInput>;
@@ -4093,6 +4095,7 @@ type ContentfulParagraphFieldsEnum =
   | 'id'
   | 'node_locale'
   | 'title'
+  | 'order'
   | 'content.id'
   | 'content.parent.id'
   | 'content.parent.parent.id'
@@ -4505,6 +4508,7 @@ type ContentfulParagraphFilterInput = {
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly node_locale: Maybe<StringQueryOperatorInput>;
   readonly title: Maybe<StringQueryOperatorInput>;
+  readonly order: Maybe<IntQueryOperatorInput>;
   readonly content: Maybe<contentfulParagraphContentTextNodeFilterInput>;
   readonly spaceId: Maybe<StringQueryOperatorInput>;
   readonly createdAt: Maybe<DateQueryOperatorInput>;
@@ -5329,6 +5333,14 @@ type IndexQueryQuery = { readonly contentfulParagraph: Maybe<(
           Pick<ContentfulAsset, 'updatedAt' | 'gatsbyImageData'>
           & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url' | 'fileName' | 'contentType'>> }
         )> }
+      ) }> } };
+
+type AboutQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type AboutQueryQuery = { readonly allContentfulParagraph: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<ContentfulParagraph, 'title' | 'order'>
+        & { readonly content: Maybe<{ readonly childMdx: Maybe<Pick<Mdx, 'body'>> }> }
       ) }> } };
 
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;

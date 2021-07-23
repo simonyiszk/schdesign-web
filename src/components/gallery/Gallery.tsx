@@ -54,7 +54,6 @@ export function Gallery({ works }: GalleryProps) {
 						<Modal onClose={closeModal}>
 							<Carousel
 								views={works.map(({ author, title, image }) => ({
-									// eslint-disable-next-line global-require, import/no-dynamic-require
 									source: image?.file?.url ?? "",
 									caption: `${title} - ${author}`,
 									alt: title ?? "",

@@ -50,7 +50,7 @@ export function ImageDisplay({
 					/>
 				)}
 
-				<figcaption className="p-4 bg-gray-900 rounded-b-lg shadow-darker">
+				<figcaption className="p-4 bg-blueGray-900 rounded-b-lg shadow-darker">
 					<h4 className="pb-3 text-white text-lg">{title}</h4>
 					<h5 className="text-gray-400 text-sm">{author}</h5>
 				</figcaption>

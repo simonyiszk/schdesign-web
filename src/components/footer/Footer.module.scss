@@ -1,0 +1,7 @@
+.footer {
+	img:hover {
+		/* This is the closest I could get it to pink :D */
+		filter: invert(0.5) sepia(1) hue-rotate(308deg) saturate(4) brightness(0.9)
+			contrast(2);
+	}
+}

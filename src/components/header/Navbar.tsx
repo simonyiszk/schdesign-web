@@ -37,17 +37,30 @@ export function Navbar() {
 					<ul className="flex flex-col w-full font-RobotoMono list-none lowercase lg:flex-row lg:ml-auto lg:w-auto">
 						{navbarContent.links.map(({ href, label }, i) => (
 							<li key={`${href}`} className="pl-2 py-1 w-full lg:pl-0">
-								<Link
-									to={href}
-									className={clsx(
-										"hover:text-pink inline-block py-2 w-full text-xl font-medium lg:px-5 xl:text-2xl",
-										i === 0 && "lg:pl-0",
-										i === navbarContent.links.length - 1 && "lg:pr-0",
-									)}
-									target={href.includes("http") ? "_blank" : ""}
-								>
-									{label}
-								</Link>
+								{href.startsWith("/") ? (
+									<Link
+										to={href}
+										className={clsx(
+											"inline-block py-2 w-full hover:text-primary text-xl font-medium lg:px-5 xl:text-2xl",
+											i === 0 && "lg:pl-0",
+											i === navbarContent.links.length - 1 && "lg:pr-0",
+										)}
+									>
+										{label}
+									</Link>
+								) : (
+									<a
+										href={href}
+										className={clsx(
+											"inline-block py-2 w-full hover:text-primary text-xl font-medium lg:px-5 xl:text-2xl",
+											i === 0 && "lg:pl-0",
+											i === navbarContent.links.length - 1 && "lg:pr-0",
+										)}
+										target="_blank"
+									>
+										{label}
+									</a>
+								)}
 							</li>
 						))}
 					</ul>
