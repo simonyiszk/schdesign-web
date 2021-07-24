@@ -5,7 +5,7 @@ import { Gallery } from "@/components/gallery/Gallery";
 import { Hero } from "@/components/header/Hero";
 import { Layout } from "@/components/Layout";
 import { Paragraph } from "@/components/paragraph/Paragraph";
-import { SEO } from "@/components/SEO";
+import { Seo } from "@/components/Seo";
 import { Separator } from "@/components/separator/Separator";
 
 export default function IndexPage({
@@ -15,7 +15,7 @@ export default function IndexPage({
 }): JSX.Element {
 	return (
 		<Layout>
-			<SEO title="😎" />
+			<Seo title="😎" />
 			<Hero />
 			<Separator>Rólunk</Separator>
 			<section className="container flex flex-col mt-4 mx-auto p-4 px-4">

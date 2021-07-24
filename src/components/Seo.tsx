@@ -9,14 +9,14 @@ import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
 import { Helmet } from "react-helmet";
 
-export type SEOProps = {
+export type SeoProps = {
 	description?: string;
 	lang?: string;
 	title: string;
 	meta?: { name: string; content: string }[];
 };
 
-export function SEO({ description, lang = "hu", meta = [], title }: SEOProps) {
+export function Seo({ description, lang = "hu", meta = [], title }: SeoProps) {
 	const { site }: GatsbyTypes.Query = useStaticQuery(
 		graphql`
 			query {

@@ -5775,4 +5775,9 @@ type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
+type eProjectsProgrammingwebschdesignWebsrccomponentsSeoTsx63159454QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type eProjectsProgrammingwebschdesignWebsrccomponentsSeoTsx63159454Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }> };
+
 }
