@@ -5,9 +5,11 @@ dotenv.config({ path: "./.env.local" });
 module.exports = {
 	siteMetadata: {
 		title: `schdesign`,
-		description: `schdesign`,
+		description: `Az schdesign a Simonyi Károly Szakkollégium kreatív alkotóműhelye.`,
 		author: `@schdesign`,
-		siteUrl: `https://schdesign.hu/`,
+		siteUrl: `https://schdesign.hu`,
+		image: `/preview.png`,
+		favicon: `/favicon.png`,
 	},
 	plugins: [
 		{
@@ -41,8 +43,8 @@ module.exports = {
 				name: `schdesign`,
 				short_name: `schdesign`,
 				start_url: `/`,
-				background_color: `#663399`,
-				theme_color: `#663399`,
+				background_color: `#0F172A`,
+				theme_color: `#F8485E`,
 				display: `minimal-ui`,
 				icon: `src/assets/images/favicon.png`, // This path is relative to the root of the site.
 			},

@@ -22,9 +22,12 @@ export function Seo({ description, lang = "hu", meta = [], title }: SeoProps) {
 			query {
 				site {
 					siteMetadata {
+						siteUrl
 						title
 						description
 						author
+						image
+						favicon
 					}
 				}
 			}
@@ -61,7 +64,7 @@ export function Seo({ description, lang = "hu", meta = [], title }: SeoProps) {
 				},
 				{
 					name: `twitter:card`,
-					content: `summary`,
+					content: `summary_large_image`,
 				},
 				{
 					name: `twitter:creator`,
@@ -74,6 +77,18 @@ export function Seo({ description, lang = "hu", meta = [], title }: SeoProps) {
 				{
 					name: `twitter:description`,
 					content: metaDescription,
+				},
+				{
+					name: `twitter:image`,
+					content: `${site?.siteMetadata?.siteUrl}${site?.siteMetadata?.image}`,
+				},
+				{
+					name: `og:image`,
+					content: `${site?.siteMetadata?.siteUrl}${site?.siteMetadata?.image}`,
+				},
+				{
+					name: `thumbnail`,
+					content: `${site?.siteMetadata?.siteUrl}${site?.siteMetadata?.image}`,
 				},
 			].concat(meta)}
 		/>

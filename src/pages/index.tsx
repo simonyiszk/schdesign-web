@@ -15,7 +15,7 @@ export default function IndexPage({
 }): JSX.Element {
 	return (
 		<Layout>
-			<Seo title="😎" />
+			<Seo title="😺" />
 			<Hero />
 			<Separator>Rólunk</Separator>
 			<section className="container flex flex-col mt-4 mx-auto p-4 px-4">
