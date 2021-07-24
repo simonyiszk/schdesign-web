@@ -1,9 +1,9 @@
 import { graphql } from "gatsby";
-import type { ImageDataLike } from "gatsby-plugin-image";
 import React from "react";
 
 import { Layout } from "@/components/Layout";
 import { MemberCard } from "@/components/memberCard/MemberCard";
+import { SEO } from "@/components/SEO";
 import { Separator } from "@/components/separator/Separator";
 
 export type TeamPageProps = {
@@ -38,6 +38,7 @@ export default function Team({ data }: TeamPageProps) {
 
 	return (
 		<Layout>
+			<SEO title="Csapatunk" />
 			<Separator>Tagjaink</Separator>
 			<section className="container grid gap-12 grid-cols-1 2xl:grid-cols-4 justify-items-center mx-auto my-8 sm:grid-cols-2 lg:grid-cols-3">
 				<MemberCard

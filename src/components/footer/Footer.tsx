@@ -58,9 +58,13 @@ export function Footer() {
 						/>
 					</a>
 				</div>
-				<p className="text-gray-400 text-xs">
+				<a
+					className="w-fit block mx-auto text-gray-400 hover:underline text-xs"
+					href="https://github.com/simonyiszk/schdesign-web"
+					target="_blank"
+				>
 					© schdesign {new Date().getFullYear()}
-				</p>
+				</a>
 			</div>
 		</footer>
 	);

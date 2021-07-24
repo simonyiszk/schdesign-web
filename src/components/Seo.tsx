@@ -9,31 +9,15 @@ import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
 import { Helmet } from "react-helmet";
 
-export type SeoProps = {
+export type SEOProps = {
 	description?: string;
 	lang?: string;
 	title: string;
-	meta: (
-		| {
-				name: string;
-				content: any;
-				property?: undefined;
-		  }
-		| {
-				property: string;
-				content: any;
-				name?: undefined;
-		  }
-	)[];
+	meta?: { name: string; content: string }[];
 };
 
-export function Seo({
-	description,
-	lang = "hu",
-	meta = [],
-	title,
-}: SeoProps) {
-	const { site } = useStaticQuery(
+export function SEO({ description, lang = "hu", meta = [], title }: SEOProps) {
+	const { site }: GatsbyTypes.Query = useStaticQuery(
 		graphql`
 			query {
 				site {
@@ -47,8 +31,9 @@ export function Seo({
 		`,
 	);
 
-	const metaDescription = description || site.siteMetadata.description;
-	const defaultTitle = site.siteMetadata?.title;
+	const metaDescription =
+		description ?? site?.siteMetadata?.description ?? "schdesign";
+	const defaultTitle = site?.siteMetadata?.title ?? "schdesign";
 
 	return (
 		<Helmet
@@ -80,7 +65,7 @@ export function Seo({
 				},
 				{
 					name: `twitter:creator`,
-					content: site.siteMetadata?.author || ``,
+					content: site?.siteMetadata?.author || ``,
 				},
 				{
 					name: `twitter:title`,
