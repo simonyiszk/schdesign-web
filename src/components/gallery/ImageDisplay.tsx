@@ -44,9 +44,7 @@ export function ImageDisplay({
 					<GatsbyImage
 						image={image}
 						alt={title}
-						className={clsx(
-							"w-full rounded-t-lg hover:scale-105 transition ease-in-out",
-						)}
+						className={clsx("w-full rounded-t-lg")}
 					/>
 				)}
 
