@@ -95,9 +95,13 @@ export default function Team({ data }: TeamPageProps) {
 
 export const query = graphql`
 	query TeamQuery {
-		leader: contentfulMember(title: { eq: "Körvezető" }) {
+		leader: contentfulMember(
+			title: { eq: "Körvezető" }
+			isCurrentLeadership: { eq: true }
+		) {
 			name
 			isOld
+			isCurrentLeadership
 			email
 			title
 			image {
@@ -112,6 +116,7 @@ export const query = graphql`
 				node {
 					name
 					isOld
+					isCurrentLeadership
 					email
 					title
 					image {
@@ -128,7 +133,7 @@ export const query = graphql`
 				node {
 					name
 					isOld
-					email
+					isCurrentLeadership
 					title
 					image {
 						gatsbyImageData
@@ -138,13 +143,13 @@ export const query = graphql`
 		}
 		old: allContentfulMember(
 			sort: { fields: name }
-			filter: { isOld: { eq: true }, isCurrentLeadership: { eq: false } }
+			filter: { isOld: { eq: true } }
 		) {
 			edges {
 				node {
 					name
 					isOld
-					email
+					isCurrentLeadership
 					title
 					image {
 						gatsbyImageData

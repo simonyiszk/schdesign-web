@@ -9,6 +9,7 @@ export type MemberCardProps = {
 	title?: string;
 	imageData?: ImageDataLike | null;
 	isOld?: boolean;
+	isCurrentLeadership?: boolean;
 } & React.HTMLProps<HTMLDivElement>;
 
 export function MemberCard({
@@ -17,12 +18,16 @@ export function MemberCard({
 	title,
 	imageData,
 	isOld,
+	isCurrentLeadership,
 	...restProps
 }: MemberCardProps) {
 	const image = imageData && getImage(imageData);
 
 	function getTitle() {
-		if (title != null) {
+		if (title && !isCurrentLeadership) {
+			return `Volt-${title}`;
+		}
+		if (title) {
 			return title;
 		}
 		return isOld ? "Öregtag" : "Tag";
@@ -54,7 +59,7 @@ export function MemberCard({
 				{name}
 			</h4>
 
-			{email && (
+			{email && isCurrentLeadership && (
 				<a
 					className="mb-0.5 hover:text-primary text-sm"
 					href={`mailto:${email}`}

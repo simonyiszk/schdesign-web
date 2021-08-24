@@ -44,7 +44,7 @@ export function Seo({ description, lang = "hu", meta = [], title }: SeoProps) {
 				lang,
 			}}
 			title={title}
-			titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
+			titleTemplate={defaultTitle ? `${defaultTitle} | %s` : undefined}
 			meta={[
 				{
 					name: `description`,
