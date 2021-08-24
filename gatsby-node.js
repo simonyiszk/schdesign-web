@@ -23,7 +23,6 @@ exports.createPages = async ({ graphql, actions }) => {
 		toPath:
 			"https://drive.google.com/drive/u/1/folders/0B8rKwHW6MJ1QeEFVVXc5eGVzUzA",
 		isPermanent: true,
-		redirectInBrowser: true,
 	});
 	createRedirect({
 		fromPath: "/trello",
