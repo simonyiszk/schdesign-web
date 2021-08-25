@@ -36,6 +36,13 @@ export default function Team({ data }: TeamPageProps) {
 		return 0;
 	});
 
+	const sortedMembers = [...data.members.edges].sort((a, b) => {
+		return a.node.name?.localeCompare(b.node.name || "", "hu") ?? 0;
+	});
+	const sortedOldMembers = [...data.old.edges].sort((a, b) => {
+		return a.node.name?.localeCompare(b.node.name || "", "hu") ?? 0;
+	});
+
 	return (
 		<Layout>
 			<Seo title="Csapatunk" />
@@ -65,7 +72,7 @@ export default function Team({ data }: TeamPageProps) {
 					<hr className="w-full border-primary opacity-50" />
 				</div>
 
-				{data.members.edges.map(({ node }) => {
+				{sortedMembers.map(({ node }) => {
 					return (
 						<MemberCard
 							key={node.name}
@@ -79,7 +86,7 @@ export default function Team({ data }: TeamPageProps) {
 					<hr className="w-full border-primary opacity-50" />
 				</div>
 
-				{data.old.edges.map(({ node }) => {
+				{sortedOldMembers.map(({ node }) => {
 					return (
 						<MemberCard
 							key={node.name}

@@ -931,8 +931,6 @@ type ContentfulMember = ContentfulReference & ContentfulEntry & Node & {
   readonly id: Scalars['ID'];
   readonly node_locale: Scalars['String'];
   readonly name: Maybe<Scalars['String']>;
-  readonly email: Maybe<Scalars['String']>;
-  readonly title: Maybe<Scalars['String']>;
   readonly isCurrentLeadership: Maybe<Scalars['Boolean']>;
   readonly isOld: Maybe<Scalars['Boolean']>;
   readonly image: Maybe<ContentfulAsset>;
@@ -940,6 +938,8 @@ type ContentfulMember = ContentfulReference & ContentfulEntry & Node & {
   readonly createdAt: Maybe<Scalars['Date']>;
   readonly updatedAt: Maybe<Scalars['Date']>;
   readonly sys: Maybe<ContentfulMemberSys>;
+  readonly email: Maybe<Scalars['String']>;
+  readonly title: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
   readonly children: ReadonlyArray<Node>;
   readonly internal: Internal;
@@ -1472,8 +1472,6 @@ type Query_contentfulMemberArgs = {
   id: Maybe<StringQueryOperatorInput>;
   node_locale: Maybe<StringQueryOperatorInput>;
   name: Maybe<StringQueryOperatorInput>;
-  email: Maybe<StringQueryOperatorInput>;
-  title: Maybe<StringQueryOperatorInput>;
   isCurrentLeadership: Maybe<BooleanQueryOperatorInput>;
   isOld: Maybe<BooleanQueryOperatorInput>;
   image: Maybe<ContentfulAssetFilterInput>;
@@ -1481,6 +1479,8 @@ type Query_contentfulMemberArgs = {
   createdAt: Maybe<DateQueryOperatorInput>;
   updatedAt: Maybe<DateQueryOperatorInput>;
   sys: Maybe<ContentfulMemberSysFilterInput>;
+  email: Maybe<StringQueryOperatorInput>;
+  title: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
@@ -4679,8 +4679,6 @@ type ContentfulMemberFieldsEnum =
   | 'id'
   | 'node_locale'
   | 'name'
-  | 'email'
-  | 'title'
   | 'isCurrentLeadership'
   | 'isOld'
   | 'image.contentful_id'
@@ -4766,6 +4764,8 @@ type ContentfulMemberFieldsEnum =
   | 'sys.contentType.sys.type'
   | 'sys.contentType.sys.linkType'
   | 'sys.contentType.sys.id'
+  | 'email'
+  | 'title'
   | 'parent.id'
   | 'parent.parent.id'
   | 'parent.parent.parent.id'
@@ -4866,8 +4866,6 @@ type ContentfulMemberFilterInput = {
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly node_locale: Maybe<StringQueryOperatorInput>;
   readonly name: Maybe<StringQueryOperatorInput>;
-  readonly email: Maybe<StringQueryOperatorInput>;
-  readonly title: Maybe<StringQueryOperatorInput>;
   readonly isCurrentLeadership: Maybe<BooleanQueryOperatorInput>;
   readonly isOld: Maybe<BooleanQueryOperatorInput>;
   readonly image: Maybe<ContentfulAssetFilterInput>;
@@ -4875,6 +4873,8 @@ type ContentfulMemberFilterInput = {
   readonly createdAt: Maybe<DateQueryOperatorInput>;
   readonly updatedAt: Maybe<DateQueryOperatorInput>;
   readonly sys: Maybe<ContentfulMemberSysFilterInput>;
+  readonly email: Maybe<StringQueryOperatorInput>;
+  readonly title: Maybe<StringQueryOperatorInput>;
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
   readonly internal: Maybe<InternalFilterInput>;
@@ -5672,27 +5672,21 @@ type ContentfulContentTypeSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type TeamQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type TeamQueryQuery = { readonly leader: Maybe<(
-    Pick<ContentfulMember, 'name' | 'isOld' | 'isCurrentLeadership' | 'email' | 'title'>
-    & { readonly image: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>> }
-  )>, readonly leadership: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<ContentfulMember, 'name' | 'isOld' | 'isCurrentLeadership' | 'email' | 'title'>
-        & { readonly image: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>> }
-      ) }> }, readonly members: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<ContentfulMember, 'name' | 'isOld' | 'isCurrentLeadership' | 'title'>
-        & { readonly image: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>> }
-      ) }> }, readonly old: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<ContentfulMember, 'name' | 'isOld' | 'isCurrentLeadership' | 'title'>
-        & { readonly image: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>> }
-      ) }> } };
-
 type cProjectsProgrammingwebschdesignWebsrccomponentsSeoTsx943528760QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type cProjectsProgrammingwebschdesignWebsrccomponentsSeoTsx943528760Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'siteUrl' | 'title' | 'description' | 'author' | 'image' | 'favicon'>> }> };
+
+type WorksQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type WorksQueryQuery = { readonly allContentfulDisplayImage: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<ContentfulDisplayImage, 'title' | 'author'>
+        & { readonly image: Maybe<(
+          Pick<ContentfulAsset, 'updatedAt' | 'gatsbyImageData'>
+          & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url' | 'fileName' | 'contentType'>> }
+        )> }
+      ) }> } };
 
 type IndexQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -5710,43 +5704,6 @@ type IndexQueryQuery = { readonly contentfulParagraph: Maybe<(
           & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url' | 'fileName' | 'contentType'>> }
         )> }
       ) }> } };
-
-type WorksQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type WorksQueryQuery = { readonly allContentfulDisplayImage: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<ContentfulDisplayImage, 'title' | 'author'>
-        & { readonly image: Maybe<(
-          Pick<ContentfulAsset, 'updatedAt' | 'gatsbyImageData'>
-          & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url' | 'fileName' | 'contentType'>> }
-        )> }
-      ) }> } };
-
-type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
-
-type GatsbyImageSharpFixed_tracedSVGFragment = Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;
-
-type GatsbyImageSharpFixed_withWebpFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
-
-type GatsbyImageSharpFixed_withWebp_tracedSVGFragment = Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
-
-type GatsbyImageSharpFixed_noBase64Fragment = Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet'>;
-
-type GatsbyImageSharpFixed_withWebp_noBase64Fragment = Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
-
-type GatsbyImageSharpFluidFragment = Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
-
-type GatsbyImageSharpFluidLimitPresentationSizeFragment = { maxHeight: ImageSharpFluid['presentationHeight'], maxWidth: ImageSharpFluid['presentationWidth'] };
-
-type GatsbyImageSharpFluid_tracedSVGFragment = Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
-
-type GatsbyImageSharpFluid_withWebpFragment = Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
-
-type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
-
-type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
-
-type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
 type AboutQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -5775,6 +5732,49 @@ type GatsbyContentfulFluid_noBase64Fragment = Pick<ContentfulFluid, 'aspectRatio
 type GatsbyContentfulFluid_withWebpFragment = Pick<ContentfulFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
 type GatsbyContentfulFluid_withWebp_noBase64Fragment = Pick<ContentfulFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type TeamQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type TeamQueryQuery = { readonly leader: Maybe<(
+    Pick<ContentfulMember, 'name' | 'isOld' | 'isCurrentLeadership' | 'email' | 'title'>
+    & { readonly image: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>> }
+  )>, readonly leadership: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<ContentfulMember, 'name' | 'isOld' | 'isCurrentLeadership' | 'email' | 'title'>
+        & { readonly image: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>> }
+      ) }> }, readonly members: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<ContentfulMember, 'name' | 'isOld' | 'isCurrentLeadership' | 'title'>
+        & { readonly image: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>> }
+      ) }> }, readonly old: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<ContentfulMember, 'name' | 'isOld' | 'isCurrentLeadership' | 'title'>
+        & { readonly image: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>> }
+      ) }> } };
+
+type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
+
+type GatsbyImageSharpFixed_tracedSVGFragment = Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;
+
+type GatsbyImageSharpFixed_withWebpFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
+
+type GatsbyImageSharpFixed_withWebp_tracedSVGFragment = Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
+
+type GatsbyImageSharpFixed_noBase64Fragment = Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet'>;
+
+type GatsbyImageSharpFixed_withWebp_noBase64Fragment = Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
+
+type GatsbyImageSharpFluidFragment = Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
+
+type GatsbyImageSharpFluidLimitPresentationSizeFragment = { maxHeight: ImageSharpFluid['presentationHeight'], maxWidth: ImageSharpFluid['presentationWidth'] };
+
+type GatsbyImageSharpFluid_tracedSVGFragment = Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
+
+type GatsbyImageSharpFluid_withWebpFragment = Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
+
+type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
 type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
