@@ -1,6 +1,7 @@
 const dotenv = require("dotenv");
 
 dotenv.config({ path: "./.env.local" });
+dotenv.config({ path: "./.env.development.local" });
 
 module.exports = {
 	siteMetadata: {
@@ -54,9 +55,8 @@ module.exports = {
 			resolve: `gatsby-source-contentful`,
 			options: {
 				spaceId: `gv4jvhx1s5r7`,
-				// Learn about environment variables: https://gatsby.dev/env-vars
 				accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-				// host: `preview.contentful.com`,
+				host: process.env.CONTENTFUL_HOST,
 			},
 		},
 		`gatsby-plugin-gatsby-cloud`,
