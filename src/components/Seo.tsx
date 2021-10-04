@@ -36,7 +36,13 @@ export function Seo({ description, lang = "hu", meta = [], title }: SeoProps) {
 
 	const metaDescription =
 		description ?? site?.siteMetadata?.description ?? "schdesign";
-	const defaultTitle = site?.siteMetadata?.title ?? "schdesign";
+	const defaultTitle = site?.siteMetadata?.title
+		? `${site.siteMetadata.title} | %s`
+		: "schdesign";
+	const previewImage =
+		site?.siteMetadata?.image && site?.siteMetadata?.siteUrl
+			? `${site?.siteMetadata?.siteUrl}${site?.siteMetadata?.image}`
+			: "https://schdesign.hu/preview.png";
 
 	return (
 		<Helmet
@@ -44,7 +50,7 @@ export function Seo({ description, lang = "hu", meta = [], title }: SeoProps) {
 				lang,
 			}}
 			title={title}
-			titleTemplate={defaultTitle ? `${defaultTitle} | %s` : undefined}
+			titleTemplate={defaultTitle}
 			meta={[
 				{
 					name: `description`,
@@ -80,15 +86,15 @@ export function Seo({ description, lang = "hu", meta = [], title }: SeoProps) {
 				},
 				{
 					name: `twitter:image`,
-					content: `${site?.siteMetadata?.siteUrl}${site?.siteMetadata?.image}`,
+					content: previewImage,
 				},
 				{
 					name: `og:image`,
-					content: `${site?.siteMetadata?.siteUrl}${site?.siteMetadata?.image}`,
+					content: previewImage,
 				},
 				{
 					name: `thumbnail`,
-					content: `${site?.siteMetadata?.siteUrl}${site?.siteMetadata?.image}`,
+					content: previewImage,
 				},
 			].concat(meta)}
 		/>
