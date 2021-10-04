@@ -3,23 +3,30 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "./.env.local" });
 dotenv.config({ path: "./.env.development.local" });
 
+const siteMetadata = {
+	title: `schdesign`,
+	description: `Az schdesign a Simonyi Károly Szakkollégium kreatív alkotóműhelye.`,
+	author: `@schdesign`,
+	siteUrl: `https://schdesign.hu`,
+	image: `/preview.png`,
+	favicon: `/favicon.png`,
+};
+
 module.exports = {
-	siteMetadata: {
-		title: `schdesign`,
-		description: `Az schdesign a Simonyi Károly Szakkollégium kreatív alkotóműhelye.`,
-		author: `@schdesign`,
-		siteUrl: `https://schdesign.hu`,
-		image: `/preview.png`,
-		favicon: `/favicon.png`,
-	},
+	siteMetadata,
 	plugins: [
+		/** Contentful types */
 		{
 			resolve: `gatsby-plugin-typegen`,
 			options: {
 				outputPath: `src/@types/__generated__/gatsby-types.ts`,
 			},
 		},
+
+		/** React Helmet */
 		`gatsby-plugin-react-helmet`,
+
+		/** Preload images */
 		`gatsby-plugin-image`,
 		{
 			resolve: `gatsby-source-filesystem`,
@@ -28,6 +35,8 @@ module.exports = {
 				path: `${__dirname}/src/assets/images`,
 			},
 		},
+
+		/** Optimize images */
 		`gatsby-transformer-sharp`,
 		{
 			resolve: `gatsby-plugin-sharp`,
@@ -38,6 +47,8 @@ module.exports = {
 				},
 			},
 		},
+
+		/** Build site manifest */
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
@@ -50,7 +61,38 @@ module.exports = {
 				icon: `src/assets/images/favicon.png`, // This path is relative to the root of the site.
 			},
 		},
+
+		/** Build sitemap */
+		{
+			resolve: "gatsby-plugin-sitemap",
+			options: {
+				query: `
+				{
+					allSitePage {
+						nodes	{
+							path
+						}
+					}
+				}
+				`,
+				resolveSiteUrl: () => siteMetadata.siteUrl,
+				resolvePages: ({ allSitePage: { nodes: allPages } }) => {
+					return allPages.map((page) => {
+						return { ...page };
+					});
+				},
+				serialize: ({ path, modifiedGmt }) => {
+					return {
+						url: path,
+					};
+				},
+			},
+		},
+
+		/** MDX support */
 		`gatsby-plugin-mdx`,
+
+		/** Contentful integration */
 		{
 			resolve: `gatsby-source-contentful`,
 			options: {
@@ -66,6 +108,8 @@ module.exports = {
 		// this (optional) plugin enables Progressive Web App + Offline functionality
 		// To learn more, visit: https://gatsby.dev/offline
 		// `gatsby-plugin-offline`,
+
+		/** Redirects in gatsby-node.js */
 		`gatsby-plugin-meta-redirect`, // make sure to put last in the array
 	],
 };
