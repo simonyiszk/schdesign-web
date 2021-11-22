@@ -9,7 +9,7 @@ export default function SCHArculat() {
 		<>
 			<Seo title="Schönherz Arculati kézikönyv" />
 			<embed
-				src="SCHArculat.pdf"
+				src="/SCHArculat.pdf"
 				type="application/pdf"
 				width="100%"
 				style={{ height: "100vh" }}
