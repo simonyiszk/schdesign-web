@@ -101,7 +101,16 @@ module.exports = {
 				host: process.env.CONTENTFUL_HOST,
 			},
 		},
-		`gatsby-plugin-gatsby-cloud`,
+		{
+			resolve: `gatsby-plugin-gatsby-cloud`,
+			options: {
+				headers: {
+					"/scharculat":[
+						"X-Frame-Options: ALLOW"
+					]
+				},
+			},
+		},
 		`gatsby-plugin-sass`,
 		`gatsby-plugin-postcss`,
 		`gatsby-plugin-tsconfig-paths`,
