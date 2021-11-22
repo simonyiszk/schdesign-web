@@ -107,7 +107,6 @@ module.exports = {
 			resolve: `gatsby-plugin-gatsby-cloud`,
 			options: {
 				headers: {
-					"/*":["X-Frame-Options: DENY"],
 					"/scharculat": ["X-Frame-Options: SAMEORIGIN"],
 					"/scharculat/": ["X-Frame-Options: SAMEORIGIN"],
 				},
