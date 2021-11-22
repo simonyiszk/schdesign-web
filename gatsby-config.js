@@ -101,6 +101,8 @@ module.exports = {
 				host: process.env.CONTENTFUL_HOST,
 			},
 		},
+
+		/** Gatsby cloud hosting options */
 		{
 			resolve: `gatsby-plugin-gatsby-cloud`,
 			options: {
