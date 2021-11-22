@@ -109,6 +109,12 @@ module.exports = {
 				headers: {
 					"/scharculat": ["X-Frame-Options: SAMEORIGIN"],
 				},
+				allPageHeaders: [
+					"X-XSS-Protection: 1; mode=block",
+					"X-Content-Type-Options: nosniff",
+					"Referrer-Policy: same-origin",
+				],
+				mergeSecurityHeaders: false,
 			},
 		},
 		`gatsby-plugin-sass`,
