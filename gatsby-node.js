@@ -62,5 +62,11 @@ exports.createPages = async ({ graphql, actions }) => {
 		toPath: "https://roadmap.schdesign.hu",
 		isPermanent: true,
 	});
+	createRedirect({
+		fromPath: "/szmsz",
+		toPath:
+			"https://drive.google.com/file/d/1Jpa6VdPs5PPQm16w6aOW_00RuA8cxYST/view?usp=sharing",
+		isPermanent: true,
+	});
 	// Create pages here
 };
