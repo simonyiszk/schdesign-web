@@ -15,6 +15,9 @@ const siteMetadata = {
 module.exports = {
 	siteMetadata,
 	plugins: [
+		/** Sitemap Plugin */
+		`gatsby-plugin-sitemap`,
+
 		/** Google Tag Manager */
 		{
 			resolve: "gatsby-plugin-google-tagmanager",
