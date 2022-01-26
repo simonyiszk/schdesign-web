@@ -21,12 +21,12 @@ exports.createPages = async ({ graphql, actions }) => {
 	createRedirect({
 		fromPath: "/drive",
 		toPath:
-			"https://drive.google.com/drive/u/1/folders/0B8rKwHW6MJ1QeEFVVXc5eGVzUzA",
+			"https://drive.google.com/drive/folders/0B8rKwHW6MJ1QeEFVVXc5eGVzUzA?resourcekey=0-K2BJe0U3Om4y6dWje2ngaw&usp=sharing",
 		isPermanent: true,
 	});
 	createRedirect({
 		fromPath: "/trello",
-		toPath: "https://trello.com/b/wpWdmPYG/schdesign-2021-ősz",
+		toPath: "https://trello.com/b/NIyUgX96/schdesign-2022-tavasz",
 		isPermanent: true,
 	});
 	createRedirect({
@@ -42,7 +42,7 @@ exports.createPages = async ({ graphql, actions }) => {
 	createRedirect({
 		fromPath: "/proj",
 		toPath:
-			"https://drive.google.com/drive/u/1/folders/0B8rKwHW6MJ1QVEd5N240dlJSU2s",
+			"https://drive.google.com/drive/folders/0B8rKwHW6MJ1QVEd5N240dlJSU2s?resourcekey=0-ws1VyicbG7V-9EgQ4Jm1-g&usp=sharing",
 		isPermanent: true,
 	});
 	createRedirect({
@@ -54,7 +54,7 @@ exports.createPages = async ({ graphql, actions }) => {
 	createRedirect({
 		fromPath: "/simonyiarculat",
 		toPath:
-			"https://drive.google.com/drive/u/2/folders/0B5vSboSK4bYaMDd2MVB1U2NhNTA",
+			"https://drive.google.com/drive/folders/0B5vSboSK4bYaMDd2MVB1U2NhNTA?resourcekey=0-URP8EjUTpjZ6H5kqCzL5pQ&usp=sharing",
 		isPermanent: true,
 	});
 	createRedirect({
