@@ -27,7 +27,7 @@ exports.createPages = async ({ graphql, actions }) => {
 	createRedirect({
 		fromPath: "/trello",
 		toPath: "https://trello.com/b/NIyUgX96/schdesign-2022-tavasz",
-		isPermanent: true,
+		isPermanent: false,
 	});
 	createRedirect({
 		fromPath: "/figma",
