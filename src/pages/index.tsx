@@ -1,12 +1,31 @@
 import { graphql } from "gatsby";
 import React from "react";
 
+import type { CourseProps } from "@/components/courses/Course";
+import { CourseSection } from "@/components/courses/CourseSection";
 import { Gallery } from "@/components/gallery/Gallery";
 import { Hero } from "@/components/header/Hero";
 import { Layout } from "@/components/Layout";
 import { Paragraph } from "@/components/paragraph/Paragraph";
 import { Seo } from "@/components/Seo";
 import { Separator } from "@/components/separator/Separator";
+
+const courseData: CourseProps[] = [
+	{
+		title: "Design principles",
+		date: "02.28. Hétfő",
+		time: "18:00 - 20:00",
+		location: "BME Q épület, QBF11",
+		placeholderImage: "/courseicons/dp.png",
+	},
+	{
+		title: "Illustrator kezdő",
+		date: "03.03. Csütörtök",
+		time: "18:00 - 20:00",
+		location: "BME Q épület, QBF11",
+		placeholderImage: "/courseicons/ai.png",
+	},
+];
 
 export default function IndexPage({
 	data,
@@ -17,6 +36,10 @@ export default function IndexPage({
 		<Layout>
 			<Seo title="😺" />
 			<Hero />
+			<Separator id="tanfolyam">Tanfolyamok</Separator>
+			<section className="container flex flex-col mb-4 mt-4 mx-auto p-4 px-4">
+				<CourseSection courses={courseData} unfinished />
+			</section>
 			<Separator>Rólunk</Separator>
 			<section className="container flex flex-col mt-4 mx-auto p-4 px-4">
 				<Paragraph title={data.contentfulParagraph?.title ?? "Rólunk"}>
