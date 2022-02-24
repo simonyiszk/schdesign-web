@@ -17,11 +17,11 @@ export function CourseSection({
 			{unfinished && (
 				<div className="flex flex-col items-center justify-center p-4 text-center bg-white rounded-2xl shadow-2xl">
 					<h3 className="mb-2 text-lg font-medium border-b border-gray-600">
-						A további alkalmak még
+						A további alkalmak időpontjai
 						<br />
-						sajnos nincsenek feltöltve...
+						hamarosan érkeznek!
 					</h3>
-					<p>Kérünk nézz vissza később</p>
+					<p>Nézz vissza és tarts velünk 👀</p>
 				</div>
 			)}
 		</div>
