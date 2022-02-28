@@ -13,17 +13,38 @@ import { Separator } from "@/components/separator/Separator";
 const courseData: CourseProps[] = [
 	{
 		title: "Design principles",
-		date: "02.28. Hétfő",
+		date: "02.28. hétfő",
 		time: "18:00 - 20:00",
 		location: "BME Q épület, QBF11",
 		placeholderImage: "/courseicons/dp.png",
 	},
 	{
 		title: "Illustrator kezdő",
-		date: "03.03. Csütörtök",
+		date: "03.03. csütörtök",
 		time: "18:00 - 20:00",
 		location: "BME Q épület, QBF11",
 		placeholderImage: "/courseicons/ai.png",
+	},
+	{
+		title: "Illustrator haladó",
+		date: "03.07. hétfő",
+		time: "18:00 - 20:00",
+		location: "BME E épület, E404",
+		placeholderImage: "/courseicons/ai.png",
+	},
+	{
+		title: "Blender kezdő",
+		date: "03.10. hétfő",
+		time: "18:00 - 20:00",
+		location: "BME Q épület, QBF11",
+		placeholderImage: "/courseicons/3d.png",
+	},
+	{
+		title: "Blender haladó",
+		date: "03.14. hétfő",
+		time: "18:00 - 20:00",
+		location: "BME E épület, E404",
+		placeholderImage: "/courseicons/3d.png",
 	},
 ];
 
