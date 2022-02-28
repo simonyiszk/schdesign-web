@@ -46,6 +46,20 @@ const courseData: CourseProps[] = [
 		location: "BME E épület, E404",
 		placeholderImage: "/courseicons/3d.png",
 	},
+	{
+		title: "Photoshop kezdő",
+		date: "03.17. csütörtök",
+		time: "18:00 - 20:00",
+		location: "BME Q épület, QBF11",
+		placeholderImage: "/courseicons/ps.png",
+	},
+	{
+		title: "Photoshop haladó",
+		date: "03.21. hétfő",
+		time: "18:00 - 20:00",
+		location: "BME E épület, E404",
+		placeholderImage: "/courseicons/ps.png",
+	},
 ];
 
 export default function IndexPage({
