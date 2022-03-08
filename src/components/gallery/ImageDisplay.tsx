@@ -29,7 +29,7 @@ export function ImageDisplay({
 			key={title + author}
 			className={clsx(
 				"relative flex flex-col",
-				"transform-gpu hover:scale-105 transition ease-in-out",
+				" group ",
 				index !== length - 1 && "mb-3 md:mb-4 xl:mb-8",
 			)}
 		>
@@ -40,13 +40,18 @@ export function ImageDisplay({
 					openModal();
 				}}
 			>
-				{image && (
-					<GatsbyImage
-						image={image}
-						alt={title}
-						className={clsx("w-full rounded-t-lg")}
-					/>
-				)}
+				<div className="rounded-t-lg overflow-hidden">
+					{image && (
+						<GatsbyImage
+							image={image}
+							alt={title}
+							className={clsx(
+								"w-full",
+								"transform-gpu group-hover:scale-105 transition duration-300 ease-in-out",
+							)}
+						/>
+					)}
+				</div>
 
 				<figcaption className="p-4 bg-blueGray-900 rounded-b-lg shadow-darker">
 					<h4 className="pb-3 text-white text-lg">{title}</h4>
