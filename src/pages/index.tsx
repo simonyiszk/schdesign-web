@@ -41,23 +41,23 @@ const courseData: CourseProps[] = [
 	},
 	{
 		title: "Blender haladó",
-		date: "03.14. hétfő",
+		date: "03.21. hétfő",
 		time: "18:00 - 20:00",
 		location: "BME E épület, E404",
 		placeholderImage: "/courseicons/3d.png",
 	},
 	{
 		title: "Photoshop kezdő",
-		date: "03.17. csütörtök",
+		date: "03.24. csütörtök",
 		time: "18:00 - 20:00",
-		location: "BME Q épület, QBF11",
+		location: "Később lesz megadva",
 		placeholderImage: "/courseicons/ps.png",
 	},
 	{
 		title: "Photoshop haladó",
-		date: "03.21. hétfő",
+		date: "03.28. hétfő",
 		time: "18:00 - 20:00",
-		location: "BME E épület, E404",
+		location: "BME Q épület, QBF11",
 		placeholderImage: "/courseicons/ps.png",
 	},
 ];
