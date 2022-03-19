@@ -48,9 +48,9 @@ const courseData: CourseProps[] = [
 	},
 	{
 		title: "Photoshop kezdő",
-		date: "03.24. csütörtök",
+		date: "03.25. péntek",
 		time: "18:00 - 20:00",
-		location: "Később lesz megadva",
+		location: "BME Q épület, QBF11",
 		placeholderImage: "/courseicons/ps.png",
 	},
 	{
