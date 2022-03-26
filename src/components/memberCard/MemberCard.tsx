@@ -9,7 +9,7 @@ export type MemberCardProps = {
 	title?: string;
 	imageData?: ImageDataLike | null;
 	isOld?: boolean;
-	isCurrentLeadership?: boolean;
+	isCurrentLeadership?: 
 } & React.HTMLProps<HTMLDivElement>;
 
 export function MemberCard({
@@ -18,16 +18,12 @@ export function MemberCard({
 	title,
 	imageData,
 	isOld,
-	isCurrentLeadership,
 	...restProps
 }: MemberCardProps) {
 	const image = imageData && getImage(imageData);
 
 	function getTitle() {
-		if (title && !isCurrentLeadership) {
-			return `Volt-${title}`;
-		}
-		if (title) {
+		if (title != null) {
 			return title;
 		}
 		return isOld ? "Öregtag" : "Tag";
@@ -36,32 +32,30 @@ export function MemberCard({
 	return (
 		<figure
 			className={clsx(
-				"group flex flex-col justify-center p-4 max-w-xs text-center bg-white rounded-2xl shadow-2xl",
+				"flex flex-col justify-center p-4 max-w-xs text-center bg-white rounded-2xl shadow-2xl transform hover:scale-105 transition ease-in-out",
 				restProps.className,
 			)}
 		>
-			<div className="mb-2 h-64 rounded-2xl object-cover overflow-hidden">
-				{image ? (
-					<GatsbyImage
-						image={image}
-						alt={`${name} arcképe`}
-						className="transform group-hover:scale-105 transition duration-300 ease-in-out"
-					/>
-				) : (
-					<StaticImage
-						src="../../assets/images/blank.png"
-						placeholder="blurred"
-						alt="Hiányzó arckép"
-						className="transform group-hover:scale-105 transition duration-300 ease-in-out"
-					/>
-				)}
-			</div>
+			{image ? (
+				<GatsbyImage
+					image={image}
+					alt={`${name} arcképe`}
+					imgClassName="mb-2 h-64 rounded-2xl object-cover overflow-hidden"
+				/>
+			) : (
+				<StaticImage
+					src="../../assets/images/blank.png"
+					placeholder="blurred"
+					alt="Hiányzó arckép"
+					imgClassName="mb-2 h-64 rounded-2xl object-cover overflow-hidden"
+				/>
+			)}
 
 			<h4 className="mb-2 text-lg font-medium border-b-2 border-primary">
 				{name}
 			</h4>
 
-			{email && isCurrentLeadership && (
+			{email && (
 				<a
 					className="mb-0.5 hover:text-primary text-sm"
 					href={`mailto:${email}`}

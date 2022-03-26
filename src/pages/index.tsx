@@ -60,6 +60,20 @@ const courseData: CourseProps[] = [
 		location: "BME Q épület, QBF11",
 		placeholderImage: "/courseicons/ps.png",
 	},
+	{
+		title: "Web kezdő - Figma",
+		date: "03.31. csütörtök",
+		time: "18:00 - 20:00",
+		location: "Schönherz koli, SCH103",
+		placeholderImage: "/courseicons/web.png",
+	},
+	{
+		title: "Web haladó - React",
+		date: "04.04. hétfő",
+		time: "18:00 - 20:00",
+		location: "Schönherz koli, SCH103",
+		placeholderImage: "/courseicons/web.png",
+	},
 ];
 
 export default function IndexPage({
@@ -73,7 +87,7 @@ export default function IndexPage({
 			<Hero />
 			<Separator id="tanfolyam">Tanfolyamok</Separator>
 			<section className="container flex flex-col mb-4 mt-4 mx-auto p-4 px-4">
-				<CourseSection courses={courseData} unfinished joinable />
+				<CourseSection courses={courseData} joinable />
 			</section>
 			<Separator>Rólunk</Separator>
 			<section className="container flex flex-col mt-4 mx-auto p-4 px-4">
