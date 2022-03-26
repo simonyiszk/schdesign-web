@@ -31,7 +31,7 @@ export function Footer() {
 					<a href="https://www.instagram.com/schdesign.hu/">
 						<FaInstagram className="w-10 h-auto hover:text-primary" />
 					</a>
-					<a href="https://www.facebook.com/schonherzdesignstudio/">
+					<a href="https://www.facebook.com/schdesignbme/">
 						<FaFacebookSquare className="w-10 h-auto hover:text-primary" />
 					</a>
 				</div>
