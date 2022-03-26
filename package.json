@@ -21,15 +21,19 @@
     "url": "https://github.com/simonyiszk/schdesign-web/issues"
   },
   "homepage": "https://schdesign.hu",
-	"browserslist": [
+  "browserslist": [
     "defaults",
     "maintained node versions",
-		"last 2 versions",
-		"not IE <=11"
+    "last 2 versions",
+    "not IE <=11"
   ],
   "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@mui/lab": "^5.0.0-alpha.74",
+    "@mui/material": "^5.5.2",
     "@tailwindcss/aspect-ratio": "^0.2.2",
     "@types/react": "^17.0.27",
     "autoprefixer": "^10.3.7",

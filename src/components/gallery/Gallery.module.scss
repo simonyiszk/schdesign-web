@@ -1,24 +1,5 @@
 .workGallery {
-	column-gap: 0.75rem;
-
-	column-count: 1;
-
-	/* line-height: 0; */
-
 	* {
 		break-inside: avoid;
-	}
-
-	@screen md {
-		column-gap: 1rem;
-		column-count: 2;
-	}
-	@screen xl {
-		column-gap: 2rem;
-		column-count: 3;
-	}
-
-	@media (min-width: 1601px) {
-		column-count: 4;
 	}
 }

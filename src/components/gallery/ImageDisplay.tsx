@@ -27,14 +27,11 @@ export function ImageDisplay({
 	return (
 		<figure
 			key={title + author}
-			className={clsx(
-				"relative flex flex-col",
-				" group ",
-				index !== length - 1 && "mb-3 md:mb-4 xl:mb-8",
-			)}
+			className={clsx("relative flex flex-col", "p-3 2xl:p-8 md:p-4 xl:p-6")}
 		>
 			<button
 				type="button"
+				className="group rounded-lg shadow-darker"
 				onClick={() => {
 					setActiveIndex(index);
 					openModal();
