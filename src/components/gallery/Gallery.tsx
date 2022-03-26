@@ -1,5 +1,6 @@
+import Masonry from "@mui/lab/Masonry";
 import clsx from "clsx";
-import React from "react";
+import * as React from "react";
 import Carousel, { Modal, ModalGateway } from "react-images";
 
 import carouselFormatters from "@/utils/carouselFormatters";
@@ -15,13 +16,13 @@ export function Gallery({ works }: GalleryProps) {
 	const [modalIsOpen, setIsOpen] = React.useState(false);
 	const [activeIndex, setActiveIndex] = React.useState(0);
 
-	function openModal() {
+	const openModal = React.useCallback(() => {
 		setIsOpen(true);
-	}
+	}, [setIsOpen]);
 
-	function closeModal() {
+	const closeModal = React.useCallback(() => {
 		setIsOpen(false);
-	}
+	}, [setIsOpen]);
 
 	return (
 		<>
@@ -31,21 +32,26 @@ export function Gallery({ works }: GalleryProps) {
 					"fit p-3 pointer-events-auto md:p-4 xl:p-8",
 				)}
 			>
-				{works.map(({ author, title, image }, i) => {
-					return (
-						<ImageDisplay
-							key={(author ?? "") + (title ?? "")}
-							author={author ?? ""}
-							title={title ?? ""}
-							// @ts-expect-error: idk
-							imageData={image?.gatsbyImageData}
-							index={i}
-							length={works.length}
-							setActiveIndex={setActiveIndex}
-							openModal={openModal}
-						/>
-					);
-				})}
+				<Masonry
+					columns={{ xs: 1, sm: 2, md: 2, lg: 3, xl: 4, "2xl": 4 }}
+					spacing={{ xs: 0, sm: 0, md: 0, lg: 0, xl: 0, "2xl": 0 }}
+				>
+					{works.map(({ author, title, image }, i) => {
+						return (
+							<ImageDisplay
+								key={(author ?? "") + (title ?? "")}
+								author={author ?? ""}
+								title={title ?? ""}
+								// @ts-expect-error: idk
+								imageData={image?.gatsbyImageData}
+								index={i}
+								length={works.length}
+								setActiveIndex={setActiveIndex}
+								openModal={openModal}
+							/>
+						);
+					})}
+				</Masonry>
 			</section>
 
 			{ModalGateway && (
