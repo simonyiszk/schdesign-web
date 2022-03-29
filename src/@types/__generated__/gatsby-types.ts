@@ -5925,10 +5925,22 @@ type ContentfulContentTypeSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type staticEProjectsProgrammingwebschdesignWebsrccomponentsSeoTsx943528760QueryVariables = Exact<{ [key: string]: never; }>;
+type IndexQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type staticEProjectsProgrammingwebschdesignWebsrccomponentsSeoTsx943528760Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'siteUrl' | 'title' | 'description' | 'author' | 'image' | 'favicon'>> }> };
+type IndexQueryQuery = { readonly contentfulParagraph: Maybe<(
+    Pick<ContentfulParagraph, 'title'>
+    & { readonly content: Maybe<(
+      Pick<contentfulParagraphContentTextNode, 'content'>
+      & { readonly childMdx: Maybe<Pick<Mdx, 'body'>> }
+    )> }
+  )>, readonly allContentfulDisplayImage: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<ContentfulDisplayImage, 'title' | 'author'>
+        & { readonly image: Maybe<(
+          Pick<ContentfulAsset, 'updatedAt' | 'gatsbyImageData'>
+          & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url' | 'fileName' | 'contentType'>> }
+        )> }
+      ) }> } };
 
 type TeamQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -5945,23 +5957,6 @@ type TeamQueryQuery = { readonly leader: Maybe<(
       ) }> }, readonly old: { readonly edges: ReadonlyArray<{ readonly node: (
         Pick<ContentfulMember, 'name' | 'isOld' | 'isCurrentLeadership' | 'title'>
         & { readonly image: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>> }
-      ) }> } };
-
-type IndexQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type IndexQueryQuery = { readonly contentfulParagraph: Maybe<(
-    Pick<ContentfulParagraph, 'title'>
-    & { readonly content: Maybe<(
-      Pick<contentfulParagraphContentTextNode, 'content'>
-      & { readonly childMdx: Maybe<Pick<Mdx, 'body'>> }
-    )> }
-  )>, readonly allContentfulDisplayImage: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<ContentfulDisplayImage, 'title' | 'author'>
-        & { readonly image: Maybe<(
-          Pick<ContentfulAsset, 'updatedAt' | 'gatsbyImageData'>
-          & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url' | 'fileName' | 'contentType'>> }
-        )> }
       ) }> } };
 
 type WorksQueryQueryVariables = Exact<{ [key: string]: never; }>;
@@ -5982,6 +5977,11 @@ type AboutQueryQuery = { readonly allContentfulParagraph: { readonly edges: Read
         Pick<ContentfulParagraph, 'title' | 'order'>
         & { readonly content: Maybe<{ readonly childMdx: Maybe<Pick<Mdx, 'body'>> }> }
       ) }> } };
+
+type staticCProjectsProgrammingwebschdesignWebsrccomponentsSeoTsx943528760QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type staticCProjectsProgrammingwebschdesignWebsrccomponentsSeoTsx943528760Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'siteUrl' | 'title' | 'description' | 'author' | 'image' | 'favicon'>> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
