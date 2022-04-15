@@ -85,10 +85,10 @@ export default function IndexPage({
 		<Layout>
 			<Seo title="😺" />
 			<Hero />
-			<Separator id="tanfolyam">Tanfolyamok</Separator>
+			{/* <Separator id="tanfolyam">Tanfolyamok</Separator>
 			<section className="container flex flex-col mb-4 mt-4 mx-auto p-4 px-4">
 				<CourseSection courses={courseData} joinable />
-			</section>
+			</section> */}
 			<Separator>Rólunk</Separator>
 			<section className="container flex flex-col mt-4 mx-auto p-4 px-4">
 				<Paragraph title={data.contentfulParagraph?.title ?? "Rólunk"}>
