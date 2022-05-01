@@ -29,7 +29,7 @@ export function Gallery({ works }: GalleryProps) {
 			<section
 				className={clsx(
 					styles.workGallery,
-					"fit p-3 pointer-events-auto md:p-4 xl:p-8",
+					"fit pointer-events-auto p-3 md:p-4 xl:p-8",
 				)}
 			>
 				<Masonry

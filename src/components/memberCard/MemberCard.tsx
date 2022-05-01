@@ -36,41 +36,41 @@ export function MemberCard({
 	return (
 		<figure
 			className={clsx(
-				"group flex flex-col justify-center p-4 max-w-xs text-center bg-white rounded-2xl shadow-2xl",
+				"group flex max-w-xs flex-col justify-center rounded-2xl bg-white p-4 text-center shadow-2xl",
 				restProps.className,
 			)}
 		>
-			<div className="mb-2 h-64 rounded-2xl object-cover overflow-hidden">
+			<div className="mb-2 h-64 overflow-hidden rounded-2xl object-cover">
 				{image ? (
 					<GatsbyImage
 						image={image}
 						alt={`${name} arcképe`}
-						className="transform group-hover:scale-105 transition duration-300 ease-in-out"
+						className="transform transition duration-300 ease-in-out group-hover:scale-105"
 					/>
 				) : (
 					<StaticImage
 						src="../../assets/images/blank.png"
 						placeholder="blurred"
 						alt="Hiányzó arckép"
-						className="transform group-hover:scale-105 transition duration-300 ease-in-out"
+						className="transform transition duration-300 ease-in-out group-hover:scale-105"
 					/>
 				)}
 			</div>
 
-			<h4 className="mb-2 text-lg font-medium border-b-2 border-primary">
+			<h4 className="mb-2 border-b-2 border-primary text-lg font-medium">
 				{name}
 			</h4>
 
 			{email && isCurrentLeadership && (
 				<a
-					className="mb-0.5 hover:text-primary text-sm"
+					className="mb-0.5 text-sm hover:text-primary"
 					href={`mailto:${email}`}
 				>
 					{email}
 				</a>
 			)}
 
-			<p className="text-gray-600 font-RobotoMono text-sm lowercase">
+			<p className="font-RobotoMono text-sm lowercase text-gray-600">
 				{getTitle()}
 			</p>
 		</figure>

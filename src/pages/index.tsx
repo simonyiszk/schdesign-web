@@ -90,7 +90,7 @@ export default function IndexPage({
 				<CourseSection courses={courseData} joinable />
 			</section> */}
 			<Separator>Rólunk</Separator>
-			<section className="container flex flex-col mt-4 mx-auto p-4 px-4">
+			<section className="container mx-auto mt-4 flex flex-col p-4 px-4">
 				<Paragraph title={data.contentfulParagraph?.title ?? "Rólunk"}>
 					{data.contentfulParagraph?.content?.childMdx?.body ?? "Ez eltűnt 😔"}
 				</Paragraph>

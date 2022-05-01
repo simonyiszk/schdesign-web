@@ -12,13 +12,13 @@ export function CourseSection({
 	joinable?: boolean;
 }) {
 	return (
-		<div className="flex flex-wrap gap-8 justify-center">
+		<div className="flex flex-wrap justify-center gap-8">
 			{courses.map((course) => (
 				<Course {...course} />
 			))}
 			{unfinished && (
-				<div className="flex flex-col items-center justify-center p-4 text-center bg-white rounded-2xl shadow-2xl">
-					<h3 className="mb-2 font-medium border-b border-gray-600">
+				<div className="flex flex-col items-center justify-center rounded-2xl bg-white p-4 text-center shadow-2xl">
+					<h3 className="mb-2 border-b border-gray-600 font-medium">
 						A további alkalmak időpontjai
 						<br />
 						hamarosan érkeznek!
@@ -27,8 +27,8 @@ export function CourseSection({
 				</div>
 			)}
 			{joinable && (
-				<div className="flex flex-col items-center justify-center p-4 text-center bg-white rounded-2xl shadow-2xl">
-					<h3 className="mb-2 font-medium border-b border-gray-600">
+				<div className="flex flex-col items-center justify-center rounded-2xl bg-white p-4 text-center shadow-2xl">
+					<h3 className="mb-2 border-b border-gray-600 font-medium">
 						Ha szeretnél emailben értesülni
 						<br />
 						a tanfolyam alkalmak előtt,
@@ -36,7 +36,7 @@ export function CourseSection({
 						akkor iratkozz fel a form kitöltésével!
 					</h3>
 					<a
-						className="text-primary underline break-all"
+						className="break-all text-primary underline"
 						href="https://forms.gle/iEfzoAFHWEQAfNrL7"
 						target="_blank"
 						rel="noreferrer"
