@@ -25,9 +25,9 @@ export function Course({
 }: CourseProps) {
 	const image = imageData && getImage(imageData);
 	return (
-		<div className="flex flex-col items-center justify-center p-4 bg-white rounded-2xl shadow-2xl">
-			<div className="flex flex-row items-center mb-2 pb-2 px-2 border-b-2 border-primary">
-				<div className="w-10 h-10">
+		<div className="flex flex-col items-center justify-center rounded-2xl bg-white p-4 shadow-2xl">
+			<div className="mb-2 flex flex-row items-center border-b-2 border-primary px-2 pb-2">
+				<div className="h-10 w-10">
 					{placeholderImage && !imageData && (
 						<img src={placeholderImage} alt={`${title} logó`} className="" />
 					)}
@@ -40,7 +40,7 @@ export function Course({
 			<div className="flex flex-col items-center">
 				<p className="mb-1">{date}</p>
 				<p className="mb-1 text-sm">{time}</p>
-				<p className="text-center text-gray-600 border-t border-gray-600">
+				<p className="border-t border-gray-600 text-center text-gray-600">
 					{location}
 				</p>
 			</div>

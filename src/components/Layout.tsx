@@ -32,7 +32,7 @@ export function Layout({
 }): JSX.Element {
 	return (
 		<ThemeProvider theme={theme}>
-			<div className="flex flex-col justify-between min-h-screen">
+			<div className="flex min-h-screen flex-col justify-between">
 				<Navbar />
 
 				<main>{children}</main>

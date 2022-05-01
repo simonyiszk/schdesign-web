@@ -11,7 +11,7 @@ export default function About({ data }: { data: GatsbyTypes.Query }) {
 		<Layout>
 			<Seo title="Rólunk" />
 			<Separator>Rólunk</Separator>
-			<section className="container flex flex-col mt-4 mx-auto p-4 px-4">
+			<section className="container mx-auto mt-4 flex flex-col p-4 px-4">
 				{data.allContentfulParagraph.edges.map(({ node }, i) => {
 					return (
 						<Paragraph

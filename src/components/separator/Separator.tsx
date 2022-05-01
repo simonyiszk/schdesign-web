@@ -13,13 +13,13 @@ export function Separator({ children, id }: SeparatorProps) {
 		<div
 			className={clsx(
 				styles.separatorBg,
-				"relative flex items-center justify-center h-24",
+				"relative flex h-24 items-center justify-center",
 			)}
 			id={id}
 		>
 			<h2
 				id={children?.toString().toLowerCase()}
-				className="text-shadow-2 z-10 text-center text-white font-RobotoMono text-2xl font-semibold lowercase"
+				className="text-shadow-2 z-10 text-center font-RobotoMono text-2xl font-semibold lowercase text-white"
 			>
 				{children}
 			</h2>

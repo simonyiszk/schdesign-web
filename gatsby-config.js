@@ -99,6 +99,15 @@ module.exports = {
 			},
 		},
 
+		/** Get build date for versioning */
+		{
+			resolve: `gatsby-plugin-build-date`,
+			options: {
+				formatAsDateString: false, // boolean, defaults to true - if false API will return unformatted string from new Date()
+				// locale: 'hu', // string, defaults to null, which date-and-time defaults as "en" - whether to localize the date or not, can use any available date-and-time localization
+			},
+		},
+
 		/** Build sitemap */
 		{
 			resolve: "gatsby-plugin-sitemap",

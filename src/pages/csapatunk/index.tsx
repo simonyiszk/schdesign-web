@@ -47,14 +47,14 @@ export default function Team({ data }: TeamPageProps) {
 		<Layout>
 			<Seo title="Csapatunk" />
 			<Separator>Tagjaink</Separator>
-			<section className="container grid gap-12 grid-cols-1 2xl:grid-cols-4 justify-items-center mx-auto my-8 sm:grid-cols-2 lg:grid-cols-3">
+			<section className="container mx-auto my-8 grid grid-cols-1 justify-items-center gap-12 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
 				<MemberCard
 					imageData={data.leader.image?.gatsbyImageData}
 					{...data.leader}
-					className="col-span-1 2xl:col-span-4 sm:col-span-2 lg:col-span-3"
+					className="col-span-1 sm:col-span-2 lg:col-span-3 2xl:col-span-4"
 				/>
 
-				<div className="col-span-1 2xl:col-span-4 my-2 px-8 w-full opacity-50 sm:col-span-2 sm:px-16 lg:col-span-3 lg:px-32">
+				<div className="col-span-1 my-2 w-full px-8 opacity-50 sm:col-span-2 sm:px-16 lg:col-span-3 lg:px-32 2xl:col-span-4">
 					<hr className="w-full border-primary opacity-50" />
 				</div>
 
@@ -68,7 +68,7 @@ export default function Team({ data }: TeamPageProps) {
 					);
 				})}
 
-				<div className="col-span-1 2xl:col-span-4 my-2 px-8 w-full opacity-50 sm:col-span-2 sm:px-16 lg:col-span-3 lg:px-32">
+				<div className="col-span-1 my-2 w-full px-8 opacity-50 sm:col-span-2 sm:px-16 lg:col-span-3 lg:px-32 2xl:col-span-4">
 					<hr className="w-full border-primary opacity-50" />
 				</div>
 
@@ -82,7 +82,7 @@ export default function Team({ data }: TeamPageProps) {
 					);
 				})}
 
-				<div className="col-span-1 2xl:col-span-4 my-2 px-8 w-full opacity-50 sm:col-span-2 sm:px-16 lg:col-span-3 lg:px-32">
+				<div className="col-span-1 my-2 w-full px-8 opacity-50 sm:col-span-2 sm:px-16 lg:col-span-3 lg:px-32 2xl:col-span-4">
 					<hr className="w-full border-primary opacity-50" />
 				</div>
 
