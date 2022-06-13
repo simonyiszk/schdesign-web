@@ -26,7 +26,7 @@ exports.createPages = async ({ graphql, actions }) => {
 	});
 	createRedirect({
 		fromPath: "/trello",
-		toPath: "https://trello.com/b/NIyUgX96/schdesign-2022-tavasz",
+		toPath: "https://trello.com/b/dSLGM9CA/schdesign-2022-%C5%91sz",
 		isPermanent: false,
 	});
 	createRedirect({
