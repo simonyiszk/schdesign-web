@@ -1,75 +1,81 @@
 {
 	"root": true,
-	"env": {
-		"browser": true
-	},
-	"parserOptions": {
-		"project": "./tsconfig.json"
-	},
 	"extends": [
+		"next",
 		"airbnb",
 		"airbnb-typescript",
-		"airbnb/hooks",
-		"react-app",
 		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/strict",
 		"plugin:eslint-comments/recommended",
-		"plugin:etc/recommended",
+		"plugin:react/jsx-runtime",
 		"plugin:react-etc/recommended",
 		"prettier",
 		"prettier/prettier"
 	],
+	"parserOptions": {
+		"project": "./tsconfig.json"
+	},
 	"plugins": ["simple-import-sort"],
+	"settings": {
+		"jsx-a11y": {
+			"components": {
+				"Input": "input",
+				"Link": "a",
+				"PrimaryButton": "button",
+				"SecondaryButton": "button"
+			}
+		}
+	},
+
 	"rules": {
 		/* Auto-sort imports and exports */
+		"simple-import-sort/imports": "warn",
+		"simple-import-sort/exports": "warn",
 		"sort-imports": "off",
 		"import/order": "off",
-		"simple-import-sort/imports": "error",
-		"simple-import-sort/exports": "error",
 
 		/* Custom preferences */
-		"@typescript-eslint/array-type": "error",
 		"@typescript-eslint/consistent-indexed-object-style": [
-			"error",
+			"warn",
 			"index-signature" // Prevent ambiguity with Records & Tuples
 		],
-		"@typescript-eslint/consistent-type-assertions": "error",
-		"@typescript-eslint/explicit-module-boundary-types": "off", // Reduce bloat
-		"@typescript-eslint/method-signature-style": "error", // Force type safety
-		"@typescript-eslint/no-invalid-void-type": "error", // Force type safety
-		"@typescript-eslint/prefer-ts-expect-error": "error", // Force type safety
-		"import/no-anonymous-default-export": "error", // For named React components
-		"import/no-default-export": "error", // Default exports are confusing
+		"@typescript-eslint/consistent-type-definitions": ["warn", "type"],
+		"@typescript-eslint/method-signature-style": "warn", // Force type safety
+		"import/no-default-export": "warn", // Default exports are confusing
 		"import/prefer-default-export": "off",
-		"import/extensions": "off",
-		"jsx-a11y/anchor-is-valid": "off", // Doesn't play well with Next `<Link>`
-		"prefer-exponentiation-operator": "error", // Auto-fix for an inherited rule
-		// "react/react-in-jsx-scope": "off", // React is always in scope with Next
-		"react/require-default-props": "off", // React `defaultProps` are deprecated
-
-		"react/jsx-no-target-blank": "off", // Links on the site should be safe
-		"no-plusplus": "off"
+		"react/require-default-props": "off" // React `defaultProps` are deprecated
 	},
 
 	"overrides": [
 		{
-			"files": ["*.js"],
+			"files": ["*.d.ts"],
 			"rules": {
-				"@typescript-eslint/no-var-requires": "off", // Allow CommonJS imports
-				"global-require": "off" // Allow dynamic imports for Node
+				"@typescript-eslint/consistent-type-definitions": "off" // Augmentation
 			}
 		},
 		{
 			"files": ["*.tsx"],
 			"rules": {
-				"@typescript-eslint/consistent-type-definitions": ["error", "type"],
 				"react/jsx-props-no-spreading": "off" // TypeScript makes this safe
+			}
+		},
+		{
+			"files": ["*.js"],
+			"rules": {
+				"@typescript-eslint/no-var-requires": "off" // Allow CommonJS imports
 			}
 		},
 		{
 			"files": ["./src/pages/**"],
 			"rules": {
 				"import/no-default-export": "off",
-				"import/prefer-default-export": "error"
+				"import/prefer-default-export": "warn"
+			}
+		},
+		{
+			"files": ["./src/pages/api/**"],
+			"rules": {
+				"import/prefer-default-export": "off"
 			}
 		}
 	]

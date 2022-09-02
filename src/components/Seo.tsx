@@ -1,13 +1,4 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
-import { graphql, useStaticQuery } from "gatsby";
-import * as React from "react";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 
 export type SeoProps = {
 	description?: string;
@@ -17,86 +8,33 @@ export type SeoProps = {
 };
 
 export function Seo({ description, lang = "hu", meta = [], title }: SeoProps) {
-	const { site }: GatsbyTypes.Query = useStaticQuery(
-		graphql`
-			query {
-				site {
-					siteMetadata {
-						siteUrl
-						title
-						description
-						author
-						image
-						favicon
-					}
-				}
-			}
-		`,
-	);
-
-	const metaDescription =
-		description ?? site?.siteMetadata?.description ?? "schdesign";
-	const defaultTitle = site?.siteMetadata?.title
-		? `${site.siteMetadata.title} | %s`
-		: "schdesign";
-	const previewImage =
-		site?.siteMetadata?.image && site?.siteMetadata?.siteUrl
-			? `${site?.siteMetadata?.siteUrl}${site?.siteMetadata?.image}`
-			: "https://schdesign.hu/preview.png";
-
 	return (
-		<Helmet
-			htmlAttributes={{
-				lang,
-			}}
-			title={title}
-			titleTemplate={defaultTitle}
-			meta={[
-				{
-					name: `description`,
-					content: metaDescription,
-				},
-				{
-					property: `og:title`,
-					content: title,
-				},
-				{
-					property: `og:description`,
-					content: metaDescription,
-				},
-				{
-					property: `og:type`,
-					content: `website`,
-				},
-				{
-					name: `twitter:card`,
-					content: `summary_large_image`,
-				},
-				{
-					name: `twitter:creator`,
-					content: site?.siteMetadata?.author || ``,
-				},
-				{
-					name: `twitter:title`,
-					content: title,
-				},
-				{
-					name: `twitter:description`,
-					content: metaDescription,
-				},
-				{
-					name: `twitter:image`,
-					content: previewImage,
-				},
-				{
-					name: `og:image`,
-					content: previewImage,
-				},
-				{
-					name: `thumbnail`,
-					content: previewImage,
-				},
-			].concat(meta)}
-		/>
+		<Head>
+			<title>{`${title} | schdesign`}</title>
+			<meta
+				name="description"
+				content="Az schdesign a Simonyi Károly Szakkollégium kreatív alkotóműhelye."
+			/>
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:title" content="schdesign" />
+			<meta
+				name="twitter:description"
+				content="Az schdesign a Simonyi Károly Szakkollégium kreatív alkotóműhelye."
+			/>
+			<meta name="twitter:image" content="https://schdesign.hu/preview.png" />
+			<meta name="thumbnail" content="https://schdesign.hu/preview.png" />
+			<meta property="og:image" content="https://schdesign.hu/preview.png" />
+			<meta property="og:title" content="schdesign" />
+			<meta
+				property="og:description"
+				content="Az schdesign a Simonyi Károly Szakkollégium kreatív alkotóműhelye."
+			/>
+			<meta property="og:url" content="https://schdesign.hu" />
+			<meta property="og:type" content="website" />
+
+			<meta name="color-scheme" content="dark light" />
+
+			<link rel="shortcut icon" href="/favicon.png" />
+		</Head>
 	);
 }

@@ -1,13 +1,10 @@
 import clsx from "clsx";
-import type { ImageDataLike } from "gatsby-plugin-image";
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
-import React from "react";
 
 export type MemberCardProps = {
 	name?: string;
 	email?: string;
 	title?: string;
-	imageData?: ImageDataLike | null;
+	imageData?: object;
 	isOld?: boolean;
 	isCurrentLeadership?: boolean;
 } & React.HTMLProps<HTMLDivElement>;
@@ -21,8 +18,6 @@ export function MemberCard({
 	isCurrentLeadership,
 	...restProps
 }: MemberCardProps) {
-	const image = imageData && getImage(imageData);
-
 	function getTitle() {
 		if (title && !isCurrentLeadership) {
 			return `Volt-${title}`;

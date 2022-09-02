@@ -1,8 +1,37 @@
-@import url("fonts.css");
+.text-shadow-2 {
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.bg-blur-10 {
+	background-color: rgba(122, 122, 122, 0.66);
+	@supports (
+		(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))
+	) {
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+		background-color: rgba(150, 150, 150, 0.33);
+		opacity: 0.99;
+	}
+}
+
+.border-t-3 {
+	border-top-width: 3px;
+}
+
+.leading-0 {
+	line-height: 0;
+}
+
+.-z-1 {
+	z-index: -1;
+}
+
+.safe-area-x {
+	padding-left: calc(0.75rem + constant(safe-area-inset-left));
+	padding-left: calc(0.75rem + env(safe-area-inset-left));
+	padding-right: calc(0.75rem + constant(safe-area-inset-right));
+	padding-right: calc(0.75rem + env(safe-area-inset-right));
+}
 
 @layer utilities {
 	.text-shadow-2 {
@@ -49,22 +78,4 @@
 		opacity: 0.36;
 		z-index: -10;
 	}
-}
-
-body {
-	@apply background-figures relative;
-}
-
-html,
-body {
-	@apply font-Montserrat;
-}
-
-code {
-	@apply font-RobotoMono;
-}
-
-.react-images__view-image {
-	max-height: 100vh !important;
-	@apply mx-auto;
 }

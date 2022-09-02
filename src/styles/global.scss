@@ -1,0 +1,27 @@
+:root {
+	color-scheme: dark light;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	@apply background-figures relative;
+	@apply min-h-screen;
+	margin: 0 auto;
+}
+
+html,
+body {
+	@apply font-Montserrat;
+}
+
+code {
+	@apply font-RobotoMono;
+}
+
+.react-images__view-image {
+	max-height: 100vh !important;
+	@apply mx-auto;
+}

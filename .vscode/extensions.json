@@ -4,8 +4,6 @@
 		"csstools.postcss",
 		"dbaeumer.vscode-eslint",
 		"EditorConfig.EditorConfig",
-		"esbenp.prettier-vscode",
-		"stylelint.vscode-stylelint"
-	],
-	"unwantedRecommendations": ["zignd.html-css-class-completion"]
+		"esbenp.prettier-vscode"
+	]
 }

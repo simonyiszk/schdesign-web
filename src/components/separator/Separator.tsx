@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 
-import * as styles from "./Separator.module.scss";
+import styles from "./Separator.module.scss";
 
 export type SeparatorProps = {
 	children: React.ReactNode;

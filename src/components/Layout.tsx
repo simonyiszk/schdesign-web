@@ -35,7 +35,7 @@ export function Layout({
 			<div className="flex min-h-screen flex-col justify-between">
 				<Navbar />
 
-				<main>{children}</main>
+				<main id="#">{children}</main>
 
 				<Footer />
 			</div>

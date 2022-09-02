@@ -1,6 +1,3 @@
-import { graphql } from "gatsby";
-import React from "react";
-
 import { Layout } from "@/components/Layout";
 import { MemberCard } from "@/components/memberCard/MemberCard";
 import { Seo } from "@/components/Seo";
@@ -8,10 +5,10 @@ import { Separator } from "@/components/separator/Separator";
 
 export type TeamPageProps = {
 	data: {
-		leader: GatsbyTypes.ContentfulMember;
-		leadership: GatsbyTypes.ContentfulMemberConnection;
-		members: GatsbyTypes.ContentfulMemberConnection;
-		old: GatsbyTypes.ContentfulMemberConnection;
+		leader: object;
+		leadership: object[];
+		members: object[];
+		old: object[];
 	};
 };
 
@@ -26,22 +23,6 @@ export default function Team({ data }: TeamPageProps) {
 		"vektormentor",
 		"webmentor",
 	];
-	const sortedLeadership = [...data.leadership.edges].sort((a, b) => {
-		if (a.node.title && b.node.title) {
-			return (
-				sortOrder.indexOf(a.node.title.toLowerCase()) -
-				sortOrder.indexOf(b.node.title.toLowerCase())
-			);
-		}
-		return 0;
-	});
-
-	const sortedMembers = [...data.members.edges].sort((a, b) => {
-		return a.node.name?.localeCompare(b.node.name || "", "hu") ?? 0;
-	});
-	const sortedOldMembers = [...data.old.edges].sort((a, b) => {
-		return a.node.name?.localeCompare(b.node.name || "", "hu") ?? 0;
-	});
 
 	return (
 		<Layout>
@@ -49,7 +30,7 @@ export default function Team({ data }: TeamPageProps) {
 			<Separator>Tagjaink</Separator>
 			<section className="container mx-auto my-8 grid grid-cols-1 justify-items-center gap-12 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
 				<MemberCard
-					imageData={data.leader.image?.gatsbyImageData}
+					imageData={undefined}
 					{...data.leader}
 					className="col-span-1 sm:col-span-2 lg:col-span-3 2xl:col-span-4"
 				/>
@@ -58,12 +39,12 @@ export default function Team({ data }: TeamPageProps) {
 					<hr className="w-full border-primary opacity-50" />
 				</div>
 
-				{sortedLeadership.map(({ node }) => {
+				{[0].map((i) => {
 					return (
 						<MemberCard
-							key={node.name}
-							imageData={node.image?.gatsbyImageData}
-							{...node}
+							key={i}
+							imageData={undefined}
+							// {...node}
 						/>
 					);
 				})}
@@ -72,12 +53,12 @@ export default function Team({ data }: TeamPageProps) {
 					<hr className="w-full border-primary opacity-50" />
 				</div>
 
-				{sortedMembers.map(({ node }) => {
+				{[0].map((i) => {
 					return (
 						<MemberCard
-							key={node.name}
-							imageData={node.image?.gatsbyImageData}
-							{...node}
+							key={i}
+							imageData={undefined}
+							// {...node}
 						/>
 					);
 				})}
@@ -86,12 +67,12 @@ export default function Team({ data }: TeamPageProps) {
 					<hr className="w-full border-primary opacity-50" />
 				</div>
 
-				{sortedOldMembers.map(({ node }) => {
+				{[0].map((i) => {
 					return (
 						<MemberCard
-							key={node.name}
-							imageData={node.image?.gatsbyImageData}
-							{...node}
+							key={i}
+							imageData={undefined}
+							// {...node}
 						/>
 					);
 				})}
@@ -99,70 +80,3 @@ export default function Team({ data }: TeamPageProps) {
 		</Layout>
 	);
 }
-
-export const query = graphql`
-	query TeamQuery {
-		leader: contentfulMember(
-			title: { eq: "Körvezető" }
-			isCurrentLeadership: { eq: true }
-		) {
-			name
-			isOld
-			isCurrentLeadership
-			email
-			title
-			image {
-				gatsbyImageData
-			}
-		}
-		leadership: allContentfulMember(
-			sort: { fields: name }
-			filter: { title: { ne: "Körvezető" }, isCurrentLeadership: { eq: true } }
-		) {
-			edges {
-				node {
-					name
-					isOld
-					isCurrentLeadership
-					email
-					title
-					image {
-						gatsbyImageData
-					}
-				}
-			}
-		}
-		members: allContentfulMember(
-			sort: { fields: name }
-			filter: { isOld: { eq: false }, isCurrentLeadership: { eq: false } }
-		) {
-			edges {
-				node {
-					name
-					isOld
-					isCurrentLeadership
-					title
-					image {
-						gatsbyImageData
-					}
-				}
-			}
-		}
-		old: allContentfulMember(
-			sort: { fields: name }
-			filter: { isOld: { eq: true } }
-		) {
-			edges {
-				node {
-					name
-					isOld
-					isCurrentLeadership
-					title
-					image {
-						gatsbyImageData
-					}
-				}
-			}
-		}
-	}
-`;

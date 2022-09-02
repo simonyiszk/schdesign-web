@@ -1,12 +1,10 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-const colors = require("tailwindcss/colors");
 const aspectRatio = require("@tailwindcss/aspect-ratio");
 
+/** @type {import("tailwindcss").Config} */
 module.exports = {
-	mode: "jit",
-	content: ["./src/**/*.{js,ts,tsx,css,scss,mdx}"],
+	content: ["./src/**/*.{js,jsx,ts,tsx,scss,mdx}"],
 	theme: {
-		colors,
 		extend: {
 			transitionTimingFunction: {
 				DEFAULT: defaultTheme.transitionTimingFunction.out,

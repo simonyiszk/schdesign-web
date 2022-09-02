@@ -1,26 +1,11 @@
 {
-	"compilerOptions": {
-		"target": "esnext",
-		"module": "esnext",
-		"lib": ["dom", "es2017"],
-		"jsx": "preserve",
-		"experimentalDecorators": true,
-		"emitDecoratorMetadata": true,
-		"noEmit": true,
-		"skipLibCheck": true,
-		"baseUrl": "./src",
-		"paths": { "@/*": ["*"], "*": [""] },
-		"importsNotUsedAsValues": "error",
-		"moduleResolution": "node",
-		"resolveJsonModule": true,
-		"esModuleInterop": true,
-		"strict": true,
-		"plugins": [
-			{
-				"name": "typescript-plugin-css-modules"
-			}
-		]
-	},
-	"include": ["gatsby-*.js", "*.config.js", "**/*.ts", "**/*.tsx"],
-	"exclude": ["node_modules"]
+  "extends": "@tsconfig/next/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./src/",
+    "paths": { "@/*": ["*"], "*": [""] },
+    "strict": true,
+    "importsNotUsedAsValues": "error"
+  },
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+  "exclude": ["node_modules/", ".next/"]
 }

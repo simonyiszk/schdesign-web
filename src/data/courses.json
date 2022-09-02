@@ -1,0 +1,65 @@
+[
+	{
+		"title": "Design principles",
+		"date": "02.28. hétfő",
+		"time": "18:00 - 20:00",
+		"location": "BME Q épület, QBF11",
+		"placeholderImage": "/courseicons/dp.png"
+	},
+	{
+		"title": "Illustrator kezdő",
+		"date": "03.03. csütörtök",
+		"time": "18:00 - 20:00",
+		"location": "BME Q épület, QBF11",
+		"placeholderImage": "/courseicons/ai.png"
+	},
+	{
+		"title": "Illustrator haladó",
+		"date": "03.07. hétfő",
+		"time": "18:00 - 20:00",
+		"location": "BME E épület, E404",
+		"placeholderImage": "/courseicons/ai.png"
+	},
+	{
+		"title": "Blender kezdő",
+		"date": "03.10. csütörtök",
+		"time": "18:00 - 20:00",
+		"location": "BME Q épület, QBF11",
+		"placeholderImage": "/courseicons/3d.png"
+	},
+	{
+		"title": "Blender haladó",
+		"date": "03.21. hétfő",
+		"time": "18:00 - 20:00",
+		"location": "BME E épület, E404",
+		"placeholderImage": "/courseicons/3d.png"
+	},
+	{
+		"title": "Photoshop kezdő",
+		"date": "03.25. péntek",
+		"time": "18:00 - 20:00",
+		"location": "BME Q épület, QBF11",
+		"placeholderImage": "/courseicons/ps.png"
+	},
+	{
+		"title": "Photoshop haladó",
+		"date": "03.28. hétfő",
+		"time": "18:00 - 20:00",
+		"location": "BME Q épület, QBF11",
+		"placeholderImage": "/courseicons/ps.png"
+	},
+	{
+		"title": "Web kezdő - Figma",
+		"date": "03.31. csütörtök",
+		"time": "18:00 - 20:00",
+		"location": "Schönherz koli, SCH103",
+		"placeholderImage": "/courseicons/web.png"
+	},
+	{
+		"title": "Web haladó - React",
+		"date": "04.04. hétfő",
+		"time": "18:00 - 20:00",
+		"location": "Schönherz koli, SCH103",
+		"placeholderImage": "/courseicons/web.png"
+	}
+]
