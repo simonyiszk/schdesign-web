@@ -33,9 +33,10 @@ function orderParagraphs(a: TypeParagraph, b: TypeParagraph): number {
 export async function getParagraphs() {
 	const paragraphs = await client.getEntries<TypeParagraphFields>({
 		content_type: "paragraph",
+		order: "fields.order",
 	});
 
-	paragraphs.items.sort(orderParagraphs);
+	// paragraphs.items.sort(orderParagraphs);
 
 	const renderedParagraphs = await Promise.all(
 		paragraphs.items.map(async (paragraph) => {
@@ -58,9 +59,10 @@ function orderWorks(
 export async function getWorks() {
 	const works = await client.getEntries<TypeDisplayImageFields>({
 		content_type: "displayImage",
+		order: "-fields.createdAt",
 	});
 
-	works.items.sort(orderWorks);
+	// works.items.sort(orderWorks);
 
 	return works;
 }
@@ -93,14 +95,15 @@ export async function getMembers() {
 	const leader = (
 		await client.getEntries<TypeMemberFields>({
 			content_type: "member",
-			"fields.isCurrentLeadership[match]": "true",
-			"fields.title[match]": "Körvezető",
+			limit: 1,
+			"fields.isCurrentLeadership": "true",
+			"fields.title": "Körvezető",
 		})
 	).items[0];
 
 	const leaderShip = await client.getEntries<TypeMemberFields>({
 		content_type: "member",
-		"fields.isCurrentLeadership[match]": "true",
+		"fields.isCurrentLeadership": "true",
 		"fields.title[ne]": "Körvezető",
 	});
 
@@ -108,18 +111,20 @@ export async function getMembers() {
 
 	const members = await client.getEntries<TypeMemberFields>({
 		content_type: "member",
-		"fields.isCurrentLeadership[match]": "false",
-		"fields.isOld[match]": "false",
+		order: "fields.name",
+		"fields.isCurrentLeadership": "false",
+		"fields.isOld": "false",
 	});
 
-	members.items.sort(orderMembers);
+	// members.items.sort(orderMembers);
 
 	const oldMembers = await client.getEntries<TypeMemberFields>({
 		content_type: "member",
-		"fields.isOld[match]": "true",
+		order: "fields.name",
+		"fields.isOld": "true",
 	});
 
-	oldMembers.items.sort(orderMembers);
+	// oldMembers.items.sort(orderMembers);
 
 	return { leader, leaderShip, members, oldMembers };
 }

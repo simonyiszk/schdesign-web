@@ -21,9 +21,9 @@ export default function Team({ members }: TeamProps) {
 			<Separator>Tagjaink</Separator>
 			<section className="container mx-auto my-8 grid grid-cols-1 justify-items-center gap-12 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
 				<MemberCard
-					image={members.leader.fields.image?.fields.file}
-					{...members.leader}
+					image={members.leader.fields.image}
 					className="col-span-1 sm:col-span-2 lg:col-span-3 2xl:col-span-4"
+					{...members.leader.fields}
 				/>
 
 				<div className="col-span-1 my-2 w-full px-8 opacity-50 sm:col-span-2 sm:px-16 lg:col-span-3 lg:px-32 2xl:col-span-4">
@@ -32,12 +32,7 @@ export default function Team({ members }: TeamProps) {
 
 				{members.leaderShip.items.map(({ fields }) => {
 					return (
-						<MemberCard
-							key={fields.name}
-							// @ts-expect-error: this is a bug in contentful
-							image={fields.image?.fields.file}
-							{...fields}
-						/>
+						<MemberCard key={fields.name} image={fields.image} {...fields} />
 					);
 				})}
 
@@ -47,12 +42,7 @@ export default function Team({ members }: TeamProps) {
 
 				{members.members.items.map(({ fields }) => {
 					return (
-						<MemberCard
-							key={fields.name}
-							// @ts-expect-error: this is a bug in contentful
-							image={fields.image?.fields.file}
-							{...fields}
-						/>
+						<MemberCard key={fields.name} image={fields.image} {...fields} />
 					);
 				})}
 
@@ -62,12 +52,7 @@ export default function Team({ members }: TeamProps) {
 
 				{members.oldMembers.items.map(({ fields }) => {
 					return (
-						<MemberCard
-							key={fields.name}
-							// @ts-expect-error: this is a bug in contentful
-							image={fields.image?.fields.file}
-							{...fields}
-						/>
+						<MemberCard key={fields.name} image={fields.image} {...fields} />
 					);
 				})}
 			</section>

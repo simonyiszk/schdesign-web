@@ -43,7 +43,7 @@ export function ImageDisplay({
 		>
 			<button
 				type="button"
-				className="group rounded-lg shadow-darker"
+				className="group cursor-default rounded-lg shadow-darker"
 				onClick={() => {
 					setActiveIndex(index);
 					openModal();
