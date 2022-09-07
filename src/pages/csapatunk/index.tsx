@@ -1,37 +1,28 @@
+import type { InferGetStaticPropsType } from "next";
+
 import { Layout } from "@/components/Layout";
 import { MemberCard } from "@/components/memberCard/MemberCard";
 import { Seo } from "@/components/Seo";
 import { Separator } from "@/components/separator/Separator";
+import { getMembers } from "@/utils/contentful";
 
-export type TeamPageProps = {
-	data: {
-		leader: object;
-		leadership: object[];
-		members: object[];
-		old: object[];
-	};
-};
+export async function getStaticProps() {
+	const members = await getMembers();
 
-export default function Team({ data }: TeamPageProps) {
-	const sortOrder = [
-		"projektmenedzser",
-		"gazdasági felelős",
-		"pr felelős",
-		"hr felelős",
-		"3d mentor",
-		"rasztermentor",
-		"vektormentor",
-		"webmentor",
-	];
+	return { props: { members } };
+}
 
+type TeamProps = InferGetStaticPropsType<typeof getStaticProps>;
+
+export default function Team({ members }: TeamProps) {
 	return (
 		<Layout>
 			<Seo title="Csapatunk" />
 			<Separator>Tagjaink</Separator>
 			<section className="container mx-auto my-8 grid grid-cols-1 justify-items-center gap-12 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
 				<MemberCard
-					imageData={undefined}
-					{...data.leader}
+					image={members.leader.fields.image?.fields.file}
+					{...members.leader}
 					className="col-span-1 sm:col-span-2 lg:col-span-3 2xl:col-span-4"
 				/>
 
@@ -39,12 +30,13 @@ export default function Team({ data }: TeamPageProps) {
 					<hr className="w-full border-primary opacity-50" />
 				</div>
 
-				{[0].map((i) => {
+				{members.leaderShip.items.map(({ fields }) => {
 					return (
 						<MemberCard
-							key={i}
-							imageData={undefined}
-							// {...node}
+							key={fields.name}
+							// @ts-expect-error: this is a bug in contentful
+							image={fields.image?.fields.file}
+							{...fields}
 						/>
 					);
 				})}
@@ -53,12 +45,13 @@ export default function Team({ data }: TeamPageProps) {
 					<hr className="w-full border-primary opacity-50" />
 				</div>
 
-				{[0].map((i) => {
+				{members.members.items.map(({ fields }) => {
 					return (
 						<MemberCard
-							key={i}
-							imageData={undefined}
-							// {...node}
+							key={fields.name}
+							// @ts-expect-error: this is a bug in contentful
+							image={fields.image?.fields.file}
+							{...fields}
 						/>
 					);
 				})}
@@ -67,12 +60,13 @@ export default function Team({ data }: TeamPageProps) {
 					<hr className="w-full border-primary opacity-50" />
 				</div>
 
-				{[0].map((i) => {
+				{members.oldMembers.items.map(({ fields }) => {
 					return (
 						<MemberCard
-							key={i}
-							imageData={undefined}
-							// {...node}
+							key={fields.name}
+							// @ts-expect-error: this is a bug in contentful
+							image={fields.image?.fields.file}
+							{...fields}
 						/>
 					);
 				})}

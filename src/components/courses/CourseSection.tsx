@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import { Course, CourseProps } from "./Course";
 
 export function CourseSection({

@@ -1,2 +1,56 @@
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.background-figures {
+		position: relative;
+	}
+	.background-figures::before {
+		content: " ";
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.6;
+		background-image: url("/assets/images/bg_2x.png");
+		/* background-repeat: repeat; */
+		background-size: 2420px auto;
+		background-position: left top;
+		opacity: 0.36;
+		z-index: -10;
+	}
+}
+
+@layer utilities {
+	.text-shadow-2 {
+		text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+	}
+
+	.bg-blur-5 {
+		background-color: rgba(255, 255, 255, 0.66);
+	}
+
+	.w-fit {
+		width: fit-content;
+	}
+
+	@supports (
+		(-webkit-backdrop-filter: blur(5px)) or (backdrop-filter: blur(5px))
+	) {
+		.bg-blur-5 {
+			opacity: 0.99;
+			background-color: rgba(255, 255, 255, 0.5);
+			-webkit-backdrop-filter: blur(7px);
+			backdrop-filter: blur(7px);
+		}
+	}
+}
+
+body {
+	@apply background-figures relative;
+	@apply min-h-screen;
+	margin: 0 auto;
+}

@@ -1,11 +1,10 @@
 import clsx from "clsx";
-import React from "react";
 
-import * as styles from "./Hero.module.scss";
+import styles from "./Hero.module.scss";
 
 export function Hero() {
 	return (
-		<header className="w-full bg-blueGray-900">
+		<header className="w-full bg-gray-900">
 			<div className="container mx-auto px-4">
 				<h2 className="mb-4 text-2xl font-medium text-white">
 					Az schdesign a Simonyi Károly&nbsp;Szakkollégium{" "}

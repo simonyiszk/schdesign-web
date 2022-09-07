@@ -32,8 +32,6 @@ export function Seo({ description, lang = "hu", meta = [], title }: SeoProps) {
 			<meta property="og:url" content="https://schdesign.hu" />
 			<meta property="og:type" content="website" />
 
-			<meta name="color-scheme" content="dark light" />
-
 			<link rel="shortcut icon" href="/favicon.png" />
 		</Head>
 	);

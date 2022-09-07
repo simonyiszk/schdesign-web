@@ -1,26 +1,27 @@
 import Masonry from "@mui/lab/Masonry";
 import clsx from "clsx";
-import * as React from "react";
-import Carousel, { Modal, ModalGateway } from "react-images";
+import type { EntryWithLinkResolutionAndWithoutUnresolvableLinks } from "contentful";
+import { useCallback, useState } from "react";
 
+import type { TypeDisplayImageFields } from "@/@types/generated";
 import carouselFormatters from "@/utils/carouselFormatters";
 
-import * as styles from "./Gallery.module.scss";
+import styles from "./Gallery.module.scss";
 import { ImageDisplay } from "./ImageDisplay";
 
 export type GalleryProps = {
-	works: GatsbyTypes.ContentfulDisplayImage[];
+	works: EntryWithLinkResolutionAndWithoutUnresolvableLinks<TypeDisplayImageFields>[];
 };
 
 export function Gallery({ works }: GalleryProps) {
-	const [modalIsOpen, setIsOpen] = React.useState(false);
-	const [activeIndex, setActiveIndex] = React.useState(0);
+	const [modalIsOpen, setIsOpen] = useState(false);
+	const [activeIndex, setActiveIndex] = useState(0);
 
-	const openModal = React.useCallback(() => {
+	const openModal = useCallback(() => {
 		setIsOpen(true);
 	}, [setIsOpen]);
 
-	const closeModal = React.useCallback(() => {
+	const closeModal = useCallback(() => {
 		setIsOpen(false);
 	}, [setIsOpen]);
 
@@ -36,16 +37,14 @@ export function Gallery({ works }: GalleryProps) {
 					columns={{ xs: 1, sm: 2, md: 2, lg: 3, xl: 4, "2xl": 4 }}
 					spacing={{ xs: 0, sm: 0, md: 0, lg: 0, xl: 0, "2xl": 0 }}
 				>
-					{works.map(({ author, title, image }, i) => {
+					{works.map(({ fields }, i) => {
 						return (
 							<ImageDisplay
-								key={(author ?? "") + (title ?? "")}
-								author={author ?? ""}
-								title={title ?? ""}
-								// @ts-expect-error: idk
-								imageData={image?.gatsbyImageData}
+								key={fields.author + fields.title}
+								author={fields.author}
+								title={fields.title}
+								image={fields.image?.fields.file}
 								index={i}
-								length={works.length}
 								setActiveIndex={setActiveIndex}
 								openModal={openModal}
 							/>
@@ -54,7 +53,7 @@ export function Gallery({ works }: GalleryProps) {
 				</Masonry>
 			</section>
 
-			{ModalGateway && (
+			{/* {ModalGateway && (
 				<ModalGateway>
 					{modalIsOpen && (
 						<Modal onClose={closeModal}>
@@ -71,7 +70,7 @@ export function Gallery({ works }: GalleryProps) {
 						</Modal>
 					)}
 				</ModalGateway>
-			)}
+			)} */}
 		</>
 	);
 }

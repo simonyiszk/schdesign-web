@@ -1,10 +1,12 @@
 import clsx from "clsx";
+import type { AssetFile } from "contentful";
+import Image from "next/future/image";
 
 export type MemberCardProps = {
 	name?: string;
 	email?: string;
 	title?: string;
-	imageData?: object;
+	image?: AssetFile;
 	isOld?: boolean;
 	isCurrentLeadership?: boolean;
 } & React.HTMLProps<HTMLDivElement>;
@@ -13,7 +15,7 @@ export function MemberCard({
 	name,
 	email,
 	title,
-	imageData,
+	image,
 	isOld,
 	isCurrentLeadership,
 	...restProps
@@ -37,15 +39,14 @@ export function MemberCard({
 		>
 			<div className="mb-2 h-64 overflow-hidden rounded-2xl object-cover">
 				{image ? (
-					<GatsbyImage
-						image={image}
+					<Image
+						src={image.url}
 						alt={`${name} arcképe`}
 						className="transform transition duration-300 ease-in-out group-hover:scale-105"
 					/>
 				) : (
-					<StaticImage
+					<Image
 						src="../../assets/images/blank.png"
-						placeholder="blurred"
 						alt="Hiányzó arckép"
 						className="transform transition duration-300 ease-in-out group-hover:scale-105"
 					/>

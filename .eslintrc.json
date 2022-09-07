@@ -16,16 +16,6 @@
 		"project": "./tsconfig.json"
 	},
 	"plugins": ["simple-import-sort"],
-	"settings": {
-		"jsx-a11y": {
-			"components": {
-				"Input": "input",
-				"Link": "a",
-				"PrimaryButton": "button",
-				"SecondaryButton": "button"
-			}
-		}
-	},
 
 	"rules": {
 		/* Auto-sort imports and exports */

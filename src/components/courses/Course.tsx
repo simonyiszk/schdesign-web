@@ -1,17 +1,9 @@
-import {
-	GatsbyImage,
-	getImage,
-	ImageDataLike,
-	StaticImage,
-} from "gatsby-plugin-image";
-import * as React from "react";
-
 export type CourseProps = {
 	title: string;
 	date: string;
 	time: string;
 	location: string;
-	imageData?: ImageDataLike | null;
+	image?: string;
 	placeholderImage?: string;
 };
 
@@ -20,19 +12,15 @@ export function Course({
 	date,
 	time,
 	location,
-	imageData,
+	image,
 	placeholderImage,
 }: CourseProps) {
-	const image = imageData && getImage(imageData);
 	return (
 		<div className="flex flex-col items-center justify-center rounded-2xl bg-white p-4 shadow-2xl">
 			<div className="mb-2 flex flex-row items-center border-b-2 border-primary px-2 pb-2">
 				<div className="h-10 w-10">
-					{placeholderImage && !imageData && (
+					{placeholderImage && !image && (
 						<img src={placeholderImage} alt={`${title} logó`} className="" />
-					)}
-					{image && (
-						<GatsbyImage image={image} alt={`${title} logó`} imgClassName="" />
 					)}
 				</div>
 				<h3 className="ml-2 text-lg font-medium">{title}</h3>

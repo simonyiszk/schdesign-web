@@ -1,15 +1,5 @@
-:root {
-	color-scheme: dark light;
-}
-
 html {
 	scroll-behavior: smooth;
-}
-
-body {
-	@apply background-figures relative;
-	@apply min-h-screen;
-	margin: 0 auto;
 }
 
 html,

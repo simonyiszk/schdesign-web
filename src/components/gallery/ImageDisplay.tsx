@@ -1,15 +1,14 @@
 import clsx from "clsx";
-import type { ImageDataLike } from "gatsby-plugin-image";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import React from "react";
+import type { AssetFile } from "contentful";
+import Image from "next/future/image";
+import { useEffect, useState } from "react";
 import { FaLink } from "react-icons/fa";
 
 export type ImageDisplayProps = {
 	author: string;
 	title: string;
-	imageData: ImageDataLike;
+	image?: AssetFile;
 	index: number;
-	length: number;
 	setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
 	openModal: () => void;
 };
@@ -17,20 +16,18 @@ export type ImageDisplayProps = {
 export function ImageDisplay({
 	author,
 	title,
-	imageData,
+	image,
 	index,
-	length,
 	setActiveIndex,
 	openModal,
 }: ImageDisplayProps) {
-	const image = getImage(imageData);
-	const [hidden, setHidden] = React.useState(true);
+	const [hidden, setHidden] = useState(true);
 	const id = encodeURIComponent(
 		`work_${`${title.replace(/\s+/g, "-").toLowerCase()}_${author
 			.replace(/\s+/g, "-")
 			.toLowerCase()}`}`,
 	);
-	React.useEffect(() => {
+	useEffect(() => {
 		if (window.location.hash === `#${id}`) {
 			setActiveIndex(index);
 			openModal();
@@ -54,8 +51,10 @@ export function ImageDisplay({
 			>
 				<div className="overflow-hidden rounded-t-lg">
 					{image && (
-						<GatsbyImage
-							image={image}
+						<Image
+							src={`https:${image.url}`}
+							width={image.details.image?.width}
+							height={image.details.image?.height}
 							alt={title}
 							className={clsx(
 								"w-full",
@@ -65,7 +64,7 @@ export function ImageDisplay({
 					)}
 				</div>
 			</button>
-			<figcaption className="rounded-b-lg bg-blueGray-900 p-4 px-8 text-center shadow-darker">
+			<figcaption className="rounded-b-lg bg-gray-900 p-4 px-8 text-center shadow-darker">
 				<h4 className="pb-3 text-lg text-white">
 					{title}
 					<button
