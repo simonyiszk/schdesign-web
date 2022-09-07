@@ -2,10 +2,27 @@
 	"extends": "@tsconfig/next/tsconfig.json",
 	"compilerOptions": {
 		"baseUrl": "./src/",
-		"paths": { "@/*": ["*"], "*": [""] },
+		"paths": {
+			"@/*": [
+				"*"
+			],
+			"*": [
+				""
+			]
+		},
 		"strict": true,
-		"importsNotUsedAsValues": "error"
+		"importsNotUsedAsValues": "error",
+		"target": "es2015"
 	},
-	"include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
-	"exclude": ["node_modules/", ".next/", "src/@types/generated"]
+	"include": [
+		"**/*.ts",
+		"**/*.tsx",
+		"**/*.js",
+		"**/*.jsx"
+	],
+	"exclude": [
+		"node_modules/",
+		".next/",
+		"src/@types/generated"
+	]
 }

@@ -1,15 +1,17 @@
 import {
 	Box,
 	Button,
-	Chip,
 	FormControlLabel,
 	FormLabel,
 	Radio,
 	RadioGroup,
 	TextField,
+	Typography,
 } from "@mui/material";
 import { useFormik } from "formik";
+import moment from "moment";
 
+import { CustomChip } from "./CustomChip";
 import {
 	DivisionProjectTypeUnion,
 	FormValuesType,
@@ -58,8 +60,6 @@ export function NewProjectForm() {
 		formik.setFieldValue("projectType", newArr);
 	};
 
-	console.log(formik.errors);
-
 	return (
 		<form onSubmit={formik.handleSubmit} className="flex flex-col gap-4">
 			{templatableFields.map(({ name, label, multiline }) => (
@@ -75,10 +75,11 @@ export function NewProjectForm() {
 					onChange={formik.handleChange}
 					error={formik.touched[name] && Boolean(formik.errors[name])}
 					helperText={formik.touched[name] && formik.errors[name]}
+					required
 				/>
 			))}
 			<FormLabel>BME-hez köthető kör/cég/szervezet?</FormLabel>
-			<RadioGroup row>
+			<RadioGroup row onChange={formik.handleChange}>
 				<FormControlLabel
 					name="isFromBME"
 					label="Igen"
@@ -93,50 +94,70 @@ export function NewProjectForm() {
 				/>
 			</RadioGroup>
 			<FormLabel>Simonyi Szakkollégiumhoz köthető kör/cég/szervezet?</FormLabel>
-			<RadioGroup row>
+			<RadioGroup
+				row
+				onChange={formik.handleChange}
+				name="isFromSimonyi"
+				id="isFromSimonyi"
+			>
 				<FormControlLabel
 					name="isFromSimonyi"
 					label="Igen"
 					value="yes"
-					control={<Radio />}
+					control={<Radio name="isFromSimonyi" />}
 				/>
 				<FormControlLabel
 					name="isFromSimonyi"
 					label="Nem"
 					value="no"
-					control={<Radio />}
+					control={<Radio name="isFromSimonyi" />}
 				/>
 			</RadioGroup>
-			<FormLabel>Valami kérdés?</FormLabel>
+			<FormLabel>Miben tudunk segíteni nektek?</FormLabel>
 			<Box
 				display="grid"
-				gridTemplateColumns="repeat( auto-fit, minmax(130px, 1fr) )"
+				gridTemplateColumns={["repeat(1,1fr)", "repeat(3,1fr)"]}
 				gap={1}
 			>
-				{[
-					...new Set([
-						...projectTypeValues["3d"],
-						...projectTypeValues.web,
-						...projectTypeValues.vector,
-						...projectTypeValues.raster,
-					] as DivisionProjectTypeUnion[]),
-				]
-					.sort((a, b) => a.localeCompare(b))
-					.map((e) => (
-						<Chip
-							color={
-								formik.values.projectType.find((x) => x === e)
-									? "primary"
-									: "default"
-							}
-							label={e}
-							key={e}
-							onClick={() => {
-								toggleChip(e);
-							}}
-						/>
-					))}
+				{Object.entries(projectTypeValues).map((cat) => {
+					const [title, items] = cat;
+					return (
+						<Box>
+							<Typography align="center" variant="h6">
+								{title}
+							</Typography>
+							<Box
+								display={["grid", "flex"]}
+								gridTemplateColumns="repeat(2,1fr)"
+								flexDirection="column"
+								gap={1}
+							>
+								{items.map((e) => (
+									<CustomChip e={e} toggleChip={toggleChip} />
+								))}
+							</Box>
+						</Box>
+					);
+				})}
 			</Box>
+
+			<TextField
+				id="estimatedDeadline"
+				label="Várható határídő"
+				name="estimatedDeadline"
+				type="date"
+				onChange={formik.handleChange}
+				InputLabelProps={{
+					shrink: true,
+				}}
+				InputProps={{
+					inputProps: {
+						min: moment().add(2, "days").format("YYYY-MM-DD"),
+						max: moment().add(6, "month").format("YYYY-MM-DD"),
+					},
+				}}
+			/>
+
 			<Button type="submit" variant="text">
 				Küldés
 			</Button>
