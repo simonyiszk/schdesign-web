@@ -22,6 +22,11 @@ const theme = createTheme({
 			"2xl": 1536,
 		},
 	},
+	palette: {
+		primary: {
+			main: "#F8485E",
+		},
+	},
 });
 
 export function Layout({
