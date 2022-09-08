@@ -15,7 +15,7 @@ export default function NewProjectFormPage() {
 			<Box
 				maxWidth="sm"
 				bgcolor="white"
-				borderRadius="lg"
+				borderRadius="12px"
 				mx="auto"
 				py={6}
 				px={[2, 6]}

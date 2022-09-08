@@ -4,22 +4,22 @@ import { useState } from "react";
 import type { DivisionProjectTypeUnion } from "./formTypes";
 
 export function CustomChip({
-	e,
+	label,
 	toggleChip,
 }: {
-	e: DivisionProjectTypeUnion;
+	label: DivisionProjectTypeUnion;
 	toggleChip: (v: DivisionProjectTypeUnion) => void;
 }) {
 	const [selected, setSelected] = useState(false);
 	return (
 		<Chip
 			clickable
-			label={e}
+			label={label}
 			color={selected ? "primary" : "default"}
 			variant={selected ? "filled" : "outlined"}
-			key={e}
+			key={label}
 			onClick={() => {
-				toggleChip(e);
+				toggleChip(label);
 				setSelected(!selected);
 			}}
 		/>

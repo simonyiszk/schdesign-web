@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { useFormik } from "formik";
 import moment from "moment";
+import Image from "next/image";
 
 import { CustomChip } from "./CustomChip";
 import {
@@ -114,26 +115,25 @@ export function NewProjectForm() {
 				/>
 			</RadioGroup>
 			<FormLabel>Miben tudunk segíteni nektek?</FormLabel>
-			<Box
-				display="grid"
-				gridTemplateColumns={["repeat(1,1fr)", "repeat(3,1fr)"]}
-				gap={1}
-			>
+			<Box display="flex" gap="0.5rem" flexDirection="column">
 				{Object.entries(projectTypeValues).map((cat) => {
 					const [title, items] = cat;
 					return (
-						<Box>
-							<Typography align="center" variant="h6">
+						<Box key={title}>
+							<Typography align="left" marginBottom="0.5rem">
 								{title}
 							</Typography>
 							<Box
-								display={["grid", "flex"]}
-								gridTemplateColumns="repeat(2,1fr)"
+								display="grid"
+								gridTemplateColumns={[
+									"repeat(3,1fr)",
+									"repeat(auto-fit,  130px)",
+								]}
 								flexDirection="column"
 								gap={1}
 							>
 								{items.map((e) => (
-									<CustomChip e={e} toggleChip={toggleChip} />
+									<CustomChip key={e} label={e} toggleChip={toggleChip} />
 								))}
 							</Box>
 						</Box>
@@ -150,13 +150,28 @@ export function NewProjectForm() {
 				InputLabelProps={{
 					shrink: true,
 				}}
+				style={{ margin: "1rem 0" }}
 				InputProps={{
 					inputProps: {
-						min: moment().add(2, "days").format("YYYY-MM-DD"),
+						min: moment().add(1, "days").format("YYYY-MM-DD"),
 						max: moment().add(6, "month").format("YYYY-MM-DD"),
 					},
 				}}
 			/>
+
+			{formik.values.estimatedDeadline ===
+				moment().add(1, "days").format("YYYY-MM-DD") && (
+				<Box width="100%">
+					<Typography>Szóval holnapra kéne, mi?</Typography>
+					<Box position="relative" width="100%" height="400px">
+						<Image
+							layout="fill"
+							objectFit="cover"
+							src="/assets/images/mad_gif.webp"
+						/>
+					</Box>
+				</Box>
+			)}
 
 			<Button type="submit" variant="text">
 				Küldés
