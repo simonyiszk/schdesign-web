@@ -46,7 +46,6 @@ const templatableFields: TemplatableFieldsType[] = [
 
 export function NewProjectForm() {
 	const onSubmit = (values: FormValuesType) => {
-		// eslint-disable-next-line no-console
 		console.log(values);
 	};
 
