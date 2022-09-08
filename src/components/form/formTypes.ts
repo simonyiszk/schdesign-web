@@ -27,6 +27,8 @@ type FormValuesType = {
 	isFromSimonyi: string | null;
 	projectType: DivisionProjectTypeUnion[];
 	estimatedDeadline: string | null;
+	acceptsTos: boolean;
+	acceptsCatCaress: boolean;
 };
 
 const validationSchema: Yup.SchemaOf<FormValuesType> = Yup.object({
@@ -36,19 +38,23 @@ const validationSchema: Yup.SchemaOf<FormValuesType> = Yup.object({
 	email: Yup.string()
 		.email("Érvénytelen email cím")
 		.required("Kötelező kitölteni"),
-	group: Yup.string()
-		.required("Kötelező kitölteni")
-		.min(2, "Legalább 2 karakter hosszú legyen"),
+	group: Yup.string().default(""),
 	message: Yup.string()
 		.required("Kötelező kitölteni")
 		.min(10, "Legalább 10 karakter hosszú legyen")
 		.max(800, "Legfeljebb 800 karakter hosszú lehet"),
-	isFromBME: Yup.string().required("Kötelező kitölteni").oneOf(["yes", "no"]),
+	isFromBME: Yup.string()
+		.required("Kötelező kitölteni")
+		.oneOf(["yes", "no"], "Kötelező mező"),
 	isFromSimonyi: Yup.string()
 		.required("Kötelező kitölteni")
 		.oneOf(["yes", "no"]),
 	projectType: Yup.array(),
 	estimatedDeadline: Yup.string().required("Kötelező kitölteni"),
+	acceptsTos: Yup.boolean()
+		.required("Kötelező kitölteni")
+		.oneOf([true], "Ezt kötelező elfogadni"),
+	acceptsCatCaress: Yup.boolean().default(false).oneOf([true, false]),
 });
 
 const initialValues: FormValuesType = {
@@ -60,6 +66,8 @@ const initialValues: FormValuesType = {
 	isFromSimonyi: null,
 	projectType: [],
 	estimatedDeadline: null,
+	acceptsTos: false,
+	acceptsCatCaress: false,
 };
 
 type TemplatableFieldsType = {

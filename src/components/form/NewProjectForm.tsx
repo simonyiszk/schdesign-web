@@ -1,6 +1,8 @@
 import {
 	Box,
 	Button,
+	Checkbox,
+	FormControl,
 	FormControlLabel,
 	FormLabel,
 	Radio,
@@ -62,7 +64,12 @@ export function NewProjectForm() {
 	};
 
 	return (
-		<form onSubmit={formik.handleSubmit} className="flex flex-col gap-4">
+		<form
+			method="post"
+			action="/api/form/megrendeles"
+			onSubmit={formik.handleSubmit}
+			className="flex flex-col gap-4"
+		>
 			{templatableFields.map(({ name, label, multiline }) => (
 				<TextField
 					key={name}
@@ -76,44 +83,74 @@ export function NewProjectForm() {
 					onChange={formik.handleChange}
 					error={formik.touched[name] && Boolean(formik.errors[name])}
 					helperText={formik.touched[name] && formik.errors[name]}
-					required
+					required={validationSchema.fields[name]
+						.describe()
+						.tests.some((e) => e.name === "required")}
 				/>
 			))}
-			<FormLabel>BME-hez köthető kör/cég/szervezet?</FormLabel>
-			<RadioGroup row onChange={formik.handleChange}>
-				<FormControlLabel
-					name="isFromBME"
-					label="Igen"
-					value="yes"
-					control={<Radio />}
-				/>
-				<FormControlLabel
-					name="isFromBME"
-					label="Nem"
-					value="no"
-					control={<Radio />}
-				/>
-			</RadioGroup>
-			<FormLabel>Simonyi Szakkollégiumhoz köthető kör/cég/szervezet?</FormLabel>
-			<RadioGroup
-				row
-				onChange={formik.handleChange}
-				name="isFromSimonyi"
-				id="isFromSimonyi"
+			<FormControl
+				required
+				error={Boolean(formik.errors.isFromBME) && formik.touched.isFromBME}
 			>
-				<FormControlLabel
+				<FormLabel>BME-hez köthető kör/cég/szervezet?</FormLabel>
+				<RadioGroup row onChange={formik.handleChange}>
+					<FormControlLabel
+						name="isFromBME"
+						label="Igen"
+						value="yes"
+						control={<Radio />}
+					/>
+					<FormControlLabel
+						name="isFromBME"
+						label="Nem"
+						value="no"
+						control={<Radio />}
+					/>
+				</RadioGroup>
+				{formik.touched.isFromBME &&
+					Boolean(formik.errors.isFromBME) &&
+					formik.values.isFromBME === null && (
+						<Typography variant="caption" color="error">
+							Ez egy kötelező mező
+						</Typography>
+					)}
+			</FormControl>
+			<FormControl
+				required
+				error={
+					Boolean(formik.errors.isFromSimonyi) && formik.touched.isFromSimonyi
+				}
+			>
+				<FormLabel>
+					Simonyi Szakkollégiumhoz köthető kör/cég/szervezet?
+				</FormLabel>
+				<RadioGroup
+					row
+					onChange={formik.handleChange}
 					name="isFromSimonyi"
-					label="Igen"
-					value="yes"
-					control={<Radio name="isFromSimonyi" />}
-				/>
-				<FormControlLabel
-					name="isFromSimonyi"
-					label="Nem"
-					value="no"
-					control={<Radio name="isFromSimonyi" />}
-				/>
-			</RadioGroup>
+					id="isFromSimonyi"
+				>
+					<FormControlLabel
+						name="isFromSimonyi"
+						label="Igen"
+						value="yes"
+						control={<Radio name="isFromSimonyi" />}
+					/>
+					<FormControlLabel
+						name="isFromSimonyi"
+						label="Nem"
+						value="no"
+						control={<Radio name="isFromSimonyi" />}
+					/>
+				</RadioGroup>
+				{formik.touched.isFromSimonyi &&
+					Boolean(formik.errors.isFromSimonyi) &&
+					formik.values.isFromSimonyi === null && (
+						<Typography variant="caption" color="error">
+							Ez egy kötelező mező
+						</Typography>
+					)}
+			</FormControl>
 			<FormLabel>Miben tudunk segíteni nektek?</FormLabel>
 			<Box display="flex" gap="0.5rem" flexDirection="column">
 				{Object.entries(projectTypeValues).map((cat) => {
@@ -143,10 +180,11 @@ export function NewProjectForm() {
 
 			<TextField
 				id="estimatedDeadline"
-				label="Várható határídő"
+				label="Határídő"
 				name="estimatedDeadline"
 				type="date"
 				onChange={formik.handleChange}
+				helperText="A projekt várható határideje"
 				InputLabelProps={{
 					shrink: true,
 				}}
@@ -172,6 +210,34 @@ export function NewProjectForm() {
 					</Box>
 				</Box>
 			)}
+
+			<Box>
+				<FormControl
+					required
+					onChange={formik.handleChange}
+					error={formik.touched.acceptsTos && Boolean(formik.errors.acceptsTos)}
+				>
+					<FormControlLabel
+						name="acceptsTos"
+						id="acceptsTos"
+						control={<Checkbox />}
+						label="Elfogadom a megrendelői elveket"
+					/>
+					{formik.touched.acceptsTos && Boolean(formik.errors.acceptsTos) && (
+						<Typography variant="caption" color="error">
+							{formik.errors.acceptsTos}
+						</Typography>
+					)}
+				</FormControl>
+				<FormControl required onChange={formik.handleChange}>
+					<FormControlLabel
+						name="acceptsCatCaress"
+						id="acceptsCatCaress"
+						control={<Checkbox />}
+						label="Megígérem, hogy naponta megsimogatom a cicámat"
+					/>
+				</FormControl>
+			</Box>
 
 			<Button type="submit" variant="text">
 				Küldés
