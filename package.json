@@ -20,7 +20,7 @@
 		"typegen": "cf-content-types-generator -s CONTENTFUL_SPACE_ID -t CONTENTFUL_MANAGEMENT_TOKEN -o src/@types/generated"
 	},
 	"nano-staged": {
-		"*": "prettier --write --ignore-unknown",
+		"*": "prettier --write --ignore-unknown .",
 		"*.{ts,tsx,js,jsx}": "eslint --fix"
 	},
 	"repository": {
