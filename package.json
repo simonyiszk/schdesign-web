@@ -57,6 +57,8 @@
 		"contentful-management": "^10.12.1",
 		"dotenv": "^16.0.2",
 		"focus-visible": "5.2.0",
+		"formik": "^2.2.9",
+		"moment": "^2.29.4",
 		"next": "12.2.5",
 		"next-compose-plugins": "^2.2.1",
 		"next-mdx-remote": "^4.1.0",
@@ -67,7 +69,8 @@
 		"react-dom": "18.2.0",
 		"react-icons": "^4.4.0",
 		"sass": "^1.54.8",
-		"tailwindcss": "3.1.8"
+		"tailwindcss": "3.1.8",
+		"yup": "^0.32.11"
 	},
 	"devDependencies": {
 		"@tsconfig/next": "1.0.2",
