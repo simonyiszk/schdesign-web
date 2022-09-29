@@ -68,5 +68,11 @@ exports.createPages = async ({ graphql, actions }) => {
 			"https://drive.google.com/file/d/1Jpa6VdPs5PPQm16w6aOW_00RuA8cxYST/view?usp=sharing",
 		isPermanent: true,
 	});
+	createRedirect({
+		fromPath: "/games",
+		toPath:
+			"https://drive.google.com/drive/folders/1mW8Aaph4jBHZbf9EcEAsebmYTgP_yrxo?usp=sharing",
+		isPermanent: true,
+	});
 	// Create pages here
 };
