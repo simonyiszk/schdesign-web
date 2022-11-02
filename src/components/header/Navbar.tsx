@@ -16,7 +16,7 @@ export function Navbar() {
 				<div className="relative flex w-full justify-between lg:static lg:block lg:w-auto lg:justify-start">
 					<Link
 						href="/"
-						className="font-schdesign text-4xl no-underline lg:text-7xl"
+						className="font-schdesign text-4xl no-underline lg:text-5xl 2xl:text-7xl"
 					>
 						sch<span className="text-primary">design</span>
 					</Link>
@@ -41,7 +41,7 @@ export function Navbar() {
 									<Link
 										href={href}
 										className={clsx(
-											"inline-block w-full py-2 text-xl font-medium hover:text-primary lg:px-5 xl:text-2xl",
+											"inline-block w-full py-2 text-lg font-medium hover:text-primary lg:px-4 xl:text-2xl",
 											i === 0 && "lg:pl-0",
 											i === navbarContent.links.length - 1 && "lg:pr-0",
 										)}
@@ -52,7 +52,7 @@ export function Navbar() {
 									<a
 										href={href}
 										className={clsx(
-											"inline-block w-full py-2 text-xl font-medium hover:text-primary lg:px-5 xl:text-2xl",
+											"inline-block w-full py-2 text-lg font-medium hover:text-primary lg:px-4 xl:text-2xl",
 											i === 0 && "lg:pl-0",
 											i === navbarContent.links.length - 1 && "lg:pr-0",
 										)}

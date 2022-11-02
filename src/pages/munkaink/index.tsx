@@ -8,14 +8,14 @@ import { getWorks } from "@/utils/contentful";
 
 export async function getStaticProps() {
 	const works = await getWorks();
-	return { props: { works: works.items } };
+	return { props: { works: works.items, buildDate: Date.now() } };
 }
 
 type WorksProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-export default function Works({ works }: WorksProps) {
+export default function Works({ works, buildDate }: WorksProps) {
 	return (
-		<Layout>
+		<Layout buildDate={buildDate}>
 			<Seo title="Munkáink" />
 			<Separator>Munkáink</Separator>
 			<Gallery works={works} />

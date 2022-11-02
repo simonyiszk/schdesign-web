@@ -9,14 +9,14 @@ import { getMembers } from "@/utils/contentful";
 export async function getStaticProps() {
 	const members = await getMembers();
 
-	return { props: { members } };
+	return { props: { members, buildDate: Date.now() } };
 }
 
 type TeamProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-export default function Team({ members }: TeamProps) {
+export default function Team({ members, buildDate }: TeamProps) {
 	return (
-		<Layout>
+		<Layout buildDate={buildDate}>
 			<Seo title="Csapatunk" />
 			<Separator>Tagjaink</Separator>
 			<section className="container mx-auto my-8 grid grid-cols-1 justify-items-center gap-12 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">

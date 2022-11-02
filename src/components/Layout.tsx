@@ -11,6 +11,10 @@ declare module "@mui/material/styles" {
 	}
 }
 
+type LayoutProps = {
+	buildDate?: number;
+} & React.HTMLAttributes<HTMLDivElement>;
+
 const theme = createTheme({
 	breakpoints: {
 		values: {
@@ -29,19 +33,17 @@ const theme = createTheme({
 	},
 });
 
-export function Layout({
-	children,
-}: {
-	children: React.ReactNode;
-}): JSX.Element {
+export function Layout({ buildDate, children, ...restProps }: LayoutProps) {
 	return (
 		<ThemeProvider theme={theme}>
 			<div className="flex min-h-screen flex-col justify-between">
 				<Navbar />
 
-				<main id="#">{children}</main>
+				<main id="#" {...restProps}>
+					{children}
+				</main>
 
-				<Footer />
+				<Footer buildDate={buildDate} />
 			</div>
 		</ThemeProvider>
 	);

@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 const aspectRatio = require("@tailwindcss/aspect-ratio");
 
 /** @type {import("tailwindcss").Config} */
@@ -12,6 +13,10 @@ module.exports = {
 			colors: {
 				primary: {
 					DEFAULT: "#F8485E",
+				},
+				gray: {
+					...colors.neutral,
+					900: "#1d1d1d",
 				},
 			},
 			fontFamily: {

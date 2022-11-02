@@ -1,6 +1,6 @@
 import type * as Contentful from "contentful";
 
-export interface TypeParagraphFields {
+export type TypeParagraphFields = {
     title: Contentful.EntryFields.Symbol;
     order: Contentful.EntryFields.Integer;
     content: Contentful.EntryFields.Text;

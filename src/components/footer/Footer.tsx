@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Image from "next/future/image";
+import Link from "next/link";
 import { FaFacebookSquare, FaInstagram } from "react-icons/fa";
 
 import manifest from "@/../package.json";
@@ -9,7 +10,22 @@ import viksvg from "@/assets/images/vik.svg";
 
 import styles from "./Footer.module.scss";
 
-export function Footer() {
+type FooterProps = {
+	buildDate?: number;
+};
+
+export function Footer({ buildDate }: FooterProps) {
+	const buildDateFormat = buildDate ? new Date(buildDate) : new Date();
+	const buildDateString = new Intl.DateTimeFormat("hu-HU", {
+		month: "2-digit",
+		day: "2-digit",
+		hour: "2-digit",
+		minute: "2-digit",
+	})
+		.format(buildDateFormat)
+		.match(/\d+/g)
+		?.join("");
+
 	return (
 		<footer
 			className={clsx(styles.footer, "w-full bg-gray-900 p-8 text-white")}
@@ -18,6 +34,11 @@ export function Footer() {
 				<h3 className="mb-4 mt-4 font-RobotoMono text-2xl">kapcsolat</h3>
 				<p className="mb-4 text-xl">
 					Van egy projekted számunkra? <br />
+					Ha megértetted és elfogadot az{" "}
+					<Link href="/aszf" className="text-primary hover:underline">
+						ÁSZF
+					</Link>
+					-et, <br />
 					Küldj egy e-mailt a{" "}
 					<a
 						href="mailto:hello@schdesign.hu"
@@ -73,7 +94,7 @@ export function Footer() {
 							aria-label="GitHub repo link"
 							className="hover:text-gray-300 hover:underline"
 						>
-							{`v${manifest.version}.${"next"}`}
+							v{manifest.version}.{buildDateString}
 						</a>{" "}
 						©&nbsp;{new Date().getFullYear()}&nbsp;schdesign
 					</p>

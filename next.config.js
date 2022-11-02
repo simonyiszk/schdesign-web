@@ -71,6 +71,12 @@ const nextConfig = {
 					"https://drive.google.com/file/d/1Jpa6VdPs5PPQm16w6aOW_00RuA8cxYST/view?usp=sharing",
 				permanent: true,
 			},
+			{
+				source: "/games",
+				destination:
+					"https://drive.google.com/drive/folders/1mW8Aaph4jBHZbf9EcEAsebmYTgP_yrxo?usp=sharing",
+				permanent: true,
+			},
 		];
 	},
 };

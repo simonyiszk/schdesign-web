@@ -1,6 +1,6 @@
 import type * as Contentful from "contentful";
 
-export interface TypeMemberFields {
+export type TypeMemberFields = {
     name: Contentful.EntryFields.Symbol;
     email?: Contentful.EntryFields.Symbol;
     title?: Contentful.EntryFields.Symbol;

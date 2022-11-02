@@ -1,5 +1,6 @@
 {
 	"links": [
+		{ "href": "/aszf", "label": "Megrendelés" },
 		{ "href": "/rolunk", "label": "Rólunk" },
 		{ "href": "/munkaink", "label": "Munkáink" },
 		{ "href": "/csapatunk", "label": "Csapatunk" },

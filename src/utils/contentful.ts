@@ -11,6 +11,7 @@ import type {
 	TypeMemberFields,
 	TypeParagraph,
 	TypeParagraphFields,
+	TypeTermsOfServiceFields,
 } from "@/@types/generated/index";
 
 const client = createClient({
@@ -127,4 +128,20 @@ export async function getMembers() {
 	// oldMembers.items.sort(orderMembers);
 
 	return { leader, leaderShip, members, oldMembers };
+}
+
+export async function getTOS() {
+	const tos = (
+		await client.getEntries<TypeTermsOfServiceFields>({
+			content_type: "termsOfService",
+			limit: 1,
+		})
+	).items[0];
+
+	const renderedTOS = await (async () => {
+		const mdxSource = await serialize(tos.fields.content);
+		return { mdxSource, ...tos };
+	})();
+
+	return renderedTOS;
 }

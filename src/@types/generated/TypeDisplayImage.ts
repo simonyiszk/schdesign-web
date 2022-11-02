@@ -1,6 +1,6 @@
 import type * as Contentful from "contentful";
 
-export interface TypeDisplayImageFields {
+export type TypeDisplayImageFields = {
     title: Contentful.EntryFields.Symbol;
     author: Contentful.EntryFields.Symbol;
     image: Contentful.Asset;
