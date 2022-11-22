@@ -74,5 +74,10 @@ exports.createPages = async ({ graphql, actions }) => {
 			"https://drive.google.com/drive/folders/1mW8Aaph4jBHZbf9EcEAsebmYTgP_yrxo?usp=sharing",
 		isPermanent: true,
 	});
+	createRedirect({
+		fromPath: "/konf",
+		toPath: "https://trello.com/b/mbeiTk9j/xx-simonyi-konferencia-arculat",
+		isPermanent: true,
+	});
 	// Create pages here
 };
