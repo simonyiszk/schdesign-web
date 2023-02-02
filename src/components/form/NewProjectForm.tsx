@@ -202,11 +202,7 @@ export function NewProjectForm() {
 				<Box width="100%">
 					<Typography>Szóval holnapra kéne, mi?</Typography>
 					<Box position="relative" width="100%" height="400px">
-						<Image
-							layout="fill"
-							objectFit="cover"
-							src="/assets/images/mad_gif.webp"
-						/>
+						<Image fill src="/assets/images/mad_gif.webp" alt="Madge" />
 					</Box>
 				</Box>
 			)}
