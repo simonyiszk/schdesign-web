@@ -2,12 +2,28 @@ import Masonry from "@mui/lab/Masonry";
 import clsx from "clsx";
 import type { EntryWithLinkResolutionAndWithoutUnresolvableLinks } from "contentful";
 import { useCallback, useState } from "react";
+import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
+import Lightbox from "react-spring-lightbox";
 
 import type { TypeDisplayImageFields } from "@/@types/generated";
-import carouselFormatters from "@/utils/carouselFormatters";
 
 import styles from "./Gallery.module.scss";
 import { ImageDisplay } from "./ImageDisplay";
+
+type OverlayFooterProps = { title: string; count: string };
+
+function OverlayFooter({ title, count }: OverlayFooterProps) {
+	return (
+		<>
+			<div className="absolute bottom-2 left-2 text-xs text-gray-300">
+				{title}
+			</div>
+			<div className="absolute bottom-2 right-2 text-xs text-gray-300">
+				{count}
+			</div>
+		</>
+	);
+}
 
 export type GalleryProps = {
 	works: EntryWithLinkResolutionAndWithoutUnresolvableLinks<TypeDisplayImageFields>[];
@@ -53,24 +69,60 @@ export function Gallery({ works }: GalleryProps) {
 				</Masonry>
 			</section>
 
-			{/* {ModalGateway && (
-				<ModalGateway>
-					{modalIsOpen && (
-						<Modal onClose={closeModal}>
-							<Carousel
-								views={works.map(({ author, title, image }) => ({
-									source: image?.file?.url ?? "",
-									caption: `${title} - ${author}`,
-									alt: title ?? "",
-								}))}
-								currentIndex={activeIndex}
-								// @ts-expect-error: idk
-								formatters={carouselFormatters}
-							/>
-						</Modal>
-					)}
-				</ModalGateway>
-			)} */}
+			<Lightbox
+				className="bg-black/75 backdrop-blur"
+				isOpen={modalIsOpen}
+				currentIndex={activeIndex}
+				onClose={closeModal}
+				onNext={() => setActiveIndex((i) => (i + 1) % works.length)}
+				onPrev={() =>
+					setActiveIndex((i) => (i + works.length - 1) % works.length)
+				}
+				images={works.map(({ fields }) => ({
+					src: fields.image?.fields.file?.url ?? "",
+					// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+					alt: fields.title ?? "",
+				}))}
+				// @ts-expect-error: wrong type defs?
+				renderNextButton={({ canNext }) => (
+					<button
+						className="z-50 inline-block p-2 transition-all active:scale-75 disabled:opacity-50"
+						type="button"
+						disabled={!canNext}
+						onClick={() => setActiveIndex((i) => (i + 1) % works.length)}
+					>
+						<FaChevronRight className="h-8 w-8 text-white drop-shadow-md transition-all hover:scale-125 sm:h-12 sm:w-12" />
+					</button>
+				)}
+				// @ts-expect-error: wrong type defs?
+				renderPrevButton={({ canPrev }) => (
+					<button
+						className="z-50 inline-block p-2 transition-all active:scale-75 disabled:opacity-50"
+						type="button"
+						disabled={!canPrev}
+						onClick={() =>
+							setActiveIndex((i) => (i + works.length - 1) % works.length)
+						}
+					>
+						<FaChevronLeft className="h-8 w-8 text-white drop-shadow-md transition-all hover:scale-125 sm:h-12 sm:w-12" />
+					</button>
+				)}
+				renderFooter={() => (
+					<OverlayFooter
+						title={`${works[activeIndex].fields.title} - ${works[activeIndex].fields.author}`}
+						count={`${activeIndex + 1}/${works.length}`}
+					/>
+				)}
+				renderHeader={() => (
+					<button
+						className="absolute top-2 right-2 z-50 inline-block p-2 transition-all active:scale-75 disabled:opacity-50"
+						type="button"
+						onClick={closeModal}
+					>
+						<FaTimes className="h-8 w-8 text-white drop-shadow-md transition-all hover:scale-125 sm:h-12 sm:w-12" />
+					</button>
+				)}
+			/>
 		</>
 	);
 }

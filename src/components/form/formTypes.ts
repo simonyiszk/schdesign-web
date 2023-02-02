@@ -8,9 +8,9 @@ const projectTypeValues = {
 	grafika: [...new Set(divisionProjects.grafika)] as const,
 };
 
-type WebProjectType = typeof projectTypeValues.web[number];
-type ThreeDProjectType = typeof projectTypeValues["3d"][number];
-type GrafikaProjectType = typeof projectTypeValues.grafika[number];
+type WebProjectType = (typeof projectTypeValues.web)[number];
+type ThreeDProjectType = (typeof projectTypeValues)["3d"][number];
+type GrafikaProjectType = (typeof projectTypeValues.grafika)[number];
 type DivisionProjectTypeUnion =
 	| WebProjectType
 	| ThreeDProjectType

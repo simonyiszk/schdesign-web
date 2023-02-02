@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import type { AssetFile } from "contentful";
-import Image from "next/future/image";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaLink } from "react-icons/fa";
 

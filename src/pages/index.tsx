@@ -30,8 +30,6 @@ export async function getStaticProps() {
 type IndexProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 export default function IndexPage({ paragraph, works, buildDate }: IndexProps) {
-	console.log("Tappancs a kutyus boldogsága úgy virágzik mint környezete.");
-
 	return (
 		<Layout buildDate={buildDate}>
 			<Seo title="😺" />

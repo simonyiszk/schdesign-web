@@ -16,8 +16,8 @@ type WorksProps = InferGetStaticPropsType<typeof getStaticProps>;
 export default function TOSPage({ TOS, buildDate }: WorksProps) {
 	return (
 		<Layout buildDate={buildDate}>
-			<Seo title="Általános szerződési feltételek" />
-			<Separator>Általános szerződési feltételek</Separator>
+			<Seo title="Megrendelési feltételek" />
+			<Separator>Megrendelési feltételek</Separator>
 			<section className="container mx-auto mt-4 flex flex-col p-4 px-4 text-justify">
 				<Paragraph>{TOS.mdxSource}</Paragraph>
 			</section>

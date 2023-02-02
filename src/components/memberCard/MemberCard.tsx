@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import type { Asset } from "contentful";
-import Image from "next/future/image";
+import Image from "next/image";
 
 export type MemberCardProps = {
 	name?: string;

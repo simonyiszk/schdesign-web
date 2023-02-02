@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Image from "next/future/image";
+import Image from "next/image";
 import Link from "next/link";
 import { FaFacebookSquare, FaInstagram } from "react-icons/fa";
 
