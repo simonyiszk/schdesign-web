@@ -1,10 +1,10 @@
-import type * as Contentful from "contentful";
+import type { Asset, Entry, EntryFields } from "contentful";
 
 export type TypeDisplayImageFields = {
-    title: Contentful.EntryFields.Symbol;
-    author: Contentful.EntryFields.Symbol;
-    image: Contentful.Asset;
-    createdAt: Contentful.EntryFields.Date;
+    title: EntryFields.Symbol;
+    author: EntryFields.Symbol;
+    image: Asset;
+    createdAt: EntryFields.Date;
 }
 
-export type TypeDisplayImage = Contentful.Entry<TypeDisplayImageFields>;
+export type TypeDisplayImage = Entry<TypeDisplayImageFields>;

@@ -5,12 +5,14 @@ import {
 import { serialize } from "next-mdx-remote/serialize";
 
 import type {
+	TypeCourseFields,
 	TypeDisplayImage,
 	TypeDisplayImageFields,
 	TypeMember,
 	TypeMemberFields,
 	TypeParagraph,
 	TypeParagraphFields,
+	TypeSiteSettingsFields,
 	TypeTermsOfServiceFields,
 } from "@/@types/generated/index";
 
@@ -144,4 +146,33 @@ export async function getTOS() {
 	})();
 
 	return renderedTOS;
+}
+
+export type GetCoursesReturnType = Awaited<ReturnType<typeof getCourses>>;
+
+export async function getCourses() {
+	const courses = await client.getEntries<TypeCourseFields>({
+		content_type: "course",
+		order: "fields.order",
+	});
+
+	const renderedCourses = await Promise.all(
+		courses.items.map(async (course) => {
+			const mdxSource = course.fields.content
+				? await serialize(course.fields.content)
+				: null;
+			return { mdxSource, ...course };
+		}),
+	);
+
+	return renderedCourses;
+}
+
+export async function getSiteSettings() {
+	const siteSettings = await client.getEntries<TypeSiteSettingsFields>({
+		content_type: "siteSettings",
+		limit: 1,
+	});
+
+	return siteSettings.items[0];
 }

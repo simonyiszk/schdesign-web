@@ -1,12 +1,12 @@
-import type * as Contentful from "contentful";
+import type { Asset, Entry, EntryFields } from "contentful";
 
 export type TypeMemberFields = {
-    name: Contentful.EntryFields.Symbol;
-    email?: Contentful.EntryFields.Symbol;
-    title?: Contentful.EntryFields.Symbol;
-    isCurrentLeadership: Contentful.EntryFields.Boolean;
-    isOld: Contentful.EntryFields.Boolean;
-    image?: Contentful.Asset;
+    name: EntryFields.Symbol;
+    email?: EntryFields.Symbol;
+    title?: EntryFields.Symbol;
+    isCurrentLeadership: EntryFields.Boolean;
+    isOld: EntryFields.Boolean;
+    image?: Asset;
 }
 
-export type TypeMember = Contentful.Entry<TypeMemberFields>;
+export type TypeMember = Entry<TypeMemberFields>;

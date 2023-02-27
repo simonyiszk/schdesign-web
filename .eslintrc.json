@@ -9,6 +9,7 @@
 		"plugin:eslint-comments/recommended",
 		"plugin:react/jsx-runtime",
 		"plugin:react-etc/recommended",
+		"plugin:tailwindcss/recommended",
 		"prettier",
 		"prettier/prettier"
 	],

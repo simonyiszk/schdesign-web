@@ -1,7 +1,7 @@
-import type * as Contentful from "contentful";
+import type { Entry, EntryFields } from "contentful";
 
 export type TypeTermsOfServiceFields = {
-    content: Contentful.EntryFields.Text;
+    content: EntryFields.Text;
 }
 
-export type TypeTermsOfService = Contentful.Entry<TypeTermsOfServiceFields>;
+export type TypeTermsOfService = Entry<TypeTermsOfServiceFields>;
