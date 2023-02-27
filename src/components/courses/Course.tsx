@@ -66,15 +66,17 @@ export function Course({
 					<div className="flex flex-col items-center">
 						{date ? (
 							<>
-								<p className="mb-1">{dateString}</p>
-								<p className="mb-1 text-sm">{timeString}</p>
+								<p className="mb-1 w-full">{dateString}</p>
+								<p className="mb-1 w-full border-b border-gray-600 text-sm">
+									{timeString}
+								</p>
 							</>
 						) : (
-							<p className="mb-1 text-center">
+							<p className="mb-1 w-full border-b border-gray-600 text-center">
 								Időpont később <br /> lesz megadva
 							</p>
 						)}
-						<p className="border-t border-gray-600 text-center text-gray-600">
+						<p className="text-center text-gray-600">
 							{location ?? "Helyszín később lesz megadva"}
 						</p>
 					</div>
