@@ -83,9 +83,7 @@ export function NewProjectForm() {
 					onChange={formik.handleChange}
 					error={formik.touched[name] && Boolean(formik.errors[name])}
 					helperText={formik.touched[name] && formik.errors[name]}
-					required={validationSchema.fields[name]
-						.describe()
-						.tests.some((e: { name: string }) => e.name === "required")}
+					required={validationSchema.required(name)}
 				/>
 			))}
 			<FormControl

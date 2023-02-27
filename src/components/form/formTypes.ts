@@ -31,7 +31,7 @@ type FormValuesType = {
 	acceptsCatCaress: boolean;
 };
 
-const validationSchema: Yup.SchemaOf<FormValuesType> = Yup.object({
+const validationSchema: Yup.Schema<FormValuesType> = Yup.object({
 	name: Yup.string()
 		.required("Kötelező kitölteni")
 		.min(3, "Legalább 3 karakter hosszú legyen"),
@@ -49,7 +49,7 @@ const validationSchema: Yup.SchemaOf<FormValuesType> = Yup.object({
 	isFromSimonyi: Yup.string()
 		.required("Kötelező kitölteni")
 		.oneOf(["yes", "no"]),
-	projectType: Yup.array(),
+	projectType: Yup.array().default([]),
 	estimatedDeadline: Yup.string().required("Kötelező kitölteni"),
 	acceptsTos: Yup.boolean()
 		.required("Kötelező kitölteni")
