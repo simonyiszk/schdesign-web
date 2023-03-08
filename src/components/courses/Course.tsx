@@ -1,9 +1,33 @@
+import clsx from "clsx";
 import Image from "next/image";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { FaCalendarAlt } from "react-icons/fa";
 
 import type { TypeCourseFields } from "@/@types/generated";
+import { generateCalendarEvent } from "@/utils/calendar";
 
 import { PLink, PP } from "../paragraph/ParagraphComponents";
+
+function CalendarLinkWrapper({
+	children,
+	url,
+}: {
+	children: JSX.Element;
+	url: string | undefined;
+}): JSX.Element {
+	return url ? (
+		<a
+			href={url}
+			target="_blank"
+			rel="noreferrer"
+			title="Tanfolyam hozzáadása Google Calendar-hoz"
+		>
+			{children}
+		</a>
+	) : (
+		children
+	);
+}
 
 export type CourseProps = {
 	mdxSource?: MDXRemoteSerializeResult | null;
@@ -43,6 +67,16 @@ export function Course({
 		? `${startTimeString} - ${endTimeString}`
 		: startTimeString;
 
+	const calendarEventLink =
+		dateObj && endtime
+			? generateCalendarEvent({
+					title,
+					startDate: dateObj,
+					endDate: endtime,
+					location,
+			  })
+			: undefined;
+
 	return (
 		<div className="flex flex-col items-center justify-center rounded-2xl bg-white p-4 text-center shadow-2xl">
 			{mdxSource ? (
@@ -61,7 +95,19 @@ export function Course({
 								/>
 							</div>
 						)}
-						<h3 className="ml-2 text-center text-lg font-medium">{title}</h3>
+						<CalendarLinkWrapper url={calendarEventLink}>
+							<h3
+								className={clsx(
+									"ml-2 flex flex-row items-center gap-4 text-center text-lg font-medium ",
+									calendarEventLink && "transition hover:text-primary",
+								)}
+							>
+								{title}
+								<FaCalendarAlt
+									className={clsx("inline", !calendarEventLink && "hidden")}
+								/>
+							</h3>
+						</CalendarLinkWrapper>
 					</div>
 					<div className="flex flex-col items-center">
 						{date ? (
