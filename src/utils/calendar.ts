@@ -28,8 +28,8 @@ export function generateCalendarEvent({
 		details: details ?? "",
 		location,
 		crm: "BUSY",
-		sprop: process.env.NEXT_PUBLIC_VERCEL_URL
-			? `website:https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+		sprop: process.env.NEXT_PUBLIC_DOMAIN
+			? `website:https://${process.env.NEXT_PUBLIC_DOMAIN}`
 			: "website:https://www.schdesign.hu",
 	} as { [key: string]: string };
 
