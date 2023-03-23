@@ -78,7 +78,7 @@ export function Course({
 			: undefined;
 
 	return (
-		<div className="flex flex-col items-center justify-center rounded-2xl bg-white p-4 text-center shadow-2xl">
+		<div className="flex w-full flex-col items-center justify-center rounded-2xl bg-white p-4 text-center shadow-2xl sm:w-fit">
 			{mdxSource ? (
 				<MDXRemote components={{ a: PLink, p: PP }} {...mdxSource} />
 			) : (
