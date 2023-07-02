@@ -33,6 +33,10 @@ export function Seo({ description, lang = "hu", meta = [], title }: SeoProps) {
 			<meta property="og:type" content="website" />
 
 			<link rel="shortcut icon" href="/favicon.png" />
+			<meta
+				name="google-site-verification"
+				content="lb8JjUJiH4GlXB8pe3axz_Th36HuV5HBhDDfo_oMMLQ"
+			/>
 		</Head>
 	);
 }
