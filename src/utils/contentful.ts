@@ -102,7 +102,14 @@ export async function getMembers() {
 			"fields.isCurrentLeadership": "true",
 			"fields.title": "Körvezető",
 		})
-	).items[0];
+	).items[0] ?? {
+		fields: {
+			isCurrentLeadership: true,
+			isOld: false,
+			name: "Titkos Körvezető",
+			title: "Körvezető",
+		},
+	};
 
 	const leaderShip = await client.getEntries<TypeMemberFields>({
 		content_type: "member",
