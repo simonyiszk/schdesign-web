@@ -100,7 +100,7 @@ export async function getMembers() {
 			content_type: "member",
 			limit: 1,
 			"fields.isCurrentLeadership": "true",
-			"fields.title": "Körvezető",
+			"fields.title[in]": "Körvezető",
 		})
 	).items[0] ?? {
 		fields: {
