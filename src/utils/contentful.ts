@@ -1,6 +1,6 @@
 import {
 	createClient,
-	EntryWithLinkResolutionAndWithoutUnresolvableLinks,
+	type EntryWithLinkResolutionAndWithoutUnresolvableLinks,
 } from "contentful";
 import { serialize } from "next-mdx-remote/serialize";
 
