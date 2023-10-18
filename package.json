@@ -55,7 +55,7 @@
 		"moment": "^2.29.4",
 		"next": "13.5.5",
 		"next-compose-plugins": "^2.2.1",
-		"next-mdx-remote": "^4.3.0",
+		"next-mdx-remote": "^4.4.1",
 		"postcss": "^8.4.21",
 		"postcss-import": "15.1.0",
 		"postcss-preset-env": "8.0.1",
