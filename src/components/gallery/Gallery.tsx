@@ -1,3 +1,5 @@
+"use client";
+
 import Masonry from "@mui/lab/Masonry";
 import clsx from "clsx";
 import type { EntryWithLinkResolutionAndWithoutUnresolvableLinks } from "contentful";
@@ -46,7 +48,7 @@ export function Gallery({ works }: GalleryProps) {
 			<section
 				className={clsx(
 					styles.workGallery,
-					"fit pointer-events-auto p-3 md:p-4 xl:p-8",
+					"pointer-events-auto p-3 md:p-4 xl:p-8",
 				)}
 			>
 				<Masonry

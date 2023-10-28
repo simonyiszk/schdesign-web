@@ -1,11 +1,7 @@
-import type { InferGetStaticPropsType } from "next";
-
 import { CourseSection } from "@/components/courses/CourseSection";
 import { Gallery } from "@/components/gallery/Gallery";
 import { Hero } from "@/components/header/Hero";
-import { Layout } from "@/components/Layout";
 import { SplitParagraph } from "@/components/paragraph/SplitParagraph";
-import { Seo } from "@/components/Seo";
 import { Separator } from "@/components/separator/Separator";
 import {
 	getCourses,
@@ -14,7 +10,7 @@ import {
 	getWorks,
 } from "@/utils/contentful";
 
-export async function getStaticProps() {
+export default async function MainPage() {
 	const paragraphs = await getParagraphs();
 	const works = await getWorks();
 	const courses = await getCourses();
@@ -24,30 +20,11 @@ export async function getStaticProps() {
 		works.items = works.items.slice(0, 12);
 	}
 
-	return {
-		props: {
-			paragraph: paragraphs[0],
-			works: works.items,
-			courses,
-			...siteSettings.fields,
-			buildDate: Date.now(),
-		},
-	};
-}
+	const paragraph = paragraphs[0];
+	const { showCourses } = siteSettings.fields;
 
-type IndexProps = InferGetStaticPropsType<typeof getStaticProps>;
-
-export default function IndexPage({
-	paragraph,
-	works,
-	courses,
-	showCourses,
-	buildDate,
-}: IndexProps) {
 	return (
-		<Layout buildDate={buildDate}>
-			<Seo title="😺" />
-
+		<>
 			<Hero />
 			{showCourses && (
 				<>
@@ -59,13 +36,14 @@ export default function IndexPage({
 			)}
 			<Separator>Rólunk</Separator>
 			<section className="container mx-auto mt-4 flex flex-col p-4">
-				<SplitParagraph title={paragraph.fields.title ?? "Rólunk"}>
-					{paragraph.mdxSource ?? "Ez eltűnt 😔"}
-				</SplitParagraph>
+				<SplitParagraph
+					title={paragraph.fields.title || "Rólunk"}
+					source={paragraph.fields.content || "Ez eltűnt 😔"}
+				/>
 			</section>
 
 			<Separator>Legújabb munkáink</Separator>
-			<Gallery works={works} />
-		</Layout>
+			<Gallery works={works.items} />
+		</>
 	);
 }

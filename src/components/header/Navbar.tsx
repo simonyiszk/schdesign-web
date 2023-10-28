@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import Link from "next/link";
 import { useState } from "react";
@@ -30,7 +32,7 @@ export function Navbar() {
 				</div>
 				<nav
 					className={clsx(
-						"z-50 flex-grow items-center lg:flex",
+						"z-50 grow items-center lg:flex",
 						navbarOpen ? "flex" : "hidden",
 					)}
 				>

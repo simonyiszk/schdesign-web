@@ -7,14 +7,14 @@ const carouselFormatters = {
 		views,
 	}: {
 		currentIndex: number;
-		views: { [key: string]: any }[];
+		views: { [key: string]: unknown }[];
 	}) => `Mutasd a(z) ${currentIndex + 2}. képet a(z) ${views.length} közül`,
 	getPrevLabel: ({
 		currentIndex,
 		views,
 	}: {
 		currentIndex: number;
-		views: { [key: string]: any }[];
+		views: { [key: string]: unknown }[];
 	}) => `Mutasd a(z) ${currentIndex}. képet a(z) ${views.length} közül`,
 
 	getNextTitle: () => "Következő (jobbra nyíl)",

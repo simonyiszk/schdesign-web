@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import Image from "next/image";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote/rsc";
 import { FaCalendarAlt } from "react-icons/fa";
 
 import type { TypeCourseFields } from "@/@types/generated";
@@ -40,6 +40,7 @@ export function Course({
 	location,
 	image,
 	mdxSource,
+	content,
 }: CourseProps) {
 	const dateObj = date && new Date(date);
 	const dateString = dateObj?.toLocaleDateString("hu-HU", {
@@ -77,10 +78,13 @@ export function Course({
 			  })
 			: undefined;
 
+	if (!content) return null;
+
 	return (
 		<div className="flex w-full flex-col items-center justify-center rounded-2xl bg-white p-4 text-center shadow-2xl sm:w-fit">
 			{mdxSource ? (
-				<MDXRemote components={{ a: PLink, p: PP }} {...mdxSource} />
+				// @ts-expect-error mdx rsc bug?
+				<MDXRemote components={{ a: PLink, p: PP }} source={content} />
 			) : (
 				<>
 					<div className="mb-2 flex w-full flex-row items-center justify-center border-b-2 border-primary px-2 pb-2">

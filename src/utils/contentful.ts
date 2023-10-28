@@ -1,16 +1,11 @@
-import {
-	createClient,
-	EntryWithLinkResolutionAndWithoutUnresolvableLinks,
-} from "contentful";
+import { createClient } from "contentful";
 import { serialize } from "next-mdx-remote/serialize";
 
 import type {
 	TypeCourseFields,
-	TypeDisplayImage,
 	TypeDisplayImageFields,
 	TypeMember,
 	TypeMemberFields,
-	TypeParagraph,
 	TypeParagraphFields,
 	TypeSiteSettingsFields,
 	TypeTermsOfServiceFields,
@@ -28,11 +23,6 @@ const client = createClient({
 			: "preview.contentful.com",
 }).withoutUnresolvableLinks;
 
-function orderParagraphs(a: TypeParagraph, b: TypeParagraph): number {
-	if (!a.fields.order || !b.fields.order) return 0;
-	return a.fields.order - b.fields.order;
-}
-
 export async function getParagraphs() {
 	const paragraphs = await client.getEntries<TypeParagraphFields>({
 		content_type: "paragraph",
@@ -49,14 +39,6 @@ export async function getParagraphs() {
 	);
 
 	return renderedParagraphs;
-}
-
-function orderWorks(
-	a: EntryWithLinkResolutionAndWithoutUnresolvableLinks<TypeDisplayImageFields>,
-	b: EntryWithLinkResolutionAndWithoutUnresolvableLinks<TypeDisplayImageFields>,
-): number {
-	if (!a.fields.createdAt || !b.fields.createdAt) return 0;
-	return Date.parse(a.fields.createdAt) - Date.parse(b.fields.createdAt);
 }
 
 export async function getWorks() {
@@ -87,11 +69,6 @@ function orderLeadership(a: TypeMember, b: TypeMember): number {
 		sortOrder.indexOf(a.fields.title.toLowerCase()) -
 		sortOrder.indexOf(b.fields.title.toLowerCase())
 	);
-}
-
-function orderMembers(a: TypeMember, b: TypeMember): number {
-	if (!a.fields.name || !b.fields.name) return 0;
-	return a.fields.name.localeCompare(b.fields.name, "hu");
 }
 
 export async function getMembers() {
