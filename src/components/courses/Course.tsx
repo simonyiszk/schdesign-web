@@ -78,8 +78,6 @@ export function Course({
 			  })
 			: undefined;
 
-	if (!content) return null;
-
 	return (
 		<div className="flex w-full flex-col items-center justify-center rounded-2xl bg-white p-4 text-center shadow-2xl sm:w-fit">
 			{mdxSource ? (
