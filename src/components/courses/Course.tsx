@@ -42,8 +42,11 @@ export function Course({
 	mdxSource,
 	content,
 }: CourseProps) {
+	console.log(date);
 	const dateObj = date && new Date(date);
+	console.log(dateObj);
 	const dateString = dateObj?.toLocaleDateString("hu-HU", {
+		timeZone: "Europe/Budapest",
 		month: "2-digit",
 		day: "2-digit",
 		weekday: "long",
@@ -55,11 +58,15 @@ export function Course({
 			: undefined;
 
 	const startTimeString = dateObj?.toLocaleTimeString("hu-HU", {
+		timeZone: "Europe/Budapest",
 		hour: "2-digit",
 		minute: "2-digit",
 	});
 
+	console.log(startTimeString);
+
 	const endTimeString = endtime?.toLocaleTimeString("hu-HU", {
+		timeZone: "Europe/Budapest",
 		hour: "2-digit",
 		minute: "2-digit",
 	});

@@ -1,29 +1,21 @@
 {
-  "extends": "@tsconfig/next/tsconfig.json",
-  "compilerOptions": {
-    "baseUrl": "./src/",
-    "paths": {
-      "@/*": [
-        "*"
-      ],
-      "*": [
-        ""
-      ]
-    },
-    "strict": true,
-    "verbatimModuleSyntax": true,
-    "target": "es2015"
-  },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js",
-    "**/*.jsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules/",
-    ".next/",
-    "src/@types/generated/"
-  ]
+	"extends": "@tsconfig/next/tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": "./src/",
+		"paths": {
+			"@/*": ["*"],
+			"*": [""]
+		},
+		"strict": true,
+		"verbatimModuleSyntax": true,
+		"target": "es2015"
+	},
+	"include": [
+		"**/*.ts",
+		"**/*.tsx",
+		"**/*.js",
+		"**/*.jsx",
+		".next/types/**/*.ts"
+	],
+	"exclude": ["node_modules/", ".next/", "src/@types/generated/"]
 }
