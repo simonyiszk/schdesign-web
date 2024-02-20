@@ -43,6 +43,7 @@ export function Course({
 	content,
 }: CourseProps) {
 	const dateObj = date && new Date(date);
+	console.log(dateObj);
 	const dateString = dateObj?.toLocaleDateString("hu-HU", {
 		month: "2-digit",
 		day: "2-digit",
