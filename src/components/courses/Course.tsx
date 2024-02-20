@@ -42,6 +42,7 @@ export function Course({
 	mdxSource,
 	content,
 }: CourseProps) {
+	console.log(date);
 	const dateObj = date && new Date(date);
 	console.log(dateObj);
 	const dateString = dateObj?.toLocaleDateString("hu-HU", {
