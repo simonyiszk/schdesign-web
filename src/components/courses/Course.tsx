@@ -45,7 +45,7 @@ export function Course({
 	console.log(date);
 	const dateObj = date && new Date(date);
 	console.log(dateObj);
-	const dateString = dateObj?.toLocaleDateString("hu-HU", {
+	const dateString = dateObj?.toLocaleDateString(undefined, {
 		month: "2-digit",
 		day: "2-digit",
 		weekday: "long",
@@ -56,12 +56,14 @@ export function Course({
 			? new Date(dateObj.getTime() + 60000 * length)
 			: undefined;
 
-	const startTimeString = dateObj?.toLocaleTimeString("hu-HU", {
+	const startTimeString = dateObj?.toLocaleTimeString(undefined, {
 		hour: "2-digit",
 		minute: "2-digit",
 	});
 
-	const endTimeString = endtime?.toLocaleTimeString("hu-HU", {
+	console.log(startTimeString);
+
+	const endTimeString = endtime?.toLocaleTimeString(undefined, {
 		hour: "2-digit",
 		minute: "2-digit",
 	});
