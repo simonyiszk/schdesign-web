@@ -42,7 +42,7 @@
 		"@mui/lab": "^5.0.0-alpha.120",
 		"@mui/material": "^5.11.10",
 		"@next/mdx": "^13.2.1",
-		"clsx": "1.2.1",
+		"clsx": "2.1.1",
 		"contentful": "^10.0.0-beta-v10.8",
 		"contentful-management": "^10.30.0",
 		"focus-visible": "5.2.0",
