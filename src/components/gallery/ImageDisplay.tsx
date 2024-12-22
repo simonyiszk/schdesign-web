@@ -80,12 +80,12 @@ export function ImageDisplay({
 							}, 3000);
 						}}
 					>
-						<FaLink className="h-4 w-4 hover:text-primary" />
+						<FaLink className="size-4 hover:text-primary" />
 						<span className="hidden">Megosztás</span>
 						<div
 							className={clsx(
-								"pointer-events-none absolute left-[-100%] w-fit select-none rounded-lg bg-primary p-2 text-xs font-bold text-white transition-all",
-								hidden ? "top-[0%] opacity-0" : "top-[120%] opacity-100",
+								"pointer-events-none absolute -left-full w-fit select-none rounded-lg bg-primary p-2 text-xs font-bold text-white transition-all",
+								hidden ? "top-0 opacity-0" : "top-[120%] opacity-100",
 							)}
 						>
 							Link&nbsp;másolva

@@ -12,9 +12,9 @@ function CalendarLinkWrapper({
 	children,
 	url,
 }: {
-	children: JSX.Element;
+	children: React.ReactNode;
 	url: string | undefined;
-}): JSX.Element {
+}) {
 	return url ? (
 		<a
 			href={url}
@@ -90,7 +90,7 @@ export function Course({
 				<>
 					<div className="mb-2 flex w-full flex-row items-center justify-center border-b-2 border-primary px-2 pb-2">
 						{image?.fields.file?.url && (
-							<div className="relative h-10 w-10">
+							<div className="relative size-10">
 								<Image
 									src={image.fields.file.url}
 									fill
