@@ -47,7 +47,7 @@
 		"contentful-management": "^10.30.0",
 		"focus-visible": "5.2.0",
 		"next": "15.1.2",
-		"next-mdx-remote": "^4.4.1",
+		"next-mdx-remote": "^5.0.0",
 		"react": "19.0.0",
 		"react-dom": "19.0.0",
 		"react-icons": "^5.4.0",
