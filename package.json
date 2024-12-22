@@ -37,36 +37,37 @@
 		"@contentful/rich-text-types": "^17.0.0",
 		"@emotion/react": "^11.14.0",
 		"@emotion/styled": "^11.14.0",
-		"@mdx-js/loader": "^2.3.0",
-		"@mdx-js/react": "^2.3.0",
+		"@mdx-js/loader": "^3.1.0",
+		"@mdx-js/react": "^3.1.0",
 		"@mui/lab": "6.0.0-beta.20",
 		"@mui/material": "^6.2.1",
-		"@next/mdx": "^13.2.1",
+		"@next/mdx": "^15.1.2",
 		"clsx": "2.1.1",
 		"contentful": "^11.3.3",
 		"contentful-management": "^11.40.2",
-		"focus-visible": "5.2.0",
+		"focus-visible": "5.2.1",
 		"next": "15.1.2",
 		"next-mdx-remote": "^5.0.0",
 		"react": "19.0.0",
 		"react-dom": "19.0.0",
 		"react-icons": "^5.4.0",
-		"react-spring-lightbox": "^1.7.1",
+		"react-spring-lightbox": "^1.8.0",
 		"sass": "^1.83.0"
 	},
 	"devDependencies": {
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tsconfig/next": "1.0.5",
 		"@types/node": "18.14.2",
-		"@types/react": "18.0.28",
+		"@types/react": "19.0.2",
+		"@types/react-dom": "^19.0.2",
 		"@typescript-eslint/eslint-plugin": "6.8.0",
 		"@typescript-eslint/parser": "6.8.0",
 		"autoprefixer": "^10.4.20",
 		"cf-content-types-generator": "^2.15.5",
 		"cross-env": "7.0.3",
 		"cross-var": "^1.1.0",
-		"dotenv": "^16.0.3",
-		"dotenv-cli": "^7.0.0",
+		"dotenv": "^16.4.7",
+		"dotenv-cli": "^8.0.0",
 		"eslint": "8.35.0",
 		"eslint-config-airbnb": "19.0.4",
 		"eslint-config-airbnb-typescript": "17.0.0",
@@ -89,6 +90,11 @@
 		"prettier": "3.4.2",
 		"prettier-plugin-tailwindcss": "0.6.9",
 		"tailwindcss": "3.4.17",
-		"typescript": "5.2.2"
+		"typescript": "5.7.2"
+	},
+	"pnpm": {
+		"patchedDependencies": {
+			"react-icons@5.4.0": "patches/react-icons@5.4.0.patch"
+		}
 	}
 }

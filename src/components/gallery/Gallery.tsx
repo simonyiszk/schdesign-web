@@ -84,7 +84,6 @@ export function Gallery({ works }: GalleryProps) {
 					// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 					alt: fields.title ?? "",
 				}))}
-				// @ts-expect-error: wrong type defs?
 				renderNextButton={({ canNext }) => (
 					<button
 						className="z-50 inline-block p-2 transition-all active:scale-75 disabled:opacity-50"
@@ -92,10 +91,9 @@ export function Gallery({ works }: GalleryProps) {
 						disabled={!canNext}
 						onClick={() => setActiveIndex((i) => (i + 1) % works.length)}
 					>
-						<FaChevronRight className="h-8 w-8 text-white drop-shadow-md transition-all hover:scale-125 sm:h-12 sm:w-12" />
+						<FaChevronRight className="size-8 text-white drop-shadow-md transition-all hover:scale-125 sm:size-12" />
 					</button>
 				)}
-				// @ts-expect-error: wrong type defs?
 				renderPrevButton={({ canPrev }) => (
 					<button
 						className="z-50 inline-block p-2 transition-all active:scale-75 disabled:opacity-50"
@@ -105,7 +103,7 @@ export function Gallery({ works }: GalleryProps) {
 							setActiveIndex((i) => (i + works.length - 1) % works.length)
 						}
 					>
-						<FaChevronLeft className="h-8 w-8 text-white drop-shadow-md transition-all hover:scale-125 sm:h-12 sm:w-12" />
+						<FaChevronLeft className="size-8 text-white drop-shadow-md transition-all hover:scale-125 sm:size-12" />
 					</button>
 				)}
 				renderFooter={() => (
@@ -120,7 +118,7 @@ export function Gallery({ works }: GalleryProps) {
 						type="button"
 						onClick={closeModal}
 					>
-						<FaTimes className="h-8 w-8 text-white drop-shadow-md transition-all hover:scale-125 sm:h-12 sm:w-12" />
+						<FaTimes className="size-8 text-white drop-shadow-md transition-all hover:scale-125 sm:size-12" />
 					</button>
 				)}
 			/>
