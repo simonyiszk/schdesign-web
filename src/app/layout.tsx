@@ -2,7 +2,7 @@ import "@/styles/core.css";
 import "@/styles/fonts.scss";
 import "@/styles/global.scss";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import { Footer } from "@/components/footer/Footer";
 import { Navbar } from "@/components/header/Navbar";
@@ -13,11 +13,15 @@ const description =
 	"Az schdesign a Simonyi Károly Szakkollégium kreatív alkotóműhelye.";
 const imageUrl = "/preview.png";
 
+export const viewport: Viewport = {
+	width: "device-width",
+	initialScale: 1,
+};
+
 export const metadata: Metadata = {
 	formatDetection: {
 		telephone: false,
 	},
-	viewport: "initial-scale=1.0, width=device-width",
 	title,
 	description,
 	twitter: {

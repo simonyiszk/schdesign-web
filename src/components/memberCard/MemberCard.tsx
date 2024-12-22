@@ -46,7 +46,7 @@ export function MemberCard({
 							width={image.fields.file.details.image?.width ?? 288}
 							height={image.fields.file.details.image?.height ?? 288}
 							alt={`${name} arcképe`}
-							className="transform transition duration-300 ease-in-out group-hover:scale-105"
+							className="transition duration-300 ease-in-out group-hover:scale-105"
 						/>
 					) : (
 						<Image
@@ -54,7 +54,7 @@ export function MemberCard({
 							width={256}
 							height={256}
 							alt="Hiányzó arckép"
-							className="transform transition duration-300 ease-in-out group-hover:scale-105"
+							className="transition duration-300 ease-in-out group-hover:scale-105"
 						/>
 					)
 				}

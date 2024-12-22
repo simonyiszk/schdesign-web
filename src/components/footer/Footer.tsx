@@ -31,7 +31,7 @@ export function Footer({ buildDate }: FooterProps) {
 			className={clsx(styles.footer, "w-full bg-gray-900 p-8 text-white")}
 		>
 			<div className="container mx-auto flex flex-col content-center justify-center text-center">
-				<h3 className="mb-4 mt-4 font-RobotoMono text-2xl">kapcsolat</h3>
+				<h3 className="my-4 font-RobotoMono text-2xl">kapcsolat</h3>
 				<p className="mb-4 text-xl">
 					Van egy projekted számunkra? <br />
 					Ha megértetted és elfogadot az{" "}

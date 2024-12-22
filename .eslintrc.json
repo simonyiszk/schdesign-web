@@ -32,7 +32,7 @@
 		],
 		"@typescript-eslint/consistent-type-definitions": ["warn", "type"],
 		"@typescript-eslint/method-signature-style": "warn", // Force type safety
-		"import/no-default-export": "warn", // Default exports are confusing
+		"import/no-default-export": "off", // Default exports are confusing
 		"import/prefer-default-export": "off",
 		"react/require-default-props": "off" // React `defaultProps` are deprecated
 	},
