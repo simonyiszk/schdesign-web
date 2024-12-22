@@ -6,11 +6,11 @@ settings:
 
 dependencies:
   '@contentful/rich-text-react-renderer':
-    specifier: ^15.16.2
-    version: 15.16.2(react-dom@19.0.0)(react@19.0.0)
+    specifier: ^16.0.1
+    version: 16.0.1(react-dom@19.0.0)(react@19.0.0)
   '@contentful/rich-text-types':
-    specifier: ^16.0.2
-    version: 16.0.2
+    specifier: ^17.0.0
+    version: 17.0.0
   '@emotion/react':
     specifier: ^11.10.6
     version: 11.10.6(@types/react@18.0.28)(react@19.0.0)
@@ -236,14 +236,14 @@ packages:
     dev: true
     optional: true
 
-  /@contentful/rich-text-react-renderer@15.16.2(react-dom@19.0.0)(react@19.0.0):
-    resolution: {integrity: sha512-5UJxF+6DhcwkEsgJsHczJrCxveaQ95Oqj3NaJYmM9VDVKlvPK8cNXmSiWArHCEN0uw3yU/IS2sw16uIam3LsjQ==}
+  /@contentful/rich-text-react-renderer@16.0.1(react-dom@19.0.0)(react@19.0.0):
+    resolution: {integrity: sha512-7wZZBMgwbq5Udp2KebKCJoh9K+EPGlgRkudhXSp+OxtAIdBC6JUz3Oi9kXXKYKLeSg7iTBpkO1dd0/xFjHHKbg==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
-      react: ^16.8.6 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.6 || ^17.0.0 || ^18.0.0
+      react: ^16.8.6 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.6 || ^17.0.0 || ^18.0.0 || ^19.0.0
     dependencies:
-      '@contentful/rich-text-types': 16.0.2
+      '@contentful/rich-text-types': 17.0.0
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
     dev: false
@@ -253,14 +253,17 @@ packages:
     engines: {node: '>=6.0.0'}
     dev: false
 
-  /@contentful/rich-text-types@16.0.2:
-    resolution: {integrity: sha512-ovbmCKQjlyGek4NuABoqDesC3FBV3e5jPMMdtT2mpOy9ia31MKO0NSFMRGZu7Q+veZzmDMja8S1i/XeFCUT9Pw==}
-    engines: {node: '>=6.0.0'}
-
-  /@contentful/rich-text-types@16.3.0:
-    resolution: {integrity: sha512-OfQmAu5bxE0CgQA3WlUleVej+ifFG/iXmB2DmUl4EyWyFue1aiIvfjxQhcDRSH4n1jUNMJ6L1wInZL8uV5m3TQ==}
+  /@contentful/rich-text-types@16.8.5:
+    resolution: {integrity: sha512-q18RJuJCOuYveGiCIjE5xLCQc5lZ3L2Qgxrlg/H2YEobDFqdtmklazRi1XwEWaK3tMg6yVXBzKKkQfLB4qW14A==}
     engines: {node: '>=6.0.0'}
     dev: true
+
+  /@contentful/rich-text-types@17.0.0:
+    resolution: {integrity: sha512-x50t6sILzFHBdFpAo0foJRnH8fHWyidheWhAv3uwt9aOnNqTh893gxyoc3Q0RVEZxXfHpTi+O9gmakHcdlRdTA==}
+    engines: {node: '>=6.0.0'}
+    dependencies:
+      is-plain-obj: 3.0.0
+    dev: false
 
   /@cspotcode/source-map-support@0.8.1:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -3509,7 +3512,7 @@ packages:
     resolution: {integrity: sha512-v1s9eBXDWroDQ5WFDM53hsbB7seg6tAHtNzKwhgdNSyBPd6iFvLEnvVMxfLL3pebUe7NXeGNKEXgM/8ioG6FBA==}
     engines: {node: '>=18'}
     dependencies:
-      '@contentful/rich-text-types': 16.3.0
+      '@contentful/rich-text-types': 16.8.5
       '@types/json-patch': 0.0.30
       axios: 1.5.1
       contentful-sdk-core: 8.1.0
@@ -3565,7 +3568,7 @@ packages:
     engines: {node: '>=12'}
     requiresBuild: true
     dependencies:
-      '@contentful/rich-text-types': 16.0.2
+      '@contentful/rich-text-types': 16.8.5
       axios: 0.27.2
       contentful-resolve-response: 1.8.1
       contentful-sdk-core: 7.1.0
@@ -5248,6 +5251,11 @@ packages:
     resolution: {integrity: sha512-Fd4gABb+ycGAmKou8eMftCupSir5lRxqf4aD/vd0cD2qc4HL07OjCeuHMr8Ro4CoMaeCKDB0/ECBOVWjTwUvPQ==}
     engines: {node: '>=8'}
     dev: true
+
+  /is-plain-obj@3.0.0:
+    resolution: {integrity: sha512-gwsOE28k+23GP1B6vFl1oVh/WOzmawBrKwo5Ev6wMKzPkaXaCDIQKzLnvsA42DRlbVTWorkgTKIviAKCWkfUwA==}
+    engines: {node: '>=10'}
+    dev: false
 
   /is-plain-obj@4.1.0:
     resolution: {integrity: sha512-+Pgi+vMuUNkJyExiMBt5IlFoMyKnr5zhJ4Uspz58WOhBF5QoIZkFyNHIbBAtHwzVAgk5RtndVNsDRN61/mmDqg==}
