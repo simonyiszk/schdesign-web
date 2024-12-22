@@ -42,7 +42,6 @@
 		"@mui/lab": "^5.0.0-alpha.120",
 		"@mui/material": "^5.11.10",
 		"@next/mdx": "^13.2.1",
-		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"clsx": "1.2.1",
 		"contentful": "^10.0.0-beta-v10.8",
 		"contentful-management": "^10.30.0",
@@ -59,6 +58,7 @@
 		"styled-components": "^5.3.6"
 	},
 	"devDependencies": {
+		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tsconfig/next": "1.0.5",
 		"@types/node": "18.14.2",
 		"@types/react": "18.0.28",
