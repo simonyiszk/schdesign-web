@@ -71,9 +71,6 @@ dependencies:
   sass:
     specifier: ^1.58.3
     version: 1.58.3
-  styled-components:
-    specifier: ^5.3.6
-    version: 5.3.6(@babel/core@7.26.0)(react-dom@19.0.0)(react-is@19.0.0)(react@19.0.0)
 
 devDependencies:
   '@tailwindcss/aspect-ratio':
