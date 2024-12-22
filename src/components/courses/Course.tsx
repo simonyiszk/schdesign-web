@@ -3,8 +3,8 @@ import Image from "next/image";
 import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote/rsc";
 import { FaCalendarAlt } from "react-icons/fa";
 
-import type { TypeCourseFields } from "@/@types/generated";
 import { generateCalendarEvent } from "@/utils/calendar";
+import type { GetCoursesReturnType } from "@/utils/contentful";
 
 import { PLink, PP } from "../paragraph/ParagraphComponents";
 
@@ -31,7 +31,7 @@ function CalendarLinkWrapper({
 
 export type CourseProps = {
 	mdxSource?: MDXRemoteSerializeResult | null;
-} & TypeCourseFields;
+} & GetCoursesReturnType[0]["fields"];
 
 export function Course({
 	title,
@@ -78,7 +78,7 @@ export function Course({
 					startDate: dateObj,
 					endDate: endtime,
 					location,
-			  })
+				})
 			: undefined;
 
 	return (

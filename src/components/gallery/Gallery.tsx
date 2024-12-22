@@ -2,12 +2,11 @@
 
 import Masonry from "@mui/lab/Masonry";
 import clsx from "clsx";
-import type { EntryWithLinkResolutionAndWithoutUnresolvableLinks } from "contentful";
 import { useCallback, useState } from "react";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 import Lightbox from "react-spring-lightbox";
 
-import type { TypeDisplayImageFields } from "@/@types/generated";
+import type { TypeDisplayImageWithoutUnresolvableLinksResponse } from "@/@types/generated";
 
 import styles from "./Gallery.module.scss";
 import { ImageDisplay } from "./ImageDisplay";
@@ -28,7 +27,7 @@ function OverlayFooter({ title, count }: OverlayFooterProps) {
 }
 
 export type GalleryProps = {
-	works: EntryWithLinkResolutionAndWithoutUnresolvableLinks<TypeDisplayImageFields>[];
+	works: TypeDisplayImageWithoutUnresolvableLinksResponse[];
 };
 
 export function Gallery({ works }: GalleryProps) {
@@ -117,7 +116,7 @@ export function Gallery({ works }: GalleryProps) {
 				)}
 				renderHeader={() => (
 					<button
-						className="absolute top-2 right-2 z-50 inline-block p-2 transition-all active:scale-75 disabled:opacity-50"
+						className="absolute right-2 top-2 z-50 inline-block p-2 transition-all active:scale-75 disabled:opacity-50"
 						type="button"
 						onClick={closeModal}
 					>

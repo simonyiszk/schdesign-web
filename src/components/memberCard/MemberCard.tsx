@@ -1,15 +1,11 @@
 import clsx from "clsx";
-import type { Asset } from "contentful";
 import Image from "next/image";
 
-export type MemberCardProps = {
-	name?: string;
-	email?: string;
-	title?: string;
-	image?: Asset;
-	isOld?: boolean;
-	isCurrentLeadership?: boolean;
-} & React.HTMLProps<HTMLDivElement>;
+import type { TypeMemberWithoutUnresolvableLinksResponse } from "@/@types/generated";
+
+export type MemberCardProps =
+	TypeMemberWithoutUnresolvableLinksResponse["fields"] &
+		React.HTMLProps<HTMLDivElement>;
 
 export function MemberCard({
 	name,
@@ -43,8 +39,8 @@ export function MemberCard({
 					image?.fields?.file ? (
 						<Image
 							src={`https:${image.fields.file.url}`}
-							width={image.fields.file.details.image?.width ?? 288}
-							height={image.fields.file.details.image?.height ?? 288}
+							width={image.fields.file.details?.image?.width ?? 288}
+							height={image.fields.file.details?.image?.height ?? 288}
 							alt={`${name} arcképe`}
 							className="transition duration-300 ease-in-out group-hover:scale-105"
 						/>

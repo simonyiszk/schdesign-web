@@ -2,13 +2,13 @@ import { createClient } from "contentful";
 import { serialize } from "next-mdx-remote/serialize";
 
 import type {
-	TypeCourseFields,
-	TypeDisplayImageFields,
-	TypeMember,
-	TypeMemberFields,
-	TypeParagraphFields,
-	TypeSiteSettingsFields,
-	TypeTermsOfServiceFields,
+	TypeCourseSkeleton,
+	TypeDisplayImageSkeleton,
+	TypeMemberSkeleton,
+	TypeMemberWithoutUnresolvableLinksResponse,
+	TypeParagraphSkeleton,
+	TypeSiteSettingsSkeleton,
+	TypeTermsOfServiceSkeleton,
 } from "@/@types/generated/index";
 
 const client = createClient({
@@ -24,9 +24,9 @@ const client = createClient({
 }).withoutUnresolvableLinks;
 
 export async function getParagraphs() {
-	const paragraphs = await client.getEntries<TypeParagraphFields>({
+	const paragraphs = await client.getEntries<TypeParagraphSkeleton>({
 		content_type: "paragraph",
-		order: "fields.order",
+		order: ["fields.order"],
 	});
 
 	// paragraphs.items.sort(orderParagraphs);
@@ -42,9 +42,9 @@ export async function getParagraphs() {
 }
 
 export async function getWorks() {
-	const works = await client.getEntries<TypeDisplayImageFields>({
+	const works = await client.getEntries<TypeDisplayImageSkeleton>({
 		content_type: "displayImage",
-		order: "-fields.createdAt",
+		order: ["-fields.createdAt"],
 	});
 
 	// works.items.sort(orderWorks);
@@ -63,7 +63,10 @@ const sortOrder = [
 	"webmentor",
 ];
 
-function orderLeadership(a: TypeMember, b: TypeMember): number {
+function orderLeadership(
+	a: TypeMemberWithoutUnresolvableLinksResponse,
+	b: TypeMemberWithoutUnresolvableLinksResponse,
+): number {
 	if (!a.fields.title || !b.fields.title) return 0;
 	return (
 		sortOrder.indexOf(a.fields.title.toLowerCase()) -
@@ -73,11 +76,11 @@ function orderLeadership(a: TypeMember, b: TypeMember): number {
 
 export async function getMembers() {
 	const leader = (
-		await client.getEntries<TypeMemberFields>({
+		await client.getEntries<TypeMemberSkeleton>({
 			content_type: "member",
 			limit: 1,
-			"fields.isCurrentLeadership": "true",
-			"fields.title[in]": "Körvezető",
+			"fields.isCurrentLeadership": true,
+			"fields.title[in]": ["Körvezető"],
 		})
 	).items[0] ?? {
 		fields: {
@@ -88,27 +91,27 @@ export async function getMembers() {
 		},
 	};
 
-	const leaderShip = await client.getEntries<TypeMemberFields>({
+	const leaderShip = await client.getEntries<TypeMemberSkeleton>({
 		content_type: "member",
-		"fields.isCurrentLeadership": "true",
+		"fields.isCurrentLeadership": true,
 		"fields.title[ne]": "Körvezető",
 	});
 
 	leaderShip.items.sort(orderLeadership);
 
-	const members = await client.getEntries<TypeMemberFields>({
+	const members = await client.getEntries<TypeMemberSkeleton>({
 		content_type: "member",
-		order: "fields.name",
-		"fields.isCurrentLeadership": "false",
-		"fields.isOld": "false",
+		order: ["fields.name"],
+		"fields.isCurrentLeadership": false,
+		"fields.isOld": false,
 	});
 
 	// members.items.sort(orderMembers);
 
-	const oldMembers = await client.getEntries<TypeMemberFields>({
+	const oldMembers = await client.getEntries<TypeMemberSkeleton>({
 		content_type: "member",
-		order: "fields.name",
-		"fields.isOld": "true",
+		order: ["fields.name"],
+		"fields.isOld": true,
 	});
 
 	// oldMembers.items.sort(orderMembers);
@@ -118,7 +121,7 @@ export async function getMembers() {
 
 export async function getTOS() {
 	const tos = (
-		await client.getEntries<TypeTermsOfServiceFields>({
+		await client.getEntries<TypeTermsOfServiceSkeleton>({
 			content_type: "termsOfService",
 			limit: 1,
 		})
@@ -135,9 +138,9 @@ export async function getTOS() {
 export type GetCoursesReturnType = Awaited<ReturnType<typeof getCourses>>;
 
 export async function getCourses() {
-	const courses = await client.getEntries<TypeCourseFields>({
+	const courses = await client.getEntries<TypeCourseSkeleton>({
 		content_type: "course",
-		order: "fields.order",
+		order: ["fields.order"],
 	});
 
 	const renderedCourses = await Promise.all(
@@ -153,7 +156,7 @@ export async function getCourses() {
 }
 
 export async function getSiteSettings() {
-	const siteSettings = await client.getEntries<TypeSiteSettingsFields>({
+	const siteSettings = await client.getEntries<TypeSiteSettingsSkeleton>({
 		content_type: "siteSettings",
 		limit: 1,
 	});
