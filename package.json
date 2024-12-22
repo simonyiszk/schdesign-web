@@ -54,7 +54,7 @@
 		"react-dom": "19.0.0",
 		"react-icons": "^5.4.0",
 		"react-spring-lightbox": "^1.7.1",
-		"sass": "^1.58.3"
+		"sass": "^1.83.0"
 	},
 	"devDependencies": {
 		"@tailwindcss/aspect-ratio": "^0.4.2",
