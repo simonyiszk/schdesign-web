@@ -46,8 +46,8 @@
 		"contentful": "^11.3.3",
 		"contentful-management": "^11.40.2",
 		"focus-visible": "5.2.1",
-		"next": "15.1.2",
-		"next-mdx-remote": "^5.0.0",
+		"next": "15.1.11",
+		"next-mdx-remote": "^6.0.0",
 		"react": "19.0.0",
 		"react-dom": "19.0.0",
 		"react-icons": "^5.4.0",
@@ -91,10 +91,5 @@
 		"prettier-plugin-tailwindcss": "0.6.9",
 		"tailwindcss": "3.4.17",
 		"typescript": "5.7.2"
-	},
-	"pnpm": {
-		"patchedDependencies": {
-			"react-icons@5.4.0": "patches/react-icons@5.4.0.patch"
-		}
 	}
 }
